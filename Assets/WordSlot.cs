@@ -9,10 +9,11 @@ public class WordSlot : MonoBehaviour, IDropHandler
 {
     [SerializeField]
     private string expectedWord;
+    private WordPuzzle puzzle;
 
     private void Awake()
     {
-        
+        puzzle = GetComponentInParent<WordPuzzle>();
     }
 
 
@@ -25,6 +26,7 @@ public class WordSlot : MonoBehaviour, IDropHandler
             {
                 droppedGO.SetActive(false);
                 this.gameObject.SetActive(false);
+                puzzle.UpdatePuzzle(droppedGO.GetComponent<TextMeshProUGUI>().text);
             }
             else
             {
