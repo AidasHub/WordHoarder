@@ -44,6 +44,11 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    public static InventoryManager getInstance()
+    {
+        return instance;
+    }
+
     private void Init()
     {
         wordGridLayout = inventory.GetComponentInChildren<GridLayoutGroup>();
@@ -70,18 +75,6 @@ public class InventoryManager : MonoBehaviour
         newWordTMP.text = word;
         wordList.Add(newWord);
     }
-
-    bool isFullyVisible(Rect rect)
-    {
-        Rect screenBounds = wordGridLayout.gameObject.GetComponent<RectTransform>().rect;
-        if (screenBounds.Contains(new Vector2(rect.xMin, rect.yMin))
-            && screenBounds.Contains(new Vector2(rect.xMin, rect.yMax))
-            && screenBounds.Contains(new Vector2(rect.xMax, rect.yMin))
-            && screenBounds.Contains(new Vector2(rect.xMax, rect.yMax)))
-            return true;
-        return false;
-    }
-
 
     public void ToggleInventory()
     {

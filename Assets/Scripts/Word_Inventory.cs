@@ -13,6 +13,8 @@ public class Word_Inventory : MonoBehaviour, IDragHandler, IEndDragHandler
 
     private Vector3 startingPosition;
     private bool startDrag;
+    private Transform preDragParent;
+    private int preDragSiblingIndex;
 
     private void Awake()
     {
@@ -26,6 +28,9 @@ public class Word_Inventory : MonoBehaviour, IDragHandler, IEndDragHandler
     {
         if (startDrag)
         {
+            preDragParent = transform.parent;
+            preDragSiblingIndex = transform.GetSiblingIndex();
+            transform.SetParent(canvas.transform);
             startingPosition = rect.position;
             startDrag = false;
         }
@@ -35,6 +40,10 @@ public class Word_Inventory : MonoBehaviour, IDragHandler, IEndDragHandler
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        transform.SetParent(preDragParent);
+        transform.SetSiblingIndex(preDragSiblingIndex);
+        preDragParent = null;
+        preDragSiblingIndex = -1;
         canvasGroup.blocksRaycasts = true;
         startDrag = true;
         ResetPosition();
