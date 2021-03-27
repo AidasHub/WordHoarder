@@ -27,7 +27,7 @@ public class InventoryManager : MonoBehaviour
     private RectTransform rectTransform;
 
     [SerializeField]
-    List<Word_Inventory> wordList;
+    List<InventoryWord> wordList;
 
     private static InventoryManager instance;
 
@@ -63,17 +63,54 @@ public class InventoryManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            AddWord("Computer");
+            AddWord("Guinea pig");
+            RemoveWord("Guinea pig");
         }
     }
 
     public void AddWord(string word)
     {
         GameObject newWordGO = Instantiate(wordPrefab, wordGridLayout.transform);
-        Word_Inventory newWord = newWordGO.GetComponent<Word_Inventory>();
+        newWordGO.name = word;
+        InventoryWord newWord = newWordGO.GetComponent<InventoryWord>();
         TextMeshProUGUI newWordTMP = newWordGO.GetComponent<TextMeshProUGUI>();
         newWordTMP.text = word;
         wordList.Add(newWord);
+    }
+
+    public void RemoveWord(string word)
+    {
+        for(int i = 0; i < wordList.Count; i++)
+        {
+            if (wordList[i].getWordString() == word)
+            {
+                wordList.RemoveAt(i);
+                RefreshInventory();
+                break;
+            }          
+        }
+    }
+
+    public void RefreshInventory()
+    {
+        for(int i = 0; i < wordGridLayout.transform.childCount; i++)
+        {
+            bool found = false;
+            for (int j = 0; j < wordList.Count; j++)
+            {
+                if (wordGridLayout.transform.GetChild(i).name == wordList[j].getWordString())
+                    found = true;
+            }
+            if (!found)
+            {
+                Destroy(wordGridLayout.transform.GetChild(i).gameObject);
+            }
+        }
+    }
+
+    public List<InventoryWord> GetWords()
+    {
+        return wordList;
     }
 
     public void ToggleInventory()

@@ -1,0 +1,16 @@
+{
+  "textEN":
+  "I have a light brown _. I place my _ monitors on it",
+  "missingWordsEN":
+  [
+    "table",
+    "computer"
+  ],
+  "textOther":
+  "Aš turiu rusvą _. Ant jo laikau savo _ monitorius",
+  "missingWordsOther":
+  [
+    "stalą",
+    "kompiuterio"
+  ]
+}

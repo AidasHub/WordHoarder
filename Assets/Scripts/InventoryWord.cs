@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using TMPro;
 
 [RequireComponent(typeof(TextMeshProUGUI))]
-public class Word_Inventory : MonoBehaviour, IDragHandler, IEndDragHandler
+public class InventoryWord : MonoBehaviour, IDragHandler, IEndDragHandler
 {
     private RectTransform rect;
     private Canvas canvas;
@@ -52,5 +52,10 @@ public class Word_Inventory : MonoBehaviour, IDragHandler, IEndDragHandler
     public void ResetPosition()
     {
         rect.position = startingPosition;
+    }
+
+    public string getWordString()
+    {
+        return GetComponent<TextMeshProUGUI>().text;
     }
 }

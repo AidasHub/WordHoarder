@@ -2,10 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Word_World : MonoBehaviour
+[RequireComponent(typeof(BoxCollider2D))]
+public class WorldWord : MonoBehaviour
 {
     [SerializeField]
     private string wordText;
+    private BoxCollider2D wordCollider;
+
+    private void Start()
+    {
+        wordCollider = GetComponent<BoxCollider2D>();
+    }
 
     void OnMouseOver()
     {
@@ -19,6 +26,7 @@ public class Word_World : MonoBehaviour
 
     private void OnMouseDown()
     {
-        this.gameObject.SetActive(false);
+        wordCollider.enabled = false;
+        InventoryManager.getInstance().AddWord(wordText);
     }
 }

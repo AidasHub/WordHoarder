@@ -9,11 +9,13 @@ public class WordSlot : MonoBehaviour, IDropHandler
 {
     [SerializeField]
     private string expectedWord;
-    private WordPuzzle puzzle;
+    [SerializeField]
+    private int expectedWordIndex;
+    private PuzzleWordFill puzzle;
 
     private void Awake()
     {
-        puzzle = GetComponentInParent<WordPuzzle>();
+        puzzle = GetComponentInParent<PuzzleWordFill>();
     }
 
 
@@ -22,19 +24,27 @@ public class WordSlot : MonoBehaviour, IDropHandler
         if(eventData.pointerDrag != null)
         {
             var droppedGO = eventData.pointerDrag.gameObject;
-            if (droppedGO.GetComponent<TextMeshProUGUI>().text == expectedWord)
+            var actualWord = droppedGO.GetComponent<TextMeshProUGUI>().text;
+
+            if (expectedWord == actualWord)
             {
-                droppedGO.SetActive(false);
                 this.gameObject.SetActive(false);
-                puzzle.UpdatePuzzle(droppedGO.GetComponent<TextMeshProUGUI>().text);
+                puzzle.UpdatePuzzle(actualWord, expectedWordIndex);
+                Destroy(droppedGO);
             }
             else
             {
                 FlashWordSlot();
-                droppedGO.GetComponent<Word_Inventory>().ResetPosition();
+                droppedGO.GetComponent<InventoryWord>().ResetPosition();
             }
 
         }
+    }
+
+    public void SetWord(string word, int index)
+    {
+        this.expectedWord = word;
+        this.expectedWordIndex = index;
     }
 
     private void FlashWordSlot()
