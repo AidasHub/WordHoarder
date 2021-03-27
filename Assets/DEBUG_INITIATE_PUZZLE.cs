@@ -15,10 +15,11 @@ public class DEBUG_INITIATE_PUZZLE : MonoBehaviour
     {
         interactionPanel.GetComponent<Animator>().SetTrigger("ToggleInteractionPanel");
         InventoryManager.getInstance().AddWord("Dog");
-        InventoryManager.getInstance().AddWord("Cat");
+        InventoryManager.getInstance().AddWord("cat");
         InventoryManager.getInstance().AddWord("Bucket");
         InventoryManager.getInstance().AddWord("computer");
         InventoryManager.getInstance().AddWord("table");
+        InventoryManager.getInstance().AddWord("plants");
         puzzleWordFill.Init();
         Destroy(this.gameObject);
     }

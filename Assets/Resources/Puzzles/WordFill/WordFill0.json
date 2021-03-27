@@ -1,16 +1,20 @@
 {
   "textEN":
-  "I have a light brown _. I place my _ monitors on it",
+  "I have a light brown _. I place my _ monitors on it. Next to it sit my _, but my _ likes to eat them for some reason",
   "missingWordsEN":
   [
     "table",
-    "computer"
+    "computer",
+    "plants",
+    "cat"
   ],
   "textOther":
-  "Aš turiu rusvą _. Ant jo laikau savo _ monitorius",
+  "Aš turiu rusvą _. Ant jo statau savo _ monitorius. Šalia pastatyti _, bet mano _ kažkodėl mėgsta juos valgyti",
   "missingWordsOther":
   [
     "stalą",
-    "kompiuterio"
+    "kompiuterio",
+    "augalai",
+    "katė"
   ]
 }

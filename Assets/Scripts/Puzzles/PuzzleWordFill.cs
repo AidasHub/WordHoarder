@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System;
+using System.Text.RegularExpressions;
 
 public class PuzzleWordFill : MonoBehaviour
 {
@@ -188,6 +189,9 @@ public class PuzzleWordFill : MonoBehaviour
         int blankStart = 0;
         int blankEnd = 0;
         int blankLength = 0;
+
+        text = Regex.Replace(text, "<.*?>", "");
+
         for (int i = 0; i < text.Length; i++)
         {
             if (!blankStarted)
