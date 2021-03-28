@@ -21,6 +21,6 @@ public class DEBUG_INITIATE_PUZZLE : MonoBehaviour
         InventoryManager.getInstance().AddWord("table");
         InventoryManager.getInstance().AddWord("plants");
         puzzleWordFill.Init();
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
     }
 }

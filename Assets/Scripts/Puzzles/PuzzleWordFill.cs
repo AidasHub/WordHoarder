@@ -40,6 +40,19 @@ public class PuzzleWordFill : MonoBehaviour
         PopulatePuzzleInventory();
     }
 
+    public void Close()
+    {
+        CleanupInventory();
+    }
+
+    private void CleanupInventory()
+    {
+        for(int i = 0; i < inventoryGridLayout.transform.childCount; i++)
+        {
+            Destroy(inventoryGridLayout.transform.GetChild(i).gameObject);
+        }
+    }
+
     public void UpdatePuzzle(string word, int wordIndex)
     {
         string replacement = "<color=green>" + word + "</color>";
@@ -95,7 +108,7 @@ public class PuzzleWordFill : MonoBehaviour
     public void PopulateWordPanels()
     {
         
-        TextAsset puzzleAsset = gameManager.GetWordFillPuzzle(puzzleIndex);
+        TextAsset puzzleAsset = InteractiveManager.getInstance().GetWordFillPuzzle(puzzleIndex);
         _PuzzleInfo puzzleInfo = _PuzzleInfo.CreateFromJSON(puzzleAsset.text);
 
         #region EN_SETUP

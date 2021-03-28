@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField]
-    public List<TextAsset> wordFillPuzzles;
 
     private static GameManager instance;
+    public static bool isDone;
+
+    [SerializeField]
+    private List<GameObject> managerList;
 
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(transform.parent);
             Init();
         }
         else if (instance != this)
@@ -27,15 +30,22 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void InitGame()
+    {
+        isDone = false;
+        for (int i = 0; i < managerList.Count; i++)
+        {
+            if (managerList[i])
+            {
+                var manager = Instantiate(managerList[i], transform.parent);
+                manager.name = managerList[i].name;
+            }
+        }
+        isDone = true;
+    }
+
     public static GameManager getInstance()
     {
         return instance;
     }
-
-    public TextAsset GetWordFillPuzzle(int i)
-    {
-        return wordFillPuzzles[i];
-    }
-
-
 }
