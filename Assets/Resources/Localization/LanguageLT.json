@@ -1,0 +1,20 @@
+{
+	"MenuStart":"Naujas žaidimas",
+	"MenuLoad":"Tęsti Žaidimą",
+	"MenuOptions":"Nustatymai",
+	"MenuQuit":"Išeiti",
+
+	"OptionsGraphics":"Grafika",
+	"OptionsAudio":"Garsas",
+	
+	"MiscContinue":"Tęsti",
+	"MiscBack":"Atgal",
+
+	"TutorialSteps":
+	[
+	"Sveiki, atvykę į Word-Hoarder!",
+	"Susipažinkine su žaidimo valdymu",
+	"Žaidime jums bus pateikti vaizdai, kuriuose gausu įvairių objektų",
+	"Spustelkite ant objekto, kad jį \"surinkti\""
+	]
+}

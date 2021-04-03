@@ -15,7 +15,7 @@ public class InventoryManager : MonoBehaviour
     private float openingSpeed = 1f;
 
     private bool isOpen = false;
-    private bool isMoving = false;
+    //private bool isMoving = false;
     private bool queueClose = false;
 
     [SerializeField]
@@ -51,6 +51,10 @@ public class InventoryManager : MonoBehaviour
 
     private void Init()
     {
+        if(inventory == null)
+        {
+            inventory = UIManager.getInstance().getFromCanvas("Inventory");
+        }
         wordGridLayout = inventory.GetComponentInChildren<GridLayoutGroup>();
     }
 
@@ -129,7 +133,7 @@ public class InventoryManager : MonoBehaviour
     {
         if (!isOpen)
         {
-            isMoving = true;
+            //isMoving = true;
             while (rectTransform.offsetMin.y <= 0 && rectTransform.offsetMax.y <= 0)
             {
                 rectTransform.offsetMin = new Vector2(rectTransform.offsetMin.x, rectTransform.offsetMin.y + openingSpeed * Time.deltaTime * 100);
@@ -138,7 +142,7 @@ public class InventoryManager : MonoBehaviour
             }
             rectTransform.offsetMin = new Vector2(rectTransform.offsetMin.x, 0f);
             rectTransform.offsetMax = new Vector2(rectTransform.offsetMax.x, 0f);
-            isMoving = false;
+            //isMoving = false;
             isOpen = true;
             if (queueClose)
             {
@@ -148,7 +152,7 @@ public class InventoryManager : MonoBehaviour
         }
         else
         {
-            isMoving = true;
+            //isMoving = true;
             while(rectTransform.offsetMin.y >= -offset && rectTransform.offsetMax.y >= -offset)
             {
                 rectTransform.offsetMin = new Vector2(rectTransform.offsetMin.x, rectTransform.offsetMin.y - openingSpeed * Time.deltaTime * 100);
@@ -157,7 +161,7 @@ public class InventoryManager : MonoBehaviour
             }
             rectTransform.offsetMin = new Vector2(rectTransform.offsetMin.x, -offset);
             rectTransform.offsetMax = new Vector2(rectTransform.offsetMax.x, -offset);
-            isMoving = false;
+            //isMoving = false;
             isOpen = false;
         }
     }

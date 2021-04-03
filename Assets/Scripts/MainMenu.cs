@@ -12,6 +12,9 @@ public class MainMenu : MonoBehaviour
     private TextMeshProUGUI titleTMP;
     [SerializeField]
     private GameObject buttonPanel;
+    [SerializeField]
+    private MainMenuLocalization mainMenuLocalization;
+
 
     private string sourceTitleHalf = "WORD-";
 
@@ -47,5 +50,31 @@ public class MainMenu : MonoBehaviour
         {
             buttons[i].interactable = true;
         }
+    }
+
+    public void StartGame()
+    {
+        titleAnimator.SetBool("DisplayLoadingScreen", true);
+    }
+
+    private void StartGameProcess()
+    {
+        GameManager.getInstance().InitGame();
+        LevelManager.getInstance().LoadTutorial();
+    }
+
+    public void LoadGame()
+    {
+
+    }
+
+    public void OptionsMenu()
+    {
+
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

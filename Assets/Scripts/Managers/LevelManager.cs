@@ -54,4 +54,10 @@ public class LevelManager : MonoBehaviour
     {
         SceneManager.LoadScene(2);
     }
+
+    public AsyncOperation LoadTutorial()
+    {
+        var result = SceneManager.LoadSceneAsync(3);
+        return result;
+    }
 }

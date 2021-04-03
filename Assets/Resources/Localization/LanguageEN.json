@@ -1,0 +1,20 @@
+{
+	"MenuStart":"New Game",
+	"MenuLoad":"Load Game",
+	"MenuOptions":"Options",
+	"MenuQuit":"Quit",
+
+	"OptionsGraphics":"Graphics",
+	"OptionsAudio":"Audio",
+	
+	"MiscContinue":"Continue",
+	"MiscBack":"Back",
+
+	"TutorialSteps":
+	[
+	"Welcome to Word-Hoarder!",
+	"This tutorial will guide you through the basic controls",
+	"In the world you will be presented with various surroundings containing various objects",
+	"Click on an object to \"Collect it\""
+	]
+}

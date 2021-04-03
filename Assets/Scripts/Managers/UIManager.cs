@@ -48,4 +48,9 @@ public class UIManager : MonoBehaviour
         ret.name = go.name;
         return ret;
     }
+
+    public GameObject getFromCanvas(string name)
+    {
+        return mainCanvas.transform.Find(name).gameObject;
+    }
 }
