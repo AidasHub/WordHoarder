@@ -10,8 +10,6 @@ public class UIManager : MonoBehaviour
     private GameObject mainCanvasGO;
     private Canvas mainCanvas;
 
-    private LevelManager levelManager;
-
     private static UIManager instance;
 
     private void Awake()
@@ -29,8 +27,6 @@ public class UIManager : MonoBehaviour
 
     private void Init()
     {
-        levelManager = LevelManager.getInstance();
-
         mainCanvasGO = Instantiate(canvasPrefab);
         mainCanvasGO.name = canvasPrefab.name;
         DontDestroyOnLoad(mainCanvasGO.gameObject);

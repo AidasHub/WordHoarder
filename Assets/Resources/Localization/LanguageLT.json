@@ -1,20 +1,28 @@
 {
-	"MenuStart":"Naujas žaidimas",
-	"MenuLoad":"Tęsti Žaidimą",
-	"MenuOptions":"Nustatymai",
-	"MenuQuit":"Išeiti",
+	"MenuStart": "Naujas žaidimas",
+	"MenuLoad": "Tęsti Žaidimą",
+	"MenuOptions": "Nustatymai",
+	"MenuQuit": "Išeiti",
 
-	"OptionsGraphics":"Grafika",
-	"OptionsAudio":"Garsas",
-	
-	"MiscContinue":"Tęsti",
-	"MiscBack":"Atgal",
+	"OptionsGraphics": "Grafika",
+	"OptionsAudio": "Garsas",
 
-	"TutorialSteps":
-	[
-	"Sveiki, atvykę į Word-Hoarder!",
-	"Susipažinkine su žaidimo valdymu",
-	"Žaidime jums bus pateikti vaizdai, kuriuose gausu įvairių objektų",
-	"Spustelkite ant objekto, kad jį \"surinkti\""
+	"GraphicsResolution": "Ekrano raiška",
+	"GraphicsFullScreen": "Pilno ekrano režimas",
+
+	"PauseLabel": "Žaidimas sustabdytas",
+	"PauseResume": "Tęsti žaidimą",
+	"PauseSave": "Užsaugoti žaidimą",
+	"PauseOptions": "Nustatymai",
+	"PauseQuit": "Išeiti iš žaidimo",
+
+	"MiscContinue": "Tęsti",
+	"MiscBack": "Atgal",
+
+	"TutorialSteps": [
+		"Sveiki, atvykę į Word-Hoarder!",
+		"Susipažinkine su žaidimo valdymu",
+		"Žaidime jums bus pateikti vaizdai, kuriuose gausu įvairių objektų",
+		"Spustelkite ant objekto, kad jį \"surinkti\""
 	]
 }

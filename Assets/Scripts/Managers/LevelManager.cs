@@ -5,59 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    private static LevelManager instance;
-
-    private UIManager _UIManager;
-
-    private void Awake()
+    public static void LoadSplashScreen()
     {
-        if (instance == null)
-        {
-            instance = this;
-            Init();
-        }
-        else if (instance != this)
-        {
-            Destroy(this.gameObject);
-        }
+        SceneManager.LoadSceneAsync(1);
     }
 
-    private void Init()
+    public static void LoadMainMenu()
     {
-        if(SceneManager.GetActiveScene().buildIndex == 0)
-        {
-            SceneManager.LoadScene(1);
-            SceneManager.sceneLoaded += LoadSplashScreen;
-        }
+        SceneManager.LoadSceneAsync(2);
     }
 
-    public static LevelManager getInstance()
+    public static void LoadTutorial()
     {
-        return instance;
-    }
-
-    private void LoadSplashScreen(Scene scene, LoadSceneMode mode)
-    {
-        _UIManager = UIManager.getInstance();
-        StartCoroutine(OnSplashScreenLoaded());
-        SceneManager.sceneLoaded -= LoadSplashScreen;
-
-    }
-
-    public IEnumerator OnSplashScreenLoaded()
-    {
-        yield return new WaitForSeconds(3f);
-        LoadMainMenu();
-    }
-
-    public void LoadMainMenu()
-    {
-        SceneManager.LoadScene(2);
-    }
-
-    public AsyncOperation LoadTutorial()
-    {
-        var result = SceneManager.LoadSceneAsync(3);
-        return result;
+        SceneManager.LoadSceneAsync(3);
     }
 }

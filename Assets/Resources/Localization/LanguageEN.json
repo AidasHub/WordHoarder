@@ -5,7 +5,16 @@
 	"MenuQuit":"Quit",
 
 	"OptionsGraphics":"Graphics",
-	"OptionsAudio":"Audio",
+	"OptionsAudio": "Audio",
+
+	"PauseLabel": "Game Paused",
+	"PauseResume": "Resume Game",
+	"PauseSave": "Save Game",
+	"PauseOptions": "Options",
+	"PauseQuit": "Quit Game",
+
+	"GraphicsResolution": "Resolution",
+	"GraphicsFullScreen": "Full Screen",
 	
 	"MiscContinue":"Continue",
 	"MiscBack":"Back",

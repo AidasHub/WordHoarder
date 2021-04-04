@@ -27,7 +27,8 @@ public class GameManager : MonoBehaviour
 
     private void Init()
     {
-
+        LocalizationManager.Init();
+        LevelManager.LoadSplashScreen();
     }
 
     public void InitGame()

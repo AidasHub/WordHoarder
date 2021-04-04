@@ -15,14 +15,28 @@ public class LocalizationManager : MonoBehaviour
     [Serializable]
     public class _LocalizationInfo
     {
+        // Main Menu Options
         public string MenuStart;
         public string MenuLoad;
         public string MenuOptions;
         public string MenuQuit;
 
+        // Options Menu Options
         public string OptionsGraphics;
         public string OptionsAudio;
 
+        // Graphics Menu Options
+        public string GraphicsResolution;
+        public string GraphicsFullScreen;
+
+        // Pause Menu Options
+        public string PauseLabel;
+        public string PauseResume;
+        public string PauseSave;
+        public string PauseOptions;
+        public string PauseQuit;
+
+        // Miscellaneous Text
         public string MiscContinue;
         public string MiscBack;
 
@@ -41,31 +55,12 @@ public class LocalizationManager : MonoBehaviour
 
     private static List<_LocalizationInfo> languageInfoList = new List<_LocalizationInfo>();
 
-    private static ActiveLanguage activeLanguage;
+    private static ActiveLanguage activeLanguage = ActiveLanguage.EN;
 
-    private static LocalizationManager instance;
-
-    private void Awake()
+    public static void Init()
     {
-        if (instance == null)
-        {
-            instance = this;
-            Init();
-        }
-        else if (instance != this)
-        {
-            Destroy(this.gameObject);
-        }
-    }
-
-    public static LocalizationManager getInstance()
-    {
-        return instance;
-    }
-
-    private void Init()
-    {
-        for(int i = 0; i < localizationFiles.Count; i++)
+        TextAsset[] localizationFiles = Resources.LoadAll<TextAsset>("Localization/");
+        for(int i = 0; i < localizationFiles.Length; i++)
         {
             var info = _LocalizationInfo.CreateFromJSON(localizationFiles[i].text);
             languageInfoList.Add(info);
