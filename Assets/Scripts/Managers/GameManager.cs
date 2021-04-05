@@ -4,15 +4,37 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField]
+    private bool debugMode;
 
     private static GameManager instance;
-    public static bool isDone;
+    public static bool isDoneLoadingGame;
+    private static bool isGamePaused;
+    public static bool GamePaused
+    {
+        get
+        {
+            return isGamePaused;
+        }
+        set
+        {
+            if (value == true)
+                Time.timeScale = 0f;
+            else
+                Time.timeScale = 1f;
+            isGamePaused = value;
+        }
+    }
 
     [SerializeField]
     private List<GameObject> managerList;
 
+    [SerializeField]
+    private GameObject tutorialScenarioPrefab;
+
     private void Awake()
     {
+        isGamePaused = false;
         if (instance == null)
         {
             instance = this;
@@ -28,12 +50,13 @@ public class GameManager : MonoBehaviour
     private void Init()
     {
         LocalizationManager.Init();
-        LevelManager.LoadSplashScreen();
+        if(!debugMode)
+            LevelManager.LoadSplashScreen();
     }
 
     public void InitGame()
     {
-        isDone = false;
+        isDoneLoadingGame = false;
         for (int i = 0; i < managerList.Count; i++)
         {
             if (managerList[i])
@@ -42,11 +65,27 @@ public class GameManager : MonoBehaviour
                 manager.name = managerList[i].name;
             }
         }
-        isDone = true;
+        isDoneLoadingGame = true;
     }
 
     public static GameManager getInstance()
     {
         return instance;
+    }
+
+    public void InitializeTutorial()
+    {
+        UIManager.getInstance().AddToCanvas(tutorialScenarioPrefab);
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f;
+        isGamePaused = false;
+    }
+    public void PauseGame()
+    {
+        Time.timeScale = 0f;
+        isGamePaused = true;
     }
 }

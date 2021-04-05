@@ -18,11 +18,15 @@
 
 	"MiscContinue": "Tęsti",
 	"MiscBack": "Atgal",
+	"MiscLaunch":"Pradėti",
 
 	"TutorialSteps": [
 		"Sveiki, atvykę į Word-Hoarder!",
 		"Susipažinkine su žaidimo valdymu",
 		"Žaidime jums bus pateikti vaizdai, kuriuose gausu įvairių objektų",
-		"Spustelkite ant objekto, kad jį \"surinkti\""
+		"Spustelkite ant objekto, kad jį \"surinkti\"",
+		"Objektas buvo pridėtas į jūsų inventorių! Spustelkite \"Inventoriaus\" mygtuką, kad atidaryti inventorių",
+		"Vienas iš būdų panaudoti žodžius yra nutempti juos ant kitų atitinkamų objektų. Pabandykite nutempti raktą ant durų",
+		"Tai tiek! Spauskite mygtuką, kad pradėti žaidimą"
 	]
 }

@@ -18,5 +18,12 @@ public class LevelManager : MonoBehaviour
     public static void LoadTutorial()
     {
         SceneManager.LoadSceneAsync(3);
+        GameManager.getInstance().InitializeTutorial();
+        SceneManager.sceneLoaded += UIManager.RefreshCanvasOnLevelLoad;
+    }
+
+    public static void LoadNewGame()
+    {
+        SceneManager.LoadSceneAsync(4);
     }
 }

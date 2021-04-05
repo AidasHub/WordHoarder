@@ -23,6 +23,8 @@ public class InventoryManager : MonoBehaviour
 
     [SerializeField]
     private GameObject inventory;
+    private Animator inventoryAnimator;
+    private Button inventoryButton;
     private GridLayoutGroup wordGridLayout;
     private RectTransform rectTransform;
 
@@ -54,6 +56,9 @@ public class InventoryManager : MonoBehaviour
         if(inventory == null)
         {
             inventory = UIManager.getInstance().getFromCanvas("Inventory");
+            inventoryAnimator = inventory.GetComponent<Animator>();
+            inventoryButton = inventory.GetComponentInChildren<Button>();
+            inventoryButton.onClick.AddListener(ToggleInventory);
         }
         wordGridLayout = inventory.GetComponentInChildren<GridLayoutGroup>();
     }
@@ -61,15 +66,6 @@ public class InventoryManager : MonoBehaviour
     private void Start()
     {
         rectTransform = inventory.GetComponent<RectTransform>();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            AddWord("Guinea pig");
-            RemoveWord("Guinea pig");
-        }
     }
 
     public void AddWord(string word)
@@ -119,13 +115,18 @@ public class InventoryManager : MonoBehaviour
 
     public void ToggleInventory()
     {
+        Debug.Log(inventoryAnimator == null);
+        inventoryAnimator.SetTrigger("ToggleInventory");
+        Debug.Log("Toggled Inventory");
         if (!isOpen)
         {
-            StartCoroutine(InventoryTransformation());
+            Debug.Log("Opening");
+            //StartCoroutine(InventoryTransformation());
         }
         else
         {
-            StartCoroutine(InventoryTransformation());
+            Debug.Log("Closing");
+            //StartCoroutine(InventoryTransformation());
         }
     }
 

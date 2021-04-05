@@ -219,6 +219,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1124365473229006406, guid: d448db333814a3942a842ef5d08c2a93, type: 3}
+      propertyPath: tutorialScenarioPrefab
+      value: 
+      objectReference: {fileID: 4813360728382522257, guid: 0d53e53b274756c4f830f1bd9d06a730, type: 3}
+    - target: {fileID: 1124365473229006406, guid: d448db333814a3942a842ef5d08c2a93, type: 3}
       propertyPath: managerList.Array.data[0]
       value: 
       objectReference: {fileID: 5899964698142051017, guid: 40dbe6ec58d0a7c45b75b241527957cd, type: 3}

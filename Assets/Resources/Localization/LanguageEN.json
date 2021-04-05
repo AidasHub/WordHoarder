@@ -18,12 +18,16 @@
 	
 	"MiscContinue":"Continue",
 	"MiscBack":"Back",
+	"MiscLaunch":"Start",
 
 	"TutorialSteps":
 	[
 	"Welcome to Word-Hoarder!",
 	"This tutorial will guide you through the basic controls",
 	"In the world you will be presented with various surroundings containing various objects",
-	"Click on an object to \"Collect it\""
+		"Click on an object to \"Collect it\"",
+		"The object has been added to your inventory! You can click the inventory button to open it",
+		"One of the ways to use words is to drag them onto other objects. Try dragging the key onto the door",
+		"That's all! Click the button to start the game"
 	]
 }

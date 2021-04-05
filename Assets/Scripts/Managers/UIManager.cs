@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject canvasPrefab;
+    [SerializeField]
+    private GameObject ESCMenuPrefab;
 
     private GameObject mainCanvasGO;
     private Canvas mainCanvas;
@@ -31,6 +34,8 @@ public class UIManager : MonoBehaviour
         mainCanvasGO.name = canvasPrefab.name;
         DontDestroyOnLoad(mainCanvasGO.gameObject);
         mainCanvas = mainCanvasGO.GetComponent<Canvas>();
+        mainCanvas.worldCamera = Camera.main;
+        AddToCanvas(ESCMenuPrefab);
     }
 
     public static UIManager getInstance()
@@ -48,5 +53,10 @@ public class UIManager : MonoBehaviour
     public GameObject getFromCanvas(string name)
     {
         return mainCanvas.transform.Find(name).gameObject;
+    }
+
+    public static void RefreshCanvasOnLevelLoad(Scene scene, LoadSceneMode mode)
+    {
+        instance.mainCanvas.worldCamera = Camera.main;
     }
 }

@@ -82,8 +82,16 @@ public class MainMenu : MonoBehaviour
         {
             string option = resolutions[i].width + "x" + resolutions[i].height;
             options.Add(option);
-            if (Screen.currentResolution.width == resolutions[i].width && Screen.currentResolution.height == resolutions[i].height)
-                currentResolutionIndex = i;
+            if(SettingsManager.GetFullScreenMode())
+            {
+                if (Screen.currentResolution.width == resolutions[i].width && Screen.currentResolution.height == resolutions[i].height)
+                    currentResolutionIndex = i;
+            }
+            else
+            {
+                if (Screen.width == resolutions[i].width && Screen.height == resolutions[i].height)
+                    currentResolutionIndex = i;                    
+            }
         }
         resolutionsDropdown.AddOptions(options);
         resolutionsDropdown.value = currentResolutionIndex; // To-do: fix issue with resolution

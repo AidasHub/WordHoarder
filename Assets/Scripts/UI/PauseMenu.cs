@@ -14,21 +14,26 @@ public class PauseMenu : MonoBehaviour
     [SerializeField]
     private Toggle fullScreenToggle;
 
+    private int orderInHierarchy = 0;
+
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !pauseMenu.activeInHierarchy)
         {
+            orderInHierarchy = transform.GetSiblingIndex();
+            transform.SetSiblingIndex(transform.parent.childCount - 1);
             pauseMenu.SetActive(true);
             background.SetActive(true);
-            Time.timeScale = 0f;
+            GameManager.GamePaused = true;
         }
     }
 
     public void ResumeGame()
     {
+        transform.SetSiblingIndex(orderInHierarchy);
         pauseMenu.SetActive(false);
         background.SetActive(false);
-        Time.timeScale = 1f;
+        GameManager.GamePaused = false;
     }
 
     public void SaveGame()
@@ -51,8 +56,16 @@ public class PauseMenu : MonoBehaviour
         {
             string option = resolutions[i].width + "x" + resolutions[i].height;
             options.Add(option);
-            if (Screen.currentResolution.width == resolutions[i].width && Screen.currentResolution.height == resolutions[i].height)
-                currentResolutionIndex = i;
+            if (SettingsManager.GetFullScreenMode())
+            {
+                if (Screen.currentResolution.width == resolutions[i].width && Screen.currentResolution.height == resolutions[i].height)
+                    currentResolutionIndex = i;
+            }
+            else
+            {
+                if (Screen.width == resolutions[i].width && Screen.height == resolutions[i].height)
+                    currentResolutionIndex = i;
+            }
         }
         resolutionsDropdown.AddOptions(options);
         resolutionsDropdown.value = currentResolutionIndex; // To-do: fix issue with resolution

@@ -39,6 +39,7 @@ public class LocalizationManager : MonoBehaviour
         // Miscellaneous Text
         public string MiscContinue;
         public string MiscBack;
+        public string MiscLaunch;
 
         public string[] TutorialSteps;
 
@@ -57,6 +58,9 @@ public class LocalizationManager : MonoBehaviour
 
     private static ActiveLanguage activeLanguage = ActiveLanguage.EN;
 
+    public delegate void NotifyLanguageChange();
+    public static event NotifyLanguageChange onLanguageChanged;
+
     public static void Init()
     {
         TextAsset[] localizationFiles = Resources.LoadAll<TextAsset>("Localization/");
@@ -71,6 +75,8 @@ public class LocalizationManager : MonoBehaviour
     public static void SetActiveLanguage(int index)
     {
         activeLanguage = (ActiveLanguage)index;
+        if (onLanguageChanged != null)
+            onLanguageChanged.Invoke();
     }
 
     public static _LocalizationInfo GetActiveLanguage()
