@@ -25,5 +25,7 @@ public class LevelManager : MonoBehaviour
     public static void LoadNewGame()
     {
         SceneManager.LoadSceneAsync(4);
+        GameManager.getInstance().InitializeMainGame();
+        SceneManager.sceneLoaded += UIManager.RefreshCanvasOnLevelLoad;
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PolygonCollider2D))]
+[RequireComponent(typeof(PolygonCollider2D)), RequireComponent(typeof(LineRenderer))]
 public class WorldWord : MonoBehaviour
 {
     [SerializeField]
@@ -24,6 +24,7 @@ public class WorldWord : MonoBehaviour
             DrawObjectOutline();
         //MouseManager.getInstance().ActivateWordTooltip(Input.mousePosition, wordText);
     }
+
 
     void OnMouseExit()
     {
@@ -67,4 +68,5 @@ public class WorldWord : MonoBehaviour
     {
         lineRenderer.enabled = false;
     }
+
 }

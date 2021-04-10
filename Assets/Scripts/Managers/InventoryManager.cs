@@ -53,6 +53,7 @@ public class InventoryManager : MonoBehaviour
 
     private void Init()
     {
+        Debug.Log("Inventory INIT");
         if(inventory == null)
         {
             inventory = UIManager.getInstance().getFromCanvas("Inventory");

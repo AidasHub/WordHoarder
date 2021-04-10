@@ -215,8 +215,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1124365473229006406, guid: d448db333814a3942a842ef5d08c2a93, type: 3}
+      propertyPath: gameScenarioPrefab
+      value: 
+      objectReference: {fileID: 9115360566809847314, guid: 6386ee91190a0474aa3b2adfd9d4df12, type: 3}
+    - target: {fileID: 1124365473229006406, guid: d448db333814a3942a842ef5d08c2a93, type: 3}
       propertyPath: managerList.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1124365473229006406, guid: d448db333814a3942a842ef5d08c2a93, type: 3}
       propertyPath: tutorialScenarioPrefab
@@ -230,5 +234,9 @@ PrefabInstance:
       propertyPath: managerList.Array.data[1]
       value: 
       objectReference: {fileID: 4447322599870701558, guid: f2766556000a3f246aeb8d2c30739b10, type: 3}
+    - target: {fileID: 1124365473229006406, guid: d448db333814a3942a842ef5d08c2a93, type: 3}
+      propertyPath: managerList.Array.data[2]
+      value: 
+      objectReference: {fileID: 7664719098429056627, guid: 07b7cdba423113544a2a5579bca1bfd2, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d448db333814a3942a842ef5d08c2a93, type: 3}

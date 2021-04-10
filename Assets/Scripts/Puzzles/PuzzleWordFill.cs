@@ -10,8 +10,6 @@ public class PuzzleWordFill : MonoBehaviour
 {
     [Header("Puzzle Settings")]
     [SerializeField]
-    int puzzleIndex;
-    [SerializeField]
     private int dashCount = 10;
     [SerializeField]
     private GameObject blankWordPrefab;
@@ -34,9 +32,9 @@ public class PuzzleWordFill : MonoBehaviour
         inventoryGridLayout = GetComponentInChildren<GridLayoutGroup>();
     }
 
-    public void Init()
+    public void InitPuzzle(int puzzleIndex)
     {
-        PopulateWordPanels();
+        PopulateWordPanels(puzzleIndex);
         PopulatePuzzleInventory();
     }
 
@@ -105,7 +103,7 @@ public class PuzzleWordFill : MonoBehaviour
 
     private List<GameObject> blankWords = new List<GameObject>();
 
-    public void PopulateWordPanels()
+    public void PopulateWordPanels(int puzzleIndex)
     {
         
         TextAsset puzzleAsset = InteractiveManager.getInstance().GetWordFillPuzzle(puzzleIndex);

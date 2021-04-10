@@ -5,10 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+    [Header("Prefabs")]
     [SerializeField]
     private GameObject canvasPrefab;
     [SerializeField]
     private GameObject ESCMenuPrefab;
+
+    [Header("GameObjects")]
+    private GameObject interactivePanel;
+    private GameObject inventoryPanel;
 
     private GameObject mainCanvasGO;
     private Canvas mainCanvas;
@@ -35,6 +40,8 @@ public class UIManager : MonoBehaviour
         DontDestroyOnLoad(mainCanvasGO.gameObject);
         mainCanvas = mainCanvasGO.GetComponent<Canvas>();
         mainCanvas.worldCamera = Camera.main;
+        interactivePanel = mainCanvasGO.transform.Find("InteractionPanel").gameObject;
+        inventoryPanel = mainCanvasGO.transform.Find("Inventory").gameObject;
         AddToCanvas(ESCMenuPrefab);
     }
 
@@ -50,6 +57,19 @@ public class UIManager : MonoBehaviour
         return ret;
     }
 
+    public GameObject AddToCanvas(GameObject go, int indexInHierarchy)
+    {
+        if (indexInHierarchy >= mainCanvasGO.transform.childCount)
+            return AddToCanvas(go);
+        else
+        {
+            var ret = Instantiate(go, mainCanvasGO.transform);
+            ret.name = go.name;
+            ret.transform.SetSiblingIndex(indexInHierarchy);
+            return ret;
+        }
+    }
+
     public GameObject getFromCanvas(string name)
     {
         return mainCanvas.transform.Find(name).gameObject;
@@ -58,5 +78,15 @@ public class UIManager : MonoBehaviour
     public static void RefreshCanvasOnLevelLoad(Scene scene, LoadSceneMode mode)
     {
         instance.mainCanvas.worldCamera = Camera.main;
+    }
+
+    public GameObject GetInventory()
+    {
+        return inventoryPanel;
+    }
+    
+    public GameObject GetInteractionPanel()
+    {
+        return interactivePanel;
     }
 }

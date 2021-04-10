@@ -32,6 +32,11 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject tutorialScenarioPrefab;
 
+    [SerializeField]
+    private GameObject gameScenarioPrefab;
+
+    private List<GameObject> activeManagerList;
+
     private void Awake()
     {
         isGamePaused = false;
@@ -56,13 +61,16 @@ public class GameManager : MonoBehaviour
 
     public void InitGame()
     {
+        activeManagerList = new List<GameObject>();
         isDoneLoadingGame = false;
         for (int i = 0; i < managerList.Count; i++)
         {
             if (managerList[i])
             {
+                Debug.Log("Instantiating manager");
                 var manager = Instantiate(managerList[i], transform.parent);
                 manager.name = managerList[i].name;
+                activeManagerList.Add(manager);
             }
         }
         isDoneLoadingGame = true;
@@ -76,6 +84,11 @@ public class GameManager : MonoBehaviour
     public void InitializeTutorial()
     {
         UIManager.getInstance().AddToCanvas(tutorialScenarioPrefab);
+    }
+
+    public void InitializeMainGame()
+    {
+        UIManager.getInstance().AddToCanvas(gameScenarioPrefab, 0);
     }
 
     public void ResumeGame()

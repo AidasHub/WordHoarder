@@ -20,7 +20,7 @@ public class DEBUG_INITIATE_PUZZLE : MonoBehaviour
         InventoryManager.getInstance().AddWord("computer");
         InventoryManager.getInstance().AddWord("table");
         InventoryManager.getInstance().AddWord("plants");
-        puzzleWordFill.Init();
+        puzzleWordFill.InitPuzzle(0);
         //Destroy(this.gameObject);
     }
 }

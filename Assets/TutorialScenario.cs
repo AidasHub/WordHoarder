@@ -80,7 +80,8 @@ public class TutorialScenario : MonoBehaviour
                 arrowImage.SetActive(true);
                 break;
             case 5:
-                _UIManager.getFromCanvas("Inventory").GetComponentInChildren<Button>().onClick.RemoveAllListeners();
+                //_UIManager.getFromCanvas("Inventory").GetComponentInChildren<Button>().onClick.RemoveAllListeners();
+                _UIManager.getFromCanvas("Inventory").GetComponentInChildren<Button>().onClick.RemoveListener(AdvanceTutorial);
                 key.SetActive(false);
                 arrowImage.SetActive(false);
                 doorClosed.SetActive(true);

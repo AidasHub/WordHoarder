@@ -6,9 +6,12 @@ public class InteractiveManager : MonoBehaviour
 {
     [SerializeField]
     private Animator animator;
+    [SerializeField]
+    private PuzzleWordFill puzzleWordFill;
 
     [SerializeField]
     public List<TextAsset> wordFillPuzzles;
+
 
     private static InteractiveManager instance;
 
@@ -27,7 +30,8 @@ public class InteractiveManager : MonoBehaviour
 
     private void Init()
     {
-
+        animator = UIManager.getInstance().GetInteractionPanel().GetComponent<Animator>();
+        puzzleWordFill = UIManager.getInstance().GetInteractionPanel().GetComponentInChildren<PuzzleWordFill>();
     }
 
     public static InteractiveManager getInstance()
@@ -51,5 +55,11 @@ public class InteractiveManager : MonoBehaviour
             animator.SetBool("InteractionPanelEnabled", false);
         }
         
+    }
+
+    public void LoadWordFillPuzzle(int index)
+    {
+        puzzleWordFill.InitPuzzle(index);
+        ToggleInteraction();
     }
 }
