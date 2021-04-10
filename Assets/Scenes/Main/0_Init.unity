@@ -215,6 +215,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1124365473229006406, guid: d448db333814a3942a842ef5d08c2a93, type: 3}
+      propertyPath: pauseMenuPrefab
+      value: 
+      objectReference: {fileID: 8855806796460775050, guid: 1a01eb5a10c17ea4a926a34aa40fac1c, type: 3}
+    - target: {fileID: 1124365473229006406, guid: d448db333814a3942a842ef5d08c2a93, type: 3}
       propertyPath: gameScenarioPrefab
       value: 
       objectReference: {fileID: 9115360566809847314, guid: 6386ee91190a0474aa3b2adfd9d4df12, type: 3}

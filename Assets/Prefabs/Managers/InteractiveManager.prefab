@@ -43,5 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa8fee5dbb9747044b1bef714b8ff84c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactivePanelPrefab: {fileID: 488587054929354140, guid: 806322b7743e3d24d9e76cf5231655e8, type: 3}
+  interactivePanel: {fileID: 0}
   animator: {fileID: 0}
-  wordFillPuzzles: []
+  puzzleWordFill: {fileID: 0}
+  wordFillPuzzles:
+  - {fileID: 4900000, guid: 363d206657e6de448a9edb7777e6a059, type: 3}

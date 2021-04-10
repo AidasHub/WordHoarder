@@ -26,10 +26,10 @@ public class WordSlot : MonoBehaviour, IDropHandler
             var droppedGO = eventData.pointerDrag.gameObject;
             var actualWord = droppedGO.GetComponent<TextMeshProUGUI>().text;
 
-            if (expectedWord == actualWord)
+            if (expectedWord.ToLower() == actualWord.ToLower())
             {
                 this.gameObject.SetActive(false);
-                puzzle.UpdatePuzzle(actualWord, expectedWordIndex);
+                puzzle.UpdatePuzzle(expectedWord, expectedWordIndex);
                 Destroy(droppedGO);
             }
             else

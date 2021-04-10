@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e5e084b517c6024ba5cf22a65bfd071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryPanelPrefab: {fileID: 8764868356925593877, guid: 69b929e870a9a7a479f4105ff859809e, type: 3}
   offset: 220
   openingSpeed: 5
   wordPrefab: {fileID: 1809411841712947074, guid: 3d47046cb99d7e24cb3dcd8051435fea, type: 3}

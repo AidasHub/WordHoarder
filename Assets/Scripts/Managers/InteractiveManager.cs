@@ -1,14 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InteractiveManager : MonoBehaviour
 {
+    [Header("Setup")]
     [SerializeField]
+    private GameObject interactivePanelPrefab;
+
+    private GameObject interactivePanel;
+    private Button interactivePanelCloseButton;
     private Animator animator;
+
+    [Header("Interaction Scripts")]
     [SerializeField]
     private PuzzleWordFill puzzleWordFill;
-
     [SerializeField]
     public List<TextAsset> wordFillPuzzles;
 
@@ -30,8 +37,10 @@ public class InteractiveManager : MonoBehaviour
 
     private void Init()
     {
-        animator = UIManager.getInstance().GetInteractionPanel().GetComponent<Animator>();
-        puzzleWordFill = UIManager.getInstance().GetInteractionPanel().GetComponentInChildren<PuzzleWordFill>();
+        interactivePanel = UIManager.getInstance().AddToCanvas(interactivePanelPrefab);
+        interactivePanelCloseButton = interactivePanel.GetComponentInChildren<Button>();
+        animator = interactivePanel.GetComponent<Animator>();
+        puzzleWordFill = interactivePanel.GetComponentInChildren<PuzzleWordFill>();
     }
 
     public static InteractiveManager getInstance()
@@ -39,9 +48,9 @@ public class InteractiveManager : MonoBehaviour
         return instance;
     }
 
-    public TextAsset GetWordFillPuzzle(int i)
+    public GameObject GetInteractivePanelGO()
     {
-        return wordFillPuzzles[i];
+        return interactivePanel;
     }
 
     public void ToggleInteraction()
@@ -59,7 +68,10 @@ public class InteractiveManager : MonoBehaviour
 
     public void LoadWordFillPuzzle(int index)
     {
-        puzzleWordFill.InitPuzzle(index);
+        puzzleWordFill.InitPuzzle(wordFillPuzzles[index]);
         ToggleInteraction();
+        interactivePanelCloseButton.onClick.RemoveAllListeners();
+        interactivePanelCloseButton.onClick.AddListener(puzzleWordFill.Close);
+        interactivePanelCloseButton.onClick.AddListener(ToggleInteraction);
     }
 }

@@ -32,9 +32,9 @@ public class PuzzleWordFill : MonoBehaviour
         inventoryGridLayout = GetComponentInChildren<GridLayoutGroup>();
     }
 
-    public void InitPuzzle(int puzzleIndex)
+    public void InitPuzzle(TextAsset puzzle)
     {
-        PopulateWordPanels(puzzleIndex);
+        PopulateWordPanels(puzzle);
         PopulatePuzzleInventory();
     }
 
@@ -62,7 +62,7 @@ public class PuzzleWordFill : MonoBehaviour
                 blankWords.RemoveAt(i);
         }
         UpdateBlankWordPositions();
-        InventoryManager.getInstance().RemoveWord(word);
+        //InventoryManager.getInstance().RemoveWord(word);
     }
 
     public string ReplaceWord(string text, int wordIndex, string replacement)
@@ -103,11 +103,9 @@ public class PuzzleWordFill : MonoBehaviour
 
     private List<GameObject> blankWords = new List<GameObject>();
 
-    public void PopulateWordPanels(int puzzleIndex)
+    public void PopulateWordPanels(TextAsset puzzle)
     {
-        
-        TextAsset puzzleAsset = InteractiveManager.getInstance().GetWordFillPuzzle(puzzleIndex);
-        _PuzzleInfo puzzleInfo = _PuzzleInfo.CreateFromJSON(puzzleAsset.text);
+        _PuzzleInfo puzzleInfo = _PuzzleInfo.CreateFromJSON(puzzle.text);
 
         #region EN_SETUP
 
@@ -170,6 +168,7 @@ public class PuzzleWordFill : MonoBehaviour
     {
         List<Tuple<int, int>> blanks = FindBlanksInText(tmpLeft.text, '|');
         tmpLeft.ForceMeshUpdate();
+        Debug.Log(blanks.Count);
 
         for(int i = 0; i < blankWords.Count; i++)
         {

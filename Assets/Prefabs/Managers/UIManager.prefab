@@ -43,5 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d1c49813fceb24a9d197366c4c842c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasPrefab: {fileID: 3065715706641450951, guid: 476e58148512aa54ba21388a1e780343, type: 3}
+  canvasPrefab: {fileID: 3065715706641450951, guid: 23bb9818f103ef64b97764ef7ab5b0c7, type: 3}
   ESCMenuPrefab: {fileID: 8855806796460775050, guid: 1a01eb5a10c17ea4a926a34aa40fac1c, type: 3}

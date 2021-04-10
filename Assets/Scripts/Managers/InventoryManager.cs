@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject inventoryPanelPrefab;
 
     [SerializeField]
     private float offset = 220f;
@@ -53,10 +55,9 @@ public class InventoryManager : MonoBehaviour
 
     private void Init()
     {
-        Debug.Log("Inventory INIT");
         if(inventory == null)
         {
-            inventory = UIManager.getInstance().getFromCanvas("Inventory");
+            inventory = UIManager.getInstance().AddToCanvas(inventoryPanelPrefab);
             inventoryAnimator = inventory.GetComponent<Animator>();
             inventoryButton = inventory.GetComponentInChildren<Button>();
             inventoryButton.onClick.AddListener(ToggleInventory);
@@ -129,6 +130,11 @@ public class InventoryManager : MonoBehaviour
             Debug.Log("Closing");
             //StartCoroutine(InventoryTransformation());
         }
+    }
+
+    public GameObject GetInventoryGO()
+    {
+        return inventory;
     }
 
     IEnumerator InventoryTransformation()

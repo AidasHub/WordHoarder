@@ -8,12 +8,6 @@ public class UIManager : MonoBehaviour
     [Header("Prefabs")]
     [SerializeField]
     private GameObject canvasPrefab;
-    [SerializeField]
-    private GameObject ESCMenuPrefab;
-
-    [Header("GameObjects")]
-    private GameObject interactivePanel;
-    private GameObject inventoryPanel;
 
     private GameObject mainCanvasGO;
     private Canvas mainCanvas;
@@ -40,9 +34,6 @@ public class UIManager : MonoBehaviour
         DontDestroyOnLoad(mainCanvasGO.gameObject);
         mainCanvas = mainCanvasGO.GetComponent<Canvas>();
         mainCanvas.worldCamera = Camera.main;
-        interactivePanel = mainCanvasGO.transform.Find("InteractionPanel").gameObject;
-        inventoryPanel = mainCanvasGO.transform.Find("Inventory").gameObject;
-        AddToCanvas(ESCMenuPrefab);
     }
 
     public static UIManager getInstance()
@@ -78,15 +69,5 @@ public class UIManager : MonoBehaviour
     public static void RefreshCanvasOnLevelLoad(Scene scene, LoadSceneMode mode)
     {
         instance.mainCanvas.worldCamera = Camera.main;
-    }
-
-    public GameObject GetInventory()
-    {
-        return inventoryPanel;
-    }
-    
-    public GameObject GetInteractionPanel()
-    {
-        return interactivePanel;
     }
 }

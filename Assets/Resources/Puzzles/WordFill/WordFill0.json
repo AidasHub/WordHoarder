@@ -1,20 +1,16 @@
 {
   "textEN":
-  "I have a light brown _. I place my _ monitors on it. Next to it sit my _, but my _ likes to eat them for some reason",
+  "I sit on a _. If I want to see myself I look in the _",
   "missingWordsEN":
   [
-    "table",
-    "computer",
-    "plants",
-    "cat"
+    "pouf",
+    "mirror"
   ],
   "textOther":
-  "Aš turiu rusvą _. Ant jo statau savo _ monitorius. Šalia pastatyti _, bet mano _ kažkodėl mėgsta juos valgyti",
+  "Aš sėdžiu ant _. Jeigu noriu pamatyti save, žiūriu į _",
   "missingWordsOther":
   [
-    "stalą",
-    "kompiuterio",
-    "augalai",
-    "katė"
+    "pufo",
+    "veidrodį"
   ]
 }

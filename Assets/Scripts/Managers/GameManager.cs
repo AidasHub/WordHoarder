@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField]
-    private bool debugMode;
-
     private static GameManager instance;
     public static bool isDoneLoadingGame;
     private static bool isGamePaused;
@@ -35,6 +32,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject gameScenarioPrefab;
 
+    [SerializeField]
+    private GameObject pauseMenuPrefab;
+
     private List<GameObject> activeManagerList;
 
     private void Awake()
@@ -55,8 +55,7 @@ public class GameManager : MonoBehaviour
     private void Init()
     {
         LocalizationManager.Init();
-        if(!debugMode)
-            LevelManager.LoadSplashScreen();
+        LevelManager.LoadSplashScreen();
     }
 
     public void InitGame()
@@ -73,6 +72,7 @@ public class GameManager : MonoBehaviour
                 activeManagerList.Add(manager);
             }
         }
+        UIManager.getInstance().AddToCanvas(pauseMenuPrefab, 0);
         isDoneLoadingGame = true;
     }
 

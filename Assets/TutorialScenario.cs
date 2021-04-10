@@ -73,15 +73,15 @@ public class TutorialScenario : MonoBehaviour
                 keyButton.enabled = true;
                 break;
             case 4:
-                GameObject inventory = _UIManager.getFromCanvas("Inventory");
+                keyButton.enabled = false;
+                GameObject inventory = InventoryManager.getInstance().GetInventoryGO();
                 inventory.transform.SetSiblingIndex(inventory.transform.parent.childCount - 1);
                 inventory.SetActive(true);
                 inventory.GetComponentInChildren<Button>().onClick.AddListener(AdvanceTutorial);
                 arrowImage.SetActive(true);
                 break;
             case 5:
-                //_UIManager.getFromCanvas("Inventory").GetComponentInChildren<Button>().onClick.RemoveAllListeners();
-                _UIManager.getFromCanvas("Inventory").GetComponentInChildren<Button>().onClick.RemoveListener(AdvanceTutorial);
+                InventoryManager.getInstance().GetInventoryGO().GetComponentInChildren<Button>().onClick.RemoveListener(AdvanceTutorial);
                 key.SetActive(false);
                 arrowImage.SetActive(false);
                 doorClosed.SetActive(true);
@@ -93,6 +93,7 @@ public class TutorialScenario : MonoBehaviour
                 tutorialButtonStartGame.gameObject.SetActive(true);
                 break;
             case 7:
+                LocalizationManager.onLanguageChanged -= ForceStepsLanguageUpdate;
                 LevelManager.LoadNewGame();
                 Destroy(this.gameObject);
                 break;
