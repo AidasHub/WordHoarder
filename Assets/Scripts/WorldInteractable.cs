@@ -29,7 +29,9 @@ public class WorldInteractable : MonoBehaviour, IDropHandler
 
             if (expectedWord == actualWord)
             {
+                Debug.Log("Before:" + InventoryManager.getInstance().GetWords().Count);
                 InventoryManager.getInstance().RemoveWord(expectedWord);
+                Debug.Log("After:" + InventoryManager.getInstance().GetWords().Count);
                 Destroy(droppedGO);
                 //button.onClick.Invoke();
                 actionEvent.Invoke();

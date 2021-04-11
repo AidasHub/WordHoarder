@@ -63,7 +63,7 @@ public class MainMenu : MonoBehaviour
 
     private void StartGameProcess()
     {
-        GameManager.getInstance().InitGame();
+        _SetupManager.getInstance().InitGame();
         LevelManager.LoadTutorial();
     }
 

@@ -61,9 +61,9 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public GameObject getFromCanvas(string name)
+    public GameObject GetFromCanvas(string name)
     {
-        return mainCanvas.transform.Find(name).gameObject;
+        return mainCanvasGO.transform.Find(name).gameObject;
     }
 
     public static void RefreshCanvasOnLevelLoad(Scene scene, LoadSceneMode mode)

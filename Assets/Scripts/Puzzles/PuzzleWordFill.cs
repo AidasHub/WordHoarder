@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using System;
 using System.Text.RegularExpressions;
+using UnityEngine.Events;
 
 public class PuzzleWordFill : MonoBehaviour
 {
@@ -21,19 +22,21 @@ public class PuzzleWordFill : MonoBehaviour
     private TextMeshProUGUI tmpRight;
     [SerializeField]
 
-    GameManager gameManager;
-    InventoryManager inventoryManager;
-    GridLayoutGroup inventoryGridLayout;
+    private InventoryManager inventoryManager;
+    private GridLayoutGroup inventoryGridLayout;
+    private List<string> usedWords = new List<string>();
+    private UnityAction rewardAction;
+
 
     void Awake()
     {
-        gameManager = GameManager.getInstance();
         inventoryManager = InventoryManager.getInstance();
         inventoryGridLayout = GetComponentInChildren<GridLayoutGroup>();
     }
 
-    public void InitPuzzle(TextAsset puzzle)
+    public void InitPuzzle(TextAsset puzzle, UnityAction rewardAction)
     {
+        this.rewardAction = rewardAction;
         PopulateWordPanels(puzzle);
         PopulatePuzzleInventory();
     }
@@ -61,8 +64,12 @@ public class PuzzleWordFill : MonoBehaviour
             if (blankWords[i].name == word)
                 blankWords.RemoveAt(i);
         }
+        usedWords.Add(word);
         UpdateBlankWordPositions();
-        //InventoryManager.getInstance().RemoveWord(word);
+        if(blankWords.Count == 0)
+        {
+            CompletePuzzle();
+        }
     }
 
     public string ReplaceWord(string text, int wordIndex, string replacement)
@@ -94,6 +101,7 @@ public class PuzzleWordFill : MonoBehaviour
     public void PopulatePuzzleInventory()
     {
         List<InventoryWord> inventoryWords = inventoryManager.GetWords();
+        Debug.Log(inventoryManager.GetWords().Count);
         foreach(InventoryWord word in inventoryWords)
         {
             var GO = Instantiate(word, inventoryGridLayout.transform);
@@ -246,5 +254,14 @@ public class PuzzleWordFill : MonoBehaviour
                 break;
         }
         return wordIndex + 1;
+    }
+
+    private void CompletePuzzle()
+    {
+        rewardAction.Invoke();
+        for(int i = 0; i < usedWords.Count; i++)
+        {
+            InventoryManager.getInstance().RemoveWord(usedWords[i]);
+        }
     }
 }

@@ -45,6 +45,8 @@ public class WorldWord : MonoBehaviour
 
     private void CalculateObjectOutline()
     {
+        lineRenderer.startColor = Color.red;
+        lineRenderer.endColor = Color.red;
         lineRenderer.startWidth = 1f;
         lineRenderer.endWidth = 1f;
         lineRenderer.useWorldSpace = false;

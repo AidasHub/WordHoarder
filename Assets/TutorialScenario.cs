@@ -93,6 +93,7 @@ public class TutorialScenario : MonoBehaviour
                 tutorialButtonStartGame.gameObject.SetActive(true);
                 break;
             case 7:
+                GameManager.ClearCollectedWords();
                 LocalizationManager.onLanguageChanged -= ForceStepsLanguageUpdate;
                 LevelManager.LoadNewGame();
                 Destroy(this.gameObject);

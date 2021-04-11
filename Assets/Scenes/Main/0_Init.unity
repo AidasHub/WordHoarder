@@ -168,7 +168,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1124365473229006404, guid: d448db333814a3942a842ef5d08c2a93, type: 3}
       propertyPath: m_Name
-      value: GameManager
+      value: SetupManager
       objectReference: {fileID: 0}
     - target: {fileID: 1124365473229006405, guid: d448db333814a3942a842ef5d08c2a93, type: 3}
       propertyPath: m_RootOrder
@@ -214,6 +214,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1124365473229006406, guid: d448db333814a3942a842ef5d08c2a93, type: 3}
+      propertyPath: wordBarPrefab
+      value: 
+      objectReference: {fileID: 965378943392463037, guid: 49af0ea6743637048b2fc75fbc61de6e, type: 3}
     - target: {fileID: 1124365473229006406, guid: d448db333814a3942a842ef5d08c2a93, type: 3}
       propertyPath: pauseMenuPrefab
       value: 

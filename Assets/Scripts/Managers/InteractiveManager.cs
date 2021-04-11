@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.Events;
 public class InteractiveManager : MonoBehaviour
 {
     [Header("Setup")]
@@ -17,7 +17,7 @@ public class InteractiveManager : MonoBehaviour
     [SerializeField]
     private PuzzleWordFill puzzleWordFill;
     [SerializeField]
-    public List<TextAsset> wordFillPuzzles;
+    private List<TextAsset> wordFillPuzzles;
 
 
     private static InteractiveManager instance;
@@ -57,18 +57,21 @@ public class InteractiveManager : MonoBehaviour
     {
         if(!animator.GetBool("InteractionPanelEnabled"))
         {
+            InventoryManager.getInstance().DisableInventory();
+            WordBar.HideWordBar();
             animator.SetBool("InteractionPanelEnabled", true);
         }
         else
         {
+            InventoryManager.getInstance().EnableInventory();
+            WordBar.ShowWordBar();
             animator.SetBool("InteractionPanelEnabled", false);
         }
-        
     }
 
-    public void LoadWordFillPuzzle(int index)
+    public void LoadWordFillPuzzle(int index, UnityAction rewardAction)
     {
-        puzzleWordFill.InitPuzzle(wordFillPuzzles[index]);
+        puzzleWordFill.InitPuzzle(wordFillPuzzles[index], rewardAction);
         ToggleInteraction();
         interactivePanelCloseButton.onClick.RemoveAllListeners();
         interactivePanelCloseButton.onClick.AddListener(puzzleWordFill.Close);

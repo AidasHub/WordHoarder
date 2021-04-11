@@ -10,15 +10,7 @@ public class InventoryManager : MonoBehaviour
     [SerializeField]
     private GameObject inventoryPanelPrefab;
 
-    [SerializeField]
-    private float offset = 220f;
-
-    [SerializeField]
-    private float openingSpeed = 1f;
-
-    private bool isOpen = false;
-    //private bool isMoving = false;
-    private bool queueClose = false;
+    public bool IsOpen { get; private set; } = false;
 
     [SerializeField]
     private GameObject wordPrefab;
@@ -28,7 +20,6 @@ public class InventoryManager : MonoBehaviour
     private Animator inventoryAnimator;
     private Button inventoryButton;
     private GridLayoutGroup wordGridLayout;
-    private RectTransform rectTransform;
 
     [SerializeField]
     List<InventoryWord> wordList;
@@ -65,11 +56,6 @@ public class InventoryManager : MonoBehaviour
         wordGridLayout = inventory.GetComponentInChildren<GridLayoutGroup>();
     }
 
-    private void Start()
-    {
-        rectTransform = inventory.GetComponent<RectTransform>();
-    }
-
     public void AddWord(string word)
     {
         GameObject newWordGO = Instantiate(wordPrefab, wordGridLayout.transform);
@@ -78,13 +64,14 @@ public class InventoryManager : MonoBehaviour
         TextMeshProUGUI newWordTMP = newWordGO.GetComponent<TextMeshProUGUI>();
         newWordTMP.text = word;
         wordList.Add(newWord);
+        GameManager.IncreaseCollectedWords();
     }
 
     public void RemoveWord(string word)
     {
         for(int i = 0; i < wordList.Count; i++)
         {
-            if (wordList[i].getWordString() == word)
+            if (wordList[i].getWordString().ToLower() == word.ToLower())
             {
                 wordList.RemoveAt(i);
                 RefreshInventory();
@@ -117,18 +104,16 @@ public class InventoryManager : MonoBehaviour
 
     public void ToggleInventory()
     {
-        Debug.Log(inventoryAnimator == null);
-        inventoryAnimator.SetTrigger("ToggleInventory");
-        Debug.Log("Toggled Inventory");
-        if (!isOpen)
+        if (IsOpen)
         {
-            Debug.Log("Opening");
-            //StartCoroutine(InventoryTransformation());
+            IsOpen = false;
+            inventoryAnimator.SetBool("InventoryOpen", false);
         }
         else
         {
-            Debug.Log("Closing");
-            //StartCoroutine(InventoryTransformation());
+            Debug.Log("Opening");
+            IsOpen = true;
+            inventoryAnimator.SetBool("InventoryOpen", true);
         }
     }
 
@@ -137,40 +122,14 @@ public class InventoryManager : MonoBehaviour
         return inventory;
     }
 
-    IEnumerator InventoryTransformation()
+    public void EnableInventory()
     {
-        if (!isOpen)
-        {
-            //isMoving = true;
-            while (rectTransform.offsetMin.y <= 0 && rectTransform.offsetMax.y <= 0)
-            {
-                rectTransform.offsetMin = new Vector2(rectTransform.offsetMin.x, rectTransform.offsetMin.y + openingSpeed * Time.deltaTime * 100);
-                rectTransform.offsetMax = new Vector2(rectTransform.offsetMax.x, rectTransform.offsetMax.y + openingSpeed * Time.deltaTime * 100);
-                yield return null;
-            }
-            rectTransform.offsetMin = new Vector2(rectTransform.offsetMin.x, 0f);
-            rectTransform.offsetMax = new Vector2(rectTransform.offsetMax.x, 0f);
-            //isMoving = false;
-            isOpen = true;
-            if (queueClose)
-            {
-                queueClose = false;
-                //StartCoroutine(InventoryTransformation());
-            }
-        }
-        else
-        {
-            //isMoving = true;
-            while(rectTransform.offsetMin.y >= -offset && rectTransform.offsetMax.y >= -offset)
-            {
-                rectTransform.offsetMin = new Vector2(rectTransform.offsetMin.x, rectTransform.offsetMin.y - openingSpeed * Time.deltaTime * 100);
-                rectTransform.offsetMax = new Vector2(rectTransform.offsetMax.x, rectTransform.offsetMax.y - openingSpeed * Time.deltaTime * 100);
-                yield return null;
-            }
-            rectTransform.offsetMin = new Vector2(rectTransform.offsetMin.x, -offset);
-            rectTransform.offsetMax = new Vector2(rectTransform.offsetMax.x, -offset);
-            //isMoving = false;
-            isOpen = false;
-        }
+        inventory.SetActive(true);
     }
+
+    public void DisableInventory()
+    {
+        inventory.SetActive(false);
+    }
+
 }

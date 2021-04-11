@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
-    private static GameManager instance;
-    public static bool isDoneLoadingGame;
-    private static bool isGamePaused;
+    private static bool isGamePaused = false;
     public static bool GamePaused
     {
         get
@@ -23,82 +22,31 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    [SerializeField]
-    private List<GameObject> managerList;
+    public static UnityEvent onWordCollected = new UnityEvent();
 
-    [SerializeField]
-    private GameObject tutorialScenarioPrefab;
-
-    [SerializeField]
-    private GameObject gameScenarioPrefab;
-
-    [SerializeField]
-    private GameObject pauseMenuPrefab;
-
-    private List<GameObject> activeManagerList;
-
-    private void Awake()
+    private static int totalWords = 12;
+    public static int TotalWords
     {
-        isGamePaused = false;
-        if (instance == null)
+        get
         {
-            instance = this;
-            DontDestroyOnLoad(transform.parent);
-            Init();
+            return totalWords;
         }
-        else if (instance != this)
+        set
         {
-            Destroy(this.gameObject);
+            totalWords = value;
         }
     }
 
-    private void Init()
+    public static int CollectedWords { get; private set; }
+
+    public static void IncreaseCollectedWords()
     {
-        LocalizationManager.Init();
-        LevelManager.LoadSplashScreen();
+        CollectedWords++;
+        onWordCollected.Invoke();
     }
 
-    public void InitGame()
+    public static void ClearCollectedWords()
     {
-        activeManagerList = new List<GameObject>();
-        isDoneLoadingGame = false;
-        for (int i = 0; i < managerList.Count; i++)
-        {
-            if (managerList[i])
-            {
-                Debug.Log("Instantiating manager");
-                var manager = Instantiate(managerList[i], transform.parent);
-                manager.name = managerList[i].name;
-                activeManagerList.Add(manager);
-            }
-        }
-        UIManager.getInstance().AddToCanvas(pauseMenuPrefab, 0);
-        isDoneLoadingGame = true;
-    }
-
-    public static GameManager getInstance()
-    {
-        return instance;
-    }
-
-    public void InitializeTutorial()
-    {
-        UIManager.getInstance().AddToCanvas(tutorialScenarioPrefab);
-    }
-
-    public void InitializeMainGame()
-    {
-        UIManager.getInstance().AddToCanvas(gameScenarioPrefab, 0);
-    }
-
-    public void ResumeGame()
-    {
-        Time.timeScale = 1f;
-        isGamePaused = false;
-    }
-    public void PauseGame()
-    {
-        Time.timeScale = 0f;
-        isGamePaused = true;
+        CollectedWords = 0;
     }
 }

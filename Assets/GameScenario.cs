@@ -8,15 +8,15 @@ public class GameScenario : MonoBehaviour
     private List<GameObject> environments;
     private int currentEnvironment;
 
+    public void Awake()
+    {
+
+    }
+
     public void SwitchEnvironment(int index)
     {
         environments[currentEnvironment].SetActive(false);
         environments[index].SetActive(true);
         currentEnvironment = index;
-    }
-
-    public void LoadPuzzle(int index)
-    {
-        InteractiveManager.getInstance().LoadWordFillPuzzle(index);
     }
 }
