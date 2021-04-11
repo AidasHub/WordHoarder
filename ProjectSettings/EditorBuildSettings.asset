@@ -20,7 +20,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main/4_MainGame.unity
     guid: 84ad5db627d2af14dbf36370b5539e34
-  - enabled: 1
-    path: Assets/Scenes/WordPuzzle2.unity
-    guid: 62b630e38a919f04fb95ab6096ee87bc
   m_configObjects: {}

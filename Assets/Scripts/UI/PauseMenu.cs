@@ -38,7 +38,11 @@ public class PauseMenu : MonoBehaviour
 
     public void SaveGame()
     {
-
+        GameScenario gameScenario = UIManager.getInstance().GetFromCanvas("GamePanel").GetComponent<GameScenario>();
+        if (gameScenario != null)
+            SaveManager.SaveGame(gameScenario);
+        else
+            Debug.LogError("Saving game failed - no Game Scenario found.");
     }
 
     public void QuitGame()
@@ -68,7 +72,7 @@ public class PauseMenu : MonoBehaviour
             }
         }
         resolutionsDropdown.AddOptions(options);
-        resolutionsDropdown.value = currentResolutionIndex; // To-do: fix issue with resolution
+        resolutionsDropdown.value = currentResolutionIndex;
         resolutionsDropdown.RefreshShownValue();
 
         bool isFullScreen = SettingsManager.GetFullScreenMode();

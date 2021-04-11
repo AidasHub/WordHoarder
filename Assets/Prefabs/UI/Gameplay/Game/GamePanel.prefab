@@ -350,10 +350,10 @@ RectTransform:
   m_Father: {fileID: 91437444818409385}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -735.075, y: -190.66}
-  m_SizeDelta: {x: 201.089, y: 115.961}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!60 &883662689635168818
 PolygonCollider2D:
@@ -380,12 +380,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 34.557804, y: -62.319927}
-      - {x: 96.12483, y: -35.231693}
-      - {x: 106.10705, y: 49.579727}
-      - {x: -47.406757, y: 50.57299}
-      - {x: -61.399475, y: -30.355501}
-      - {x: -128.87108, y: -57.365913}
+    - - {x: -867.28326, y: -247.1642}
+      - {x: -855.2271, y: -252.65436}
+      - {x: -697.8169, y: -252.25107}
+      - {x: -640.10956, y: -225.22708}
+      - {x: -630.0751, y: -142.00487}
+      - {x: -782.256, y: -141.30293}
+      - {x: -797.1684, y: -224.09103}
 --- !u!120 &5104661636902813716
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -530,10 +531,10 @@ RectTransform:
   m_Father: {fileID: 91437444818409385}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -23.453, y: -151.48}
-  m_SizeDelta: {x: 107.093, y: 73.038}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!60 &3536795105677596555
 PolygonCollider2D:
@@ -560,22 +561,14 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 37.288048, y: -30.9544}
-      - {x: 42.721, y: -26.169897}
-      - {x: 43.816395, y: -16.88827}
-      - {x: 49.156548, y: -16.886791}
-      - {x: 49.684715, y: -10.476639}
-      - {x: 43.89198, y: -9.031027}
-      - {x: 44.063114, y: 13.386109}
-      - {x: 55.137096, y: 13.066799}
-      - {x: 57.3231, y: 15.723763}
-      - {x: 53.31177, y: 18.03107}
-      - {x: 44.089096, y: 17.44911}
-      - {x: 43.49511, y: 27.45953}
-      - {x: 33.45644, y: 32.59248}
-      - {x: -38.30993, y: 31.032543}
-      - {x: -50.47558, y: 20.298115}
-      - {x: -50.245518, y: -29.050184}
+    - - {x: -73.611176, y: -180.4604}
+      - {x: -74.42248, y: -130.32043}
+      - {x: -64.9538, y: -121.748695}
+      - {x: -57.650845, y: -118.992455}
+      - {x: 14.2075405, y: -120.19271}
+      - {x: 20.326172, y: -126.29954}
+      - {x: 19.753214, y: -177.83034}
+      - {x: 14.700015, y: -181.32043}
 --- !u!120 &1977891755826456158
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -760,10 +753,10 @@ RectTransform:
   m_Father: {fileID: 2146856244189936137}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -147.977, y: -180.512}
-  m_SizeDelta: {x: 250.045, y: 261.024}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!60 &1170896149944260781
 PolygonCollider2D:
@@ -790,10 +783,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 125.04356, y: -59.57109}
-      - {x: -128.44354, y: -58.787476}
-      - {x: -130.58408, y: 87.265686}
-      - {x: 128.10153, y: 84.90346}
+    - - {x: -20.670341, y: -239.9788}
+      - {x: -275.1487, y: -240.18643}
+      - {x: -277.2892, y: -96.11578}
+      - {x: -17.96392, y: -94.49171}
 --- !u!120 &1614956181201127698
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -938,10 +931,10 @@ RectTransform:
   m_Father: {fileID: 2146856244189936137}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 550.341, y: -88.575}
-  m_SizeDelta: {x: 45.105, y: 57.915}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!60 &2569726876532236509
 PolygonCollider2D:
@@ -968,14 +961,26 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -23.013857, y: 7.208937}
-      - {x: -18.727722, y: 20.867168}
-      - {x: 0.14458519, y: 25.327072}
-      - {x: 17.660906, y: 20.394161}
-      - {x: 22.908878, y: 10.224351}
-      - {x: 17.902046, y: 6.076701}
-      - {x: 12.787704, y: -27.014889}
-      - {x: -18.318703, y: -26.677645}
+    - - {x: 561.11884, y: -116.258385}
+      - {x: 568.04834, y: -82.969795}
+      - {x: 567.6445, y: -81.38627}
+      - {x: 573.9582, y: -77.52875}
+      - {x: 567.3053, y: -77.24282}
+      - {x: 567.425, y: -67.40063}
+      - {x: 559.56885, y: -71.59928}
+      - {x: 557.49817, y: -64.61759}
+      - {x: 552.23, y: -69.54081}
+      - {x: 549.125, y: -63.42198}
+      - {x: 543.99414, y: -67.321846}
+      - {x: 539.4365, y: -64.5423}
+      - {x: 540.5239, y: -72.042595}
+      - {x: 531.0427, y: -68.3204}
+      - {x: 537.2872, y: -75.13157}
+      - {x: 528.8264, y: -73.09076}
+      - {x: 528.8717, y: -76.662056}
+      - {x: 524.0982, y: -76.94955}
+      - {x: 527.3947, y: -82.018745}
+      - {x: 532.80237, y: -115.23418}
 --- !u!120 &5148111365049815009
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1096,9 +1101,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5022163766367708009}
-  - component: {fileID: 3112076993064375244}
-  - component: {fileID: 3664708320416412116}
-  - component: {fileID: 2468840378436433993}
+  - component: {fileID: 1818084181}
+  - component: {fileID: 1818084180}
+  - component: {fileID: 1818084179}
   m_Layer: 5
   m_Name: Cupboard
   m_TagString: Untagged
@@ -1120,12 +1125,12 @@ RectTransform:
   m_Father: {fileID: 91437444818409385}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -54.019, y: 116.867}
-  m_SizeDelta: {x: 325.233, y: 277.349}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!60 &3112076993064375244
+--- !u!60 &1818084181
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1150,16 +1155,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -161.35098, y: 121.0855}
-      - {x: -163.27277, y: -139.8886}
-      - {x: 162.31253, y: -138.6761}
-      - {x: 161.66335, y: 120.78851}
-    - - {x: 0, y: 1}
-      - {x: -0.95105654, y: 0.30901697}
-      - {x: -0.5877852, y: -0.80901706}
-      - {x: 0.58778536, y: -0.80901694}
-      - {x: 0.9510565, y: 0.30901712}
---- !u!120 &3664708320416412116
+    - - {x: 107.330185, y: -17.115204}
+      - {x: -216.30576, y: -16.27439}
+      - {x: -216.71098, y: 239.10663}
+      - {x: 105.61482, y: 239.21997}
+--- !u!120 &1818084180
 LineRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1257,7 +1257,7 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &2468840378436433993
+--- !u!114 &1818084179
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1303,10 +1303,10 @@ RectTransform:
   m_Father: {fileID: 2146856244189936137}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 823.745, y: 126.446}
-  m_SizeDelta: {x: 191.491, y: 217.109}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!60 &2328392576950810381
 PolygonCollider2D:
@@ -1333,10 +1333,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -93.56271, y: 108.65209}
-      - {x: 89.29185, y: 105.75975}
-      - {x: 84.566216, y: -114.89863}
-      - {x: -93.7583, y: -113.590836}
+    - - {x: 730.3684, y: 235.88586}
+      - {x: 913.223, y: 231.75824}
+      - {x: 912.2032, y: 12.335129}
+      - {x: 731.4081, y: 12.407639}
 --- !u!120 &3724433856512551233
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1481,10 +1481,10 @@ RectTransform:
   m_Father: {fileID: 9115360565682393473}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -89.215, y: -157.242}
-  m_SizeDelta: {x: 93.309, y: 82.157}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!60 &6520025993348479492
 PolygonCollider2D:
@@ -1511,23 +1511,25 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -36.55816, y: -38.422913}
-      - {x: -22.583992, y: -42.687195}
-      - {x: 8.440777, y: -43.953358}
-      - {x: 29.404688, y: -41.28609}
-      - {x: 43.605873, y: -33.5561}
-      - {x: 45.227245, y: 13.623407}
-      - {x: 48.897106, y: 15.907721}
-      - {x: 49.41749, y: 26.029644}
-      - {x: 49.38183, y: 27.586325}
-      - {x: 40.833206, y: 34.16291}
-      - {x: 22.516068, y: 38.39502}
-      - {x: -21.074772, y: 38.46576}
-      - {x: -35.26967, y: 33.886753}
-      - {x: -44.359734, y: 29.128992}
-      - {x: -46.20678, y: 19.462952}
-      - {x: -43.184193, y: 13.416914}
-      - {x: -44.592484, y: -31.780254}
+    - - {x: -43.77975, y: -143.12326}
+      - {x: -39.984875, y: -139.26083}
+      - {x: -39.651, y: -131.45976}
+      - {x: -41.666718, y: -128.23784}
+      - {x: -46.897324, y: -124.8443}
+      - {x: -59.601673, y: -120.0939}
+      - {x: -85.9099, y: -118.40872}
+      - {x: -106.75333, y: -119.027664}
+      - {x: -120.1132, y: -121.66162}
+      - {x: -131.48262, y: -126.156204}
+      - {x: -135.78336, y: -132.72702}
+      - {x: -134.82253, y: -141.55063}
+      - {x: -132.17624, y: -142.69186}
+      - {x: -133.10493, y: -189.71303}
+      - {x: -124.95124, y: -196.17055}
+      - {x: -106.993286, y: -200.23616}
+      - {x: -85.16246, y: -200.77715}
+      - {x: -60.545757, y: -198.2664}
+      - {x: -45.42624, y: -191.69308}
 --- !u!114 &5341601703409875182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1672,10 +1674,10 @@ RectTransform:
   m_Father: {fileID: 2146856244189936137}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -571.6814, y: -109.601}
-  m_SizeDelta: {x: 214.637, y: 814.797}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!60 &6632247763666486667
 PolygonCollider2D:
@@ -1702,14 +1704,14 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -76.06409, y: -405.88022}
-      - {x: 111.61758, y: -255.44469}
-      - {x: 106.129654, y: 324.87823}
-      - {x: 42.245113, y: 366.25735}
-      - {x: -90.67833, y: 405.2739}
-      - {x: -90.09762, y: 388.71854}
-      - {x: -119.01671, y: 388.60333}
-      - {x: -108.910515, y: -400.42166}
+    - - {x: -643.642, y: -513.5957}
+      - {x: -461.48422, y: -367.3031}
+      - {x: -461.95, y: 215.1466}
+      - {x: -527.77673, y: 256.52573}
+      - {x: -658.758, y: 291.65796}
+      - {x: -658.93866, y: 277.52863}
+      - {x: -689.46924, y: 274.19055}
+      - {x: -679.56573, y: -512.3148}
 --- !u!120 &9056239879048575954
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1894,10 +1896,10 @@ RectTransform:
   m_Father: {fileID: 91437444818409385}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 567.07465, y: -426.11322}
-  m_SizeDelta: {x: 396.173, y: 126.602}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!60 &8661332341017004007
 PolygonCollider2D:
@@ -1924,10 +1926,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 168.91579, y: 50.849827}
-      - {x: 374.3028, y: -51.512356}
-      - {x: -198.732, y: -54.821636}
-      - {x: -278.77777, y: 47.325817}
+    - - {x: 735.0584, y: -369.92383}
+      - {x: 950.31036, y: -478.27383}
+      - {x: 367.84387, y: -481.81445}
+      - {x: 285.48404, y: -376.04587}
 --- !u!120 &7290199107693580162
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -2072,10 +2074,10 @@ RectTransform:
   m_Father: {fileID: 91437444818409385}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -301, y: -115.831}
-  m_SizeDelta: {x: 100, y: 144.337}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!60 &8820621713126408313
 PolygonCollider2D:
@@ -2102,19 +2104,22 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -1.8827991, y: 70.7948}
-      - {x: -37.041386, y: 66.60815}
-      - {x: -37.138756, y: 56.06523}
-      - {x: -31.210878, y: 49.328274}
-      - {x: -24.455069, y: -3.284505}
-      - {x: -25.418655, y: -14.369284}
-      - {x: -38.80626, y: -19.091295}
-      - {x: -48.83708, y: -79.529106}
-      - {x: 25.681965, y: -80.36253}
-      - {x: 46.4189, y: -67.15572}
-      - {x: 39.2341, y: -13.475432}
-      - {x: 26.586039, y: -10.242475}
-      - {x: 35.907124, y: 66.65374}
+    - - {x: -281.83572, y: -45.15942}
+      - {x: -264.20795, y: -50.426422}
+      - {x: -270.54803, y: -113.00839}
+      - {x: -275.2797, y: -113.85368}
+      - {x: -274.84836, y: -126.48984}
+      - {x: -262.52005, y: -128.96657}
+      - {x: -258.40912, y: -140.07906}
+      - {x: -255.10492, y: -181.587}
+      - {x: -274.36816, y: -195.9672}
+      - {x: -348.89563, y: -195.72432}
+      - {x: -340.34805, y: -133.73492}
+      - {x: -325.67886, y: -129.3529}
+      - {x: -328.62854, y: -95.80255}
+      - {x: -337.12228, y: -49.90083}
+      - {x: -325.30005, y: -45.449318}
+      - {x: -302.2895, y: -44.546276}
 --- !u!120 &2493308740227827374
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -2259,10 +2264,10 @@ RectTransform:
   m_Father: {fileID: 2146856244189936137}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -131.212, y: 126.511}
-  m_SizeDelta: {x: 233.577, y: 110.979}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!60 &5561776449700001856
 PolygonCollider2D:
@@ -2289,11 +2294,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 112.239395, y: -56.50063}
-      - {x: -5.993649, y: -59.839336}
-      - {x: -122.746284, y: -57.85095}
-      - {x: -122.959526, y: 53.348362}
-      - {x: 114.949265, y: 53.393127}
+    - - {x: -17.877884, y: 124.978745}
+      - {x: -19.690205, y: 70.277954}
+      - {x: -74.808334, y: 66.78772}
+      - {x: -253.64355, y: 72.336365}
+      - {x: -251.63562, y: 180.04482}
+      - {x: -17.222504, y: 178.71661}
 --- !u!120 &507765546133019474
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -3060,10 +3066,10 @@ RectTransform:
   m_Father: {fileID: 9115360565682393473}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 286.137, y: 82.718}
-  m_SizeDelta: {x: 71.725, y: 453.437}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!60 &9115360566389618118
 PolygonCollider2D:
@@ -3090,10 +3096,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 8.311903, y: -233.45093}
-      - {x: 44.38311, y: 237.70984}
-      - {x: -10.370108, y: 198.88066}
-      - {x: -34.14084, y: -200.43097}
+    - - {x: 294.87085, y: -153.87297}
+      - {x: 332.99316, y: 327.5718}
+      - {x: 275.6025, y: 284.14603}
+      - {x: 249.14868, y: -115.31113}
 --- !u!114 &9115360566389618113
 MonoBehaviour:
   m_ObjectHideFlags: 0

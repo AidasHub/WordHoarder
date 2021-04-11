@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -62,7 +63,15 @@ public class WorldWord : MonoBehaviour
 
     private void DrawObjectOutline()
     {
-        if(!GameManager.GamePaused)
+        // To-do: move it to events
+        float referenceRatio = (float)16 / 9;
+        float referenceScale = 1f;
+        float currentRatio = (float)Screen.width / Screen.height;
+        float newScale = referenceScale * referenceRatio / currentRatio;
+
+        Vector3 newScaleVector = new Vector3(transform.localScale.x, newScale, transform.localScale.z);
+        transform.localScale = newScaleVector;
+        if (!GameManager.GamePaused)
             lineRenderer.enabled = true;
     }
 
@@ -71,4 +80,11 @@ public class WorldWord : MonoBehaviour
         lineRenderer.enabled = false;
     }
 
+    public Tuple<string, bool> PrepareSaveData()
+    {
+        string word = wordText;
+        bool collected = gameObject.activeInHierarchy;
+        Tuple<string, bool> saveData = new Tuple<string, bool>(word, collected);
+        return saveData;
+    }
 }

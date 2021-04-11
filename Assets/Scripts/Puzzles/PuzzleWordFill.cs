@@ -43,7 +43,17 @@ public class PuzzleWordFill : MonoBehaviour
 
     public void Close()
     {
+        //CleanupBlanks();
         CleanupInventory();
+    }
+
+    private void CleanupBlanks()
+    {
+        for(int i = 0; i < tmpLeft.transform.childCount; i++)
+        {
+            Destroy(tmpLeft.transform.GetChild(i).gameObject);
+        }
+        blankWords = new List<GameObject>();
     }
 
     private void CleanupInventory()
@@ -53,6 +63,7 @@ public class PuzzleWordFill : MonoBehaviour
             Destroy(inventoryGridLayout.transform.GetChild(i).gameObject);
         }
     }
+
 
     public void UpdatePuzzle(string word, int wordIndex)
     {
@@ -113,6 +124,7 @@ public class PuzzleWordFill : MonoBehaviour
 
     public void PopulateWordPanels(TextAsset puzzle)
     {
+        CleanupBlanks();
         _PuzzleInfo puzzleInfo = _PuzzleInfo.CreateFromJSON(puzzle.text);
 
         #region EN_SETUP

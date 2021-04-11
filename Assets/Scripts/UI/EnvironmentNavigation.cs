@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -44,5 +45,12 @@ public class EnvironmentNavigation : MonoBehaviour
     public void LoadWordFillPuzzle(int index)
     {
         InteractiveManager.getInstance().LoadWordFillPuzzle(index, UnlockEnvironment);
+    }
+
+    public Tuple<string, bool> PrepareSaveData()
+    {
+        string navigationTo = gameObject.name;
+        Tuple<string, bool> saveData = new Tuple<string, bool>(navigationTo, isLocked);
+        return saveData;
     }
 }

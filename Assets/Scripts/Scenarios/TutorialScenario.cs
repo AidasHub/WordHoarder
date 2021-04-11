@@ -73,6 +73,11 @@ public class TutorialScenario : MonoBehaviour
                 keyButton.enabled = true;
                 break;
             case 4:
+                if (InventoryManager.getInstance().GetWords().Count != 1)
+                {
+                    tutorialText.text = tutorialStepsText[currentTutorialStep - 1];
+                    return;
+                }
                 keyButton.enabled = false;
                 GameObject inventory = InventoryManager.getInstance().GetInventoryGO();
                 inventory.transform.SetSiblingIndex(inventory.transform.parent.childCount - 1);
