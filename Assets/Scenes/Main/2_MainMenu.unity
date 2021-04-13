@@ -6994,6 +6994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   titleAnimator: {fileID: 8595769646594697263}
+  loadingFadeClip: {fileID: 7400000, guid: e2ef98cfebdee9c45ac4599e02ed8396, type: 2}
   titleTMP: {fileID: 916649375}
   buttonPanel: {fileID: 911141307}
   loadSlotButtons:

@@ -9,6 +9,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     private Animator titleAnimator;
     [SerializeField]
+    private AnimationClip loadingFadeClip;
+    [SerializeField]
     private TextMeshProUGUI titleTMP;
     [SerializeField]
     private GameObject buttonPanel;
@@ -63,6 +65,10 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
+        AnimationEvent animEvent = new AnimationEvent();
+        animEvent.time = loadingFadeClip.length - 0.01f;
+        animEvent.functionName = "StartGameProcess";
+        loadingFadeClip.AddEvent(animEvent);
         titleAnimator.SetBool("DisplayLoadingScreen", true);
     }
 
@@ -71,6 +77,7 @@ public class MainMenu : MonoBehaviour
         _SetupManager.getInstance().InitGame();
         LevelManager.LoadTutorial();
     }
+
 
     public void InitializeLoadMenu()
     {
@@ -86,6 +93,16 @@ public class MainMenu : MonoBehaviour
     }
 
     public void LoadGame(int index)
+    {
+        AnimationEvent animEvent = new AnimationEvent();
+        animEvent.time = loadingFadeClip.length - 0.01f;
+        animEvent.intParameter = index;
+        animEvent.functionName = "LoadGameProcess";
+        loadingFadeClip.AddEvent(animEvent);
+        titleAnimator.SetBool("DisplayLoadingScreen", true);
+    }
+
+    private void LoadGameProcess(int index)
     {
         _SetupManager.getInstance().InitGame();
         LevelManager.LoadExistingGame(savesData[index]);
