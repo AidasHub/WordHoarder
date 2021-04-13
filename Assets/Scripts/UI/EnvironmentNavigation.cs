@@ -53,4 +53,10 @@ public class EnvironmentNavigation : MonoBehaviour
         Tuple<string, bool> saveData = new Tuple<string, bool>(navigationTo, isLocked);
         return saveData;
     }
+
+    public void LoadSaveData(bool isLocked)
+    {
+        if (!isLocked)
+            UnlockEnvironment();
+    }
 }

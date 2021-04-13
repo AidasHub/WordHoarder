@@ -2556,7 +2556,7 @@ GameObject:
   - component: {fileID: 9115360565217485162}
   - component: {fileID: 9115360565217485157}
   m_Layer: 5
-  m_Name: Image
+  m_Name: ToKitchen1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2914,7 +2914,7 @@ GameObject:
   - component: {fileID: 9115360566270270693}
   - component: {fileID: 9115360566270270692}
   m_Layer: 5
-  m_Name: ToCorridor (1)
+  m_Name: ToKitchen2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

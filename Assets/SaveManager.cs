@@ -7,29 +7,30 @@ using System;
 
 public static class SaveManager
 {
-    public static void SaveGame(GameScenario gameScenario)
+    private static int maxSavedGamesCount = 3;
+    private static string saveFolderName = "SaveData";
+    private static string saveFileName = "Data";
+
+
+    public static bool SaveGame(GameScenario gameScenario, int saveSlot)
     {
+        if (saveSlot >= maxSavedGamesCount)
+            return false;
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/SaveData";
-        if(!Directory.Exists(path + "/SaveData"))
+        string path = Application.persistentDataPath + "/" + saveFolderName;
+        if(!Directory.Exists(path))
         {
             Directory.CreateDirectory(path);
         }
-        path += "/Data";
+        path += "/" + saveFileName + saveSlot;
 
         FileStream fileStream = new FileStream(path, FileMode.Create);
+        bool success = false;
         try
         {
             GameObject gameScenarioGO = gameScenario.gameObject;
-            int currentEnvironment = 0;
-            for(int i = 0; i < gameScenarioGO.transform.childCount; i++)
-            {
-                if(gameScenarioGO.transform.GetChild(i).gameObject.activeInHierarchy)
-                {
-                    currentEnvironment = i;
-                    break;
-                }
-            }
+            int saveCurrentEnvironment = gameScenarioGO.GetComponent<GameScenario>().CurrentEnvironment;
+
 
             List<Tuple<string, bool>> saveEnvironmentStatus = new List<Tuple<string, bool>>();
             EnvironmentNavigation[] environmentStatus = gameScenarioGO.GetComponentsInChildren<EnvironmentNavigation>(true);
@@ -52,28 +53,33 @@ public static class SaveManager
                 saveInventoryWords.Add(inventoryWords[i].getWordString());
             }
 
-            SaveData saveData = new SaveData(currentEnvironment, saveEnvironmentStatus, saveWorldWords, saveInventoryWords);
+            int saveCollectedWords = GameManager.CollectedWords;
+            int totalWords = GameManager.TotalWords;
+
+            SaveData saveData = new SaveData(saveCurrentEnvironment, saveEnvironmentStatus, saveWorldWords, saveInventoryWords, saveCollectedWords, totalWords);
 
             formatter.Serialize(fileStream, saveData);
             Debug.Log("Game Data saved to " + path);
+            success = true;
         }
         catch(Exception e)
         {
             Debug.LogError(e.Message);
+            Debug.LogError(e.StackTrace);
         }
         finally
         {
             fileStream.Close();
         }
-
+        return success;
     }
 
-    public static SaveData LoadGame()
+    public static SaveData LoadGame(int saveSlot)
     {
-        string path = Application.persistentDataPath + "/SaveData";
+        string path = Application.persistentDataPath + "/" + saveFolderName;
         if (Directory.Exists(path))
         {
-            path += "/Data";
+            path += "/" + saveFileName + saveSlot;
             if (File.Exists(path))
             {
                 BinaryFormatter formatter = new BinaryFormatter();
@@ -86,6 +92,7 @@ public static class SaveManager
                 catch(Exception e)
                 {
                     Debug.LogError(e.Message);
+                    Debug.LogError(e.StackTrace);
                 }
                 finally
                 {
@@ -102,5 +109,23 @@ public static class SaveManager
             Debug.LogError("Save Folder not found");
         }
         return null;
+    }
+
+    public static SaveData[] GetSavedGames()
+    {
+        SaveData[] savesData = new SaveData[maxSavedGamesCount];
+        string path = Application.persistentDataPath + "/" + saveFolderName;
+        if (!Directory.Exists(path))
+            return savesData;
+
+        for(int i = 0; i < maxSavedGamesCount; i++)
+        {
+            string filePath = path + "/" + saveFileName + i;
+            if (File.Exists(filePath))
+            {
+                savesData[i] = (LoadGame(i));
+            }
+        }
+        return savesData;
     }
 }

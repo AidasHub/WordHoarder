@@ -6,7 +6,7 @@ public class GameScenario : MonoBehaviour
 {
     [SerializeField]
     private List<GameObject> environments;
-    private int currentEnvironment;
+    public int CurrentEnvironment { get; private set; }
 
     public void Awake()
     {
@@ -15,8 +15,13 @@ public class GameScenario : MonoBehaviour
 
     public void SwitchEnvironment(int index)
     {
-        environments[currentEnvironment].SetActive(false);
+        environments[CurrentEnvironment].SetActive(false);
         environments[index].SetActive(true);
-        currentEnvironment = index;
+        CurrentEnvironment = index;
+    }
+
+    public void LoadSaveData(int lastEnvironment)
+    {
+        SwitchEnvironment(lastEnvironment);
     }
 }

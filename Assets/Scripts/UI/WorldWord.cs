@@ -11,7 +11,7 @@ public class WorldWord : MonoBehaviour
     private PolygonCollider2D wordCollider;
     private LineRenderer lineRenderer;
 
-    private void Start()
+    private void Awake()
     {
         wordCollider = GetComponent<PolygonCollider2D>();
         lineRenderer = GetComponent<LineRenderer>();
@@ -21,7 +21,7 @@ public class WorldWord : MonoBehaviour
 
     void OnMouseOver()
     {
-        if(enabled)
+        if(enabled && !GameManager.GamePaused)
             DrawObjectOutline();
         //MouseManager.getInstance().ActivateWordTooltip(Input.mousePosition, wordText);
     }
@@ -29,14 +29,13 @@ public class WorldWord : MonoBehaviour
 
     void OnMouseExit()
     {
-        if(enabled)
-            EraseObjectOutline();
+        EraseObjectOutline();
         //MouseManager.getInstance().HideWordTooltip();
     }
 
     private void OnMouseDown()
     {
-        if(enabled)
+        if(enabled && !GameManager.GamePaused)
         {
             wordCollider.enabled = false;
             EraseObjectOutline();
@@ -82,9 +81,18 @@ public class WorldWord : MonoBehaviour
 
     public Tuple<string, bool> PrepareSaveData()
     {
-        string word = wordText;
-        bool collected = gameObject.activeInHierarchy;
-        Tuple<string, bool> saveData = new Tuple<string, bool>(word, collected);
+        string word = gameObject.name;
+        if (wordCollider == null)
+            Awake();
+        bool isCollected = !wordCollider.enabled;
+        Tuple<string, bool> saveData = new Tuple<string, bool>(word, isCollected);
         return saveData;
+    }
+
+    public void LoadSaveData(bool isCollected)
+    {
+        if (wordCollider == null)
+            Awake();
+        wordCollider.enabled = !isCollected;
     }
 }

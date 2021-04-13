@@ -13,6 +13,10 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     private GameObject buttonPanel;
 
+    [SerializeField]
+    private List<Button> loadSlotButtons;
+
+
     [Header("Option Components")]
     [SerializeField]
     private Dropdown resolutionsDropdown;
@@ -21,6 +25,7 @@ public class MainMenu : MonoBehaviour
 
 
     private string sourceTitleHalf = "WORD-";
+    private SaveData[] savesData;
 
     private void Awake()
     {
@@ -67,9 +72,23 @@ public class MainMenu : MonoBehaviour
         LevelManager.LoadTutorial();
     }
 
-    public void LoadGame()
+    public void InitializeLoadMenu()
     {
+        savesData = SaveManager.GetSavedGames();
+        for(int i = 0; i < savesData.Length; i++)
+        {
+            if(savesData[i] != null)
+            {
+                loadSlotButtons[i].GetComponentInChildren<Text>().text = savesData[i].CollectedWords + "/" + savesData[i].TotalWords;
+                loadSlotButtons[i].interactable = true;
+            }
+        }
+    }
 
+    public void LoadGame(int index)
+    {
+        _SetupManager.getInstance().InitGame();
+        LevelManager.LoadExistingGame(savesData[index]);
     }
 
     public void InitializeGraphicsMenu()
@@ -94,7 +113,7 @@ public class MainMenu : MonoBehaviour
             }
         }
         resolutionsDropdown.AddOptions(options);
-        resolutionsDropdown.value = currentResolutionIndex; // To-do: fix issue with resolution
+        resolutionsDropdown.value = currentResolutionIndex;
         resolutionsDropdown.RefreshShownValue();
 
         bool isFullScreen = SettingsManager.GetFullScreenMode();

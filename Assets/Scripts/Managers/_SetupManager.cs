@@ -72,4 +72,62 @@ public class _SetupManager : MonoBehaviour
         UIManager.getInstance().AddToCanvas(gameScenarioPrefab, 0);
         UIManager.getInstance().AddToCanvas(wordBarPrefab);
     }
+
+    public void InitializeMainGame(SaveData data)
+    {
+        GameObject gameScenario = UIManager.getInstance().AddToCanvas(gameScenarioPrefab, 0);
+        UIManager.getInstance().AddToCanvas(wordBarPrefab);
+
+        gameScenario.GetComponent<GameScenario>().SwitchEnvironment(data.CurrentEnvironment);
+        EnvironmentNavigation[] environmentStatus = gameScenario.GetComponentsInChildren<EnvironmentNavigation>(true);
+        WorldWord[] worldWords = gameScenario.GetComponentsInChildren<WorldWord>(true);
+
+        if (environmentStatus.Length != data.EnvironmentStatus.Count)
+        {
+            Debug.LogError("Error loading a save file - environment navigation count does not match");
+            return;
+        }
+        if (worldWords.Length != data.WorldWords.Count)
+        {
+            Debug.LogError("Error loading a save file - world words count does not match");
+            return;
+        }
+
+        for(int i = 0; i < environmentStatus.Length; i++)
+        {
+            for(int j = 0; j < data.EnvironmentStatus.Count; j++)
+            {
+                if(environmentStatus[i].gameObject.name == data.EnvironmentStatus[j].Item1)
+                {
+                    environmentStatus[i].LoadSaveData(data.EnvironmentStatus[j].Item2);
+                    break;
+                }
+            }
+        }
+
+        for(int i = 0; i < worldWords.Length; i++)
+        {
+            for(int j = 0; j < data.WorldWords.Count; j++)
+            {
+                if(worldWords[i].gameObject.name == data.WorldWords[j].Item1)
+                {
+                    worldWords[i].LoadSaveData(data.WorldWords[j].Item2);
+                    break;
+                }
+            }
+        }
+
+        for(int i = 0; i < data.InventoryWords.Count; i++)
+        {
+            InventoryManager.getInstance().AddWord(data.InventoryWords[i]);
+        }
+
+        GameManager.ClearCollectedWords();
+        for(int i = 0; i < data.CollectedWords; i++)
+        {
+            GameManager.IncreaseCollectedWords();
+        }
+
+        Debug.Log("Data successfully loaded!");
+    }
 }

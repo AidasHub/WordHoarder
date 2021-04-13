@@ -6,16 +6,20 @@ using UnityEngine;
 [Serializable]
 public class SaveData
 {
-    public int currentEnvironment;
-    public List<Tuple<string, bool>> environmentStatus;
-    public List<Tuple<string, bool>> worldWords;
-    public List<string> inventoryWords;
+    public int CurrentEnvironment;
+    public List<Tuple<string, bool>> EnvironmentStatus;
+    public List<Tuple<string, bool>> WorldWords;
+    public List<string> InventoryWords;
+    public int CollectedWords;
+    public int TotalWords;
 
-    public SaveData(int ce, List<Tuple<string, bool>> es, List<Tuple<string, bool>> ww, List<string> iw)
+    public SaveData(int ce, List<Tuple<string, bool>> es, List<Tuple<string, bool>> ww, List<string> iw, int cw, int tw)
     {
-        currentEnvironment = ce;
-        environmentStatus = es;
-        worldWords = ww;
-        inventoryWords = iw;
+        CurrentEnvironment = ce;
+        EnvironmentStatus = es;
+        WorldWords = ww;
+        InventoryWords = iw;
+        CollectedWords = cw;
+        TotalWords = tw;
     }
 }
