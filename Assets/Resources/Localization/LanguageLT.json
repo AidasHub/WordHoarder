@@ -4,6 +4,12 @@
 	"MenuOptions": "Nustatymai",
 	"MenuQuit": "Išeiti",
 
+	"LoadSlotEmpty": "Laisva",
+	"LoadSlotUsed": "surinktų žodžių",
+	"LoadSlotOverwrite": "Perrašyti pasirinktą užsaugojimą?",
+	"LoadSaveSuccessful": "Užsaugojimas sėkmingas!",
+	"LoadSaveFailed": "Užsaugojimas nepavyko...",
+
 	"OptionsGraphics": "Grafika",
 	"OptionsAudio": "Garsas",
 
@@ -18,7 +24,10 @@
 
 	"MiscContinue": "Tęsti",
 	"MiscBack": "Atgal",
-	"MiscLaunch":"Pradėti",
+	"MiscLaunch": "Pradėti",
+	"MiscYes": "Taip",
+	"MiscNo": "Ne",
+	"MiscOK": "Gerai",
 
 	"TutorialSteps": [
 		"Sveiki, atvykę į Word-Hoarder!",

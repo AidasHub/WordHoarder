@@ -14,6 +14,8 @@ public class MainMenu : MonoBehaviour
     private TextMeshProUGUI titleTMP;
     [SerializeField]
     private GameObject buttonPanel;
+    [SerializeField]
+    private MainMenuLocalization mainMenuLocalizationHelper;
 
     [SerializeField]
     private List<Button> loadSlotButtons;
@@ -82,14 +84,20 @@ public class MainMenu : MonoBehaviour
     public void InitializeLoadMenu()
     {
         savesData = SaveManager.GetSavedGames();
+        string[] slotInfo = new string[savesData.Length];
         for(int i = 0; i < savesData.Length; i++)
         {
             if(savesData[i] != null)
             {
-                loadSlotButtons[i].GetComponentInChildren<Text>().text = savesData[i].CollectedWords + "/" + savesData[i].TotalWords;
+                slotInfo[i] = savesData[i].CollectedWords + "/" + savesData[i].TotalWords;
                 loadSlotButtons[i].interactable = true;
             }
+            else
+            {
+                slotInfo[i] = null;
+            }
         }
+        mainMenuLocalizationHelper.UpdateLanguageForLoadSlots(slotInfo);
     }
 
     public void LoadGame(int index)
@@ -152,6 +160,9 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.ExitPlaymode();
+#endif
         Application.Quit();
     }
 }

@@ -9,6 +9,8 @@ public class PauseMenu : MonoBehaviour
     private GameObject pauseMenu;
     [SerializeField]
     private GameObject background;
+    [SerializeField]
+    private PauseMenuLocalization pauseMenuLocalizationHelper;
     private bool menuOpen = false;
 
     [Header("Save Menu")]
@@ -53,17 +55,19 @@ public class PauseMenu : MonoBehaviour
     public void InitializeSaveMenu()
     {
         savesData = SaveManager.GetSavedGames();
+        string[] slotInfo = new string[savesData.Length];
         for (int i = 0; i < saveSlotButtons.Count; i++)
         {
             if(savesData[i] == null)
             {
-                saveSlotButtons[i].GetComponentInChildren<Text>().text = "EMPTY";
+                slotInfo[i] = null;
             }
             else
             {
-                saveSlotButtons[i].GetComponentInChildren<Text>().text = savesData[i].CollectedWords + "/" + savesData[i].TotalWords;
+                slotInfo[i] = savesData[i].CollectedWords + "/" + savesData[i].TotalWords;
             }
         }
+        pauseMenuLocalizationHelper.UpdateLanguageForSaveSlots(slotInfo);
     }
 
     public void SaveGameCheckOverwriting(int i)
@@ -109,25 +113,13 @@ public class PauseMenu : MonoBehaviour
 
     private void SaveGameReportSuccess(bool success)
     {
-        if(success)
-        {
-            saveConfirmationLabel.text = "SAVE SUCCESSFUL";
-        }
-        else
-        {
-            saveConfirmationLabel.text = "SAVING FAILED...";
-        }
+        pauseMenuLocalizationHelper.UpdateLanguageForSaveSuccess(success);
         saveConfirmationLabel.transform.parent.gameObject.SetActive(true);
     }
 
     public void ClearSaveListeners()
     {
         saveOverwriteButtonYes.onClick.RemoveAllListeners();
-    }
-
-    public void QuitGame()
-    {
-        Application.Quit();
     }
 
     public void InitializeGraphicsMenu()
@@ -170,5 +162,13 @@ public class PauseMenu : MonoBehaviour
     public void SetFullScreenMode(bool isFullScreen)
     {
         SettingsManager.SetFullScreenMode(isFullScreen);
+    }
+
+    public void QuitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.ExitPlaymode();
+#endif
+        Application.Quit();
     }
 }

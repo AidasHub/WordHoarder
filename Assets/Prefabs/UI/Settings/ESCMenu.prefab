@@ -146,10 +146,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 3b2f5bbed7a93a84f9914745dea52500, type: 3}
-    m_FontSize: 47
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 3
     m_MaxSize: 151
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -568,6 +568,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3778098284429654020}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1112,6 +1124,16 @@ MonoBehaviour:
   pauseSave: {fileID: 2118801835640865094}
   pauseOptions: {fileID: 414155026095450349}
   pauseQuit: {fileID: 3003398261525574923}
+  saveSlots:
+  - {fileID: 8681178480027488810}
+  - {fileID: 3737082366696442502}
+  - {fileID: 5962533901388472858}
+  saveBack: {fileID: 6391293309889454567}
+  saveOverwriteLabel: {fileID: 2791974604278578416}
+  saveOverwriteYes: {fileID: 5833014353170119320}
+  saveOverwriteNo: {fileID: 1474010598116569566}
+  saveSuccessLabel: {fileID: 1035885486396068484}
+  saveSuccessButton: {fileID: 1485310630465818931}
   optionsGraphics: {fileID: 660378439713613504}
   optionsAudio: {fileID: 2315594317762203755}
   optionsBack: {fileID: 8813822645630047383}
@@ -1183,6 +1205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1510350066764069591}
   background: {fileID: 644272140693125912}
+  pauseMenuLocalizationHelper: {fileID: 901580707880962323}
   saveOverwriteButtonYes: {fileID: 7141299154650240262}
   saveConfirmationLabel: {fileID: 1035885486396068484}
   saveSlotButtons:
@@ -3439,10 +3462,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 3b2f5bbed7a93a84f9914745dea52500, type: 3}
-    m_FontSize: 47
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 3
     m_MaxSize: 151
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -3659,6 +3682,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3778098284429654020}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4150,6 +4185,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: SaveGameCheckOverwriting
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3778098284429654020}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5529,6 +5576,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3778098284429654020}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &8430340344797704618
 GameObject:

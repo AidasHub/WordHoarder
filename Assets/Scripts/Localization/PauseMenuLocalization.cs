@@ -17,6 +17,23 @@ public class PauseMenuLocalization : MonoBehaviour
     [SerializeField]
     Text pauseQuit;
 
+    [Header("Save Menu Panel Text")]
+    [SerializeField]
+    List<Text> saveSlots;
+    [SerializeField]
+    Text saveBack;
+    [SerializeField]
+    Text saveOverwriteLabel;
+    [SerializeField]
+    Text saveOverwriteYes;
+    [SerializeField]
+    Text saveOverwriteNo;
+    [SerializeField]
+    Text saveSuccessLabel;
+    [SerializeField]
+    Text saveSuccessButton;
+
+
     [Header("Options Menu Panel Text")]
     [SerializeField]
     Text optionsGraphics;
@@ -54,6 +71,12 @@ public class PauseMenuLocalization : MonoBehaviour
         pauseOptions.text = language.MenuOptions.ToUpper();
         pauseQuit.text = language.PauseQuit.ToUpper();
 
+        saveBack.text = language.MiscBack.ToUpper();
+        saveOverwriteLabel.text = language.LoadSlotOverwrite.ToUpper();
+        saveOverwriteYes.text = language.MiscYes;
+        saveOverwriteNo.text = language.MiscNo;
+        saveSuccessButton.text = language.MiscOK;
+
         optionsGraphics.text = language.OptionsGraphics.ToUpper();
         optionsAudio.text = language.OptionsAudio.ToUpper();
         optionsBack.text = language.MiscBack.ToUpper();
@@ -61,5 +84,35 @@ public class PauseMenuLocalization : MonoBehaviour
         graphicsResolution.text = language.GraphicsResolution.ToUpper();
         graphicsFullScreen.text = language.GraphicsFullScreen.ToUpper();
         graphicsBack.text = language.MiscBack.ToUpper();
+    }
+
+    public void UpdateLanguageForSaveSlots(string[] slotInfo)
+    {
+        var language = LocalizationManager.GetActiveLanguage();
+
+        for(int i = 0; i < saveSlots.Count; i++)
+        {
+            if(slotInfo[i] == null)
+            {
+                saveSlots[i].text = language.LoadSlotEmpty;
+            }
+            else
+            {
+                saveSlots[i].text = slotInfo[i] + " " + language.LoadSlotUsed;
+            }
+        }
+    }
+
+    public void UpdateLanguageForSaveSuccess(bool isSuccessful)
+    {
+        var language = LocalizationManager.GetActiveLanguage();
+        if (isSuccessful)
+        {
+            saveSuccessLabel.text = language.LoadSaveSuccessful;
+        }
+        else
+        {
+            saveSuccessLabel.text = language.LoadSaveFailed;
+        }
     }
 }

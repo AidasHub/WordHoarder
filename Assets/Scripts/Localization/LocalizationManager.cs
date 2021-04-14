@@ -21,6 +21,13 @@ public class LocalizationManager : MonoBehaviour
         public string MenuOptions;
         public string MenuQuit;
 
+        // Save/Load Menu Options
+        public string LoadSlotEmpty;
+        public string LoadSlotUsed;
+        public string LoadSlotOverwrite;
+        public string LoadSaveSuccessful;
+        public string LoadSaveFailed;
+
         // Options Menu Options
         public string OptionsGraphics;
         public string OptionsAudio;
@@ -40,6 +47,9 @@ public class LocalizationManager : MonoBehaviour
         public string MiscContinue;
         public string MiscBack;
         public string MiscLaunch;
+        public string MiscYes;
+        public string MiscNo;
+        public string MiscOK;
 
         public string[] TutorialSteps;
 

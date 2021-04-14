@@ -15,6 +15,12 @@ public class MainMenuLocalization : MonoBehaviour
     [SerializeField]
     Text menuQuit;
 
+    [Header("Loading Panel Text")]
+    [SerializeField]
+    List<Text> loadSlots;
+    [SerializeField]
+    Text loadBack;
+
     [Header("Options Menu Panel Text")]
     [SerializeField]
     Text optionsGraphics;
@@ -51,6 +57,8 @@ public class MainMenuLocalization : MonoBehaviour
         menuOptions.text = language.MenuOptions.ToUpper();
         menuQuit.text = language.MenuQuit.ToUpper();
 
+        loadBack.text = language.MiscBack.ToUpper();
+
         optionsGraphics.text = language.OptionsGraphics.ToUpper();
         optionsAudio.text = language.OptionsAudio.ToUpper();
         optionsBack.text = language.MiscBack.ToUpper();
@@ -58,5 +66,21 @@ public class MainMenuLocalization : MonoBehaviour
         graphicsResolution.text = language.GraphicsResolution.ToUpper();
         graphicsFullScreen.text = language.GraphicsFullScreen.ToUpper();
         graphicsBack.text = language.MiscBack.ToUpper();
+    }
+
+    public void UpdateLanguageForLoadSlots(string[] slotInfo)
+    {
+        var language = LocalizationManager.GetActiveLanguage();
+        for(int i = 0; i < loadSlots.Count; i++)
+        {
+            if (slotInfo[i] == null)
+            {
+                loadSlots[i].text = language.LoadSlotEmpty.ToUpper();
+            }
+            else
+            {
+                loadSlots[i].text = slotInfo[i] + " " + language.LoadSlotUsed.ToUpper();
+            }
+        }
     }
 }
