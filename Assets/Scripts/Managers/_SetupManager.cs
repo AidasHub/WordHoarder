@@ -8,8 +8,6 @@ public class _SetupManager : MonoBehaviour
     public static bool isDoneLoadingGame;
 
     [SerializeField]
-    private List<GameObject> managerList;
-    [SerializeField]
     private GameObject tutorialScenarioPrefab;
     [SerializeField]
     private GameObject gameScenarioPrefab;
@@ -37,23 +35,24 @@ public class _SetupManager : MonoBehaviour
 
     private void Init()
     {
+        GameObject assetsManager = new GameObject("AssetsManager");
+        assetsManager.AddComponent<AssetsManager>();
+        assetsManager.transform.parent = transform.parent;
+
         LocalizationManager.Init();
+
         LevelManager.LoadSplashScreen();
     }
 
     public void InitGame()
     {
         isDoneLoadingGame = false;
-        for (int i = 0; i < managerList.Count; i++)
-        {
-            if (managerList[i])
-            {
-                Debug.Log("Instantiating manager");
-                var manager = Instantiate(managerList[i], transform.parent);
-                manager.name = managerList[i].name;
-            }
-        }
-        UIManager.getInstance().AddToCanvas(pauseMenuPrefab, 0);
+
+        UIManager.Init();
+        InventoryManager.Init();
+        InteractiveManager.Init();
+
+        UIManager.AddToCanvas(pauseMenuPrefab, 0);
         isDoneLoadingGame = true;
     }
 
@@ -64,19 +63,19 @@ public class _SetupManager : MonoBehaviour
 
     public void InitializeTutorial()
     {
-        UIManager.getInstance().AddToCanvas(tutorialScenarioPrefab);
+        UIManager.AddToCanvas(tutorialScenarioPrefab);
     }
 
     public void InitializeMainGame()
     {
-        UIManager.getInstance().AddToCanvas(gameScenarioPrefab, 0);
-        UIManager.getInstance().AddToCanvas(wordBarPrefab);
+        UIManager.AddToCanvas(gameScenarioPrefab, 0);
+        UIManager.AddToCanvas(wordBarPrefab);
     }
 
     public void InitializeMainGame(SaveData data)
     {
-        GameObject gameScenario = UIManager.getInstance().AddToCanvas(gameScenarioPrefab, 0);
-        UIManager.getInstance().AddToCanvas(wordBarPrefab);
+        GameObject gameScenario = UIManager.AddToCanvas(gameScenarioPrefab, 0);
+        UIManager.AddToCanvas(wordBarPrefab);
 
         gameScenario.GetComponent<GameScenario>().SwitchEnvironment(data.CurrentEnvironment);
         EnvironmentNavigation[] environmentStatus = gameScenario.GetComponentsInChildren<EnvironmentNavigation>(true);
@@ -119,7 +118,7 @@ public class _SetupManager : MonoBehaviour
 
         for(int i = 0; i < data.InventoryWords.Count; i++)
         {
-            InventoryManager.getInstance().AddWord(data.InventoryWords[i]);
+            InventoryManager.AddWord(data.InventoryWords[i]);
         }
 
         GameManager.ClearCollectedWords();

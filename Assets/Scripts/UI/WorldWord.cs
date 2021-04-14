@@ -39,7 +39,7 @@ public class WorldWord : MonoBehaviour
         {
             wordCollider.enabled = false;
             EraseObjectOutline();
-            InventoryManager.getInstance().AddWord(wordText);
+            InventoryManager.AddWord(wordText);
         }
     }
 

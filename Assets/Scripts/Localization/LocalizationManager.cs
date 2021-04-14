@@ -4,7 +4,7 @@ using UnityEngine;
 using System.IO;
 using System;
 
-public class LocalizationManager : MonoBehaviour
+public static class LocalizationManager
 {
     public enum ActiveLanguage
     {
@@ -59,11 +59,6 @@ public class LocalizationManager : MonoBehaviour
         }
     }
 
-
-
-    [SerializeField]
-    List<TextAsset> localizationFiles;
-
     private static List<_LocalizationInfo> languageInfoList = new List<_LocalizationInfo>();
 
     private static ActiveLanguage activeLanguage = ActiveLanguage.EN;
@@ -73,7 +68,7 @@ public class LocalizationManager : MonoBehaviour
 
     public static void Init()
     {
-        TextAsset[] localizationFiles = Resources.LoadAll<TextAsset>("Localization/");
+        TextAsset[] localizationFiles = AssetsManager.Localization.Languages;
         for(int i = 0; i < localizationFiles.Length; i++)
         {
             var info = _LocalizationInfo.CreateFromJSON(localizationFiles[i].text);

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1124365473229006404
+--- !u!1 &933944427989820140
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1124365473229006405}
-  - component: {fileID: 1124365473229006406}
+  - component: {fileID: 933944427989820141}
+  - component: {fileID: 933944427989820142}
   m_Layer: 0
-  m_Name: _GameManager
+  m_Name: SetupManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1124365473229006405
+--- !u!4 &933944427989820141
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1124365473229006404}
+  m_GameObject: {fileID: 933944427989820140}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,16 +31,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1124365473229006406
+--- !u!114 &933944427989820142
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1124365473229006404}
+  m_GameObject: {fileID: 933944427989820140}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 795ad3a2b73fc1d4cab93aa53e41b7d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  managerList: []
+  tutorialScenarioPrefab: {fileID: 4813360728382522257, guid: 0d53e53b274756c4f830f1bd9d06a730, type: 3}
+  gameScenarioPrefab: {fileID: 9115360566809847314, guid: 6386ee91190a0474aa3b2adfd9d4df12, type: 3}
+  pauseMenuPrefab: {fileID: 901580708039411258, guid: 189efb54a4d876a49bce7815dab1a9b8, type: 3}
+  wordBarPrefab: {fileID: 965378943392463037, guid: 49af0ea6743637048b2fc75fbc61de6e, type: 3}

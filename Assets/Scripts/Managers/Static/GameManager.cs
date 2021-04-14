@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class GameManager : MonoBehaviour
+public static class GameManager
 {
     private static bool isGamePaused = false;
     public static bool GamePaused

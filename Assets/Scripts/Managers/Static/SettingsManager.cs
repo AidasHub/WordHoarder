@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class SettingsManager : MonoBehaviour
+public static class SettingsManager
 {
     public static Resolution[] GetResolutions()
     {

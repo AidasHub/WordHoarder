@@ -5,60 +5,43 @@ using UnityEngine.EventSystems;
 using TMPro;
 using UnityEngine.UI;
 
-public class InventoryManager : MonoBehaviour
+public static class InventoryManager
 {
-    [SerializeField]
-    private GameObject inventoryPanelPrefab;
+    private static GameObject inventoryPanelPrefab;
 
-    public bool IsOpen { get; private set; } = false;
+    public static bool IsOpen { get; private set; } = false;
 
-    [SerializeField]
-    private GameObject wordPrefab;
+    private static GameObject wordPrefab;
 
-    [SerializeField]
-    private GameObject inventory;
-    private Animator inventoryAnimator;
-    private Button inventoryButton;
-    private GridLayoutGroup wordGridLayout;
+    private static GameObject inventory;
+    private static Animator inventoryAnimator;
+    private static Button inventoryButton;
+    private static GridLayoutGroup wordGridLayout;
 
-    [SerializeField]
-    List<InventoryWord> wordList;
+    static List<InventoryWord> wordList;
 
-    private static InventoryManager instance;
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            Init();
-        }
-        else if (instance != this)
-        {
-            Destroy(this.gameObject);
-        }
-    }
-
-    public static InventoryManager getInstance()
-    {
-        return instance;
-    }
-
-    private void Init()
+    public static void Init()
     {
         if(inventory == null)
         {
-            inventory = UIManager.getInstance().AddToCanvas(inventoryPanelPrefab);
+            inventoryPanelPrefab = AssetsManager.ManagerPrefabs.Inventory;
+            wordPrefab = AssetsManager.Words.InventoryWord;
+            inventory = UIManager.AddToCanvas(inventoryPanelPrefab);
             inventoryAnimator = inventory.GetComponent<Animator>();
             inventoryButton = inventory.GetComponentInChildren<Button>();
             inventoryButton.onClick.AddListener(ToggleInventory);
+            wordList = new List<InventoryWord>();
         }
         wordGridLayout = inventory.GetComponentInChildren<GridLayoutGroup>();
     }
 
-    public void AddWord(string word)
+    public static void AddWord(string word)
     {
-        GameObject newWordGO = Instantiate(wordPrefab, wordGridLayout.transform);
+        if(inventory == null)
+        {
+            Init();
+        }
+        GameObject newWordGO = GameObject.Instantiate(wordPrefab, wordGridLayout.transform);
         newWordGO.name = word;
         InventoryWord newWord = newWordGO.GetComponent<InventoryWord>();
         TextMeshProUGUI newWordTMP = newWordGO.GetComponent<TextMeshProUGUI>();
@@ -67,8 +50,12 @@ public class InventoryManager : MonoBehaviour
         GameManager.IncreaseCollectedWords();
     }
 
-    public void RemoveWord(string word)
+    public static void RemoveWord(string word)
     {
+        if(inventory == null)
+        {
+            Init();
+        }
         for(int i = 0; i < wordList.Count; i++)
         {
             if (wordList[i].getWordString().ToLower() == word.ToLower())
@@ -80,7 +67,7 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public void RefreshInventory()
+    public static void RefreshInventory()
     {
         for(int i = 0; i < wordGridLayout.transform.childCount; i++)
         {
@@ -92,17 +79,17 @@ public class InventoryManager : MonoBehaviour
             }
             if (!found)
             {
-                Destroy(wordGridLayout.transform.GetChild(i).gameObject);
+                GameObject.Destroy(wordGridLayout.transform.GetChild(i).gameObject);
             }
         }
     }
 
-    public List<InventoryWord> GetWords()
+    public static List<InventoryWord> GetWords()
     {
         return wordList;
     }
 
-    public void ToggleInventory()
+    public static void ToggleInventory()
     {
         if (IsOpen)
         {
@@ -117,17 +104,17 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public GameObject GetInventoryGO()
+    public static GameObject GetInventoryGO()
     {
         return inventory;
     }
 
-    public void EnableInventory()
+    public static void EnableInventory()
     {
         inventory.SetActive(true);
     }
 
-    public void DisableInventory()
+    public static void DisableInventory()
     {
         inventory.SetActive(false);
     }

@@ -44,7 +44,7 @@ public class EnvironmentNavigation : MonoBehaviour
 
     public void LoadWordFillPuzzle(int index)
     {
-        InteractiveManager.getInstance().LoadWordFillPuzzle(index, UnlockEnvironment);
+        InteractiveManager.LoadWordFillPuzzle(index, UnlockEnvironment);
     }
 
     public Tuple<string, bool> PrepareSaveData()

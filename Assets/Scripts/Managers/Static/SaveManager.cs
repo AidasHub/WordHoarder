@@ -47,7 +47,7 @@ public static class SaveManager
             }
 
             List<string> saveInventoryWords = new List<string>();
-            List<InventoryWord> inventoryWords = InventoryManager.getInstance().GetWords();
+            List<InventoryWord> inventoryWords = InventoryManager.GetWords();
             for(int i = 0; i < inventoryWords.Count; i++)
             {
                 saveInventoryWords.Add(inventoryWords[i].getWordString());

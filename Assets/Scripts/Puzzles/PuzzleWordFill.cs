@@ -22,7 +22,6 @@ public class PuzzleWordFill : MonoBehaviour
     private TextMeshProUGUI tmpRight;
     [SerializeField]
 
-    private InventoryManager inventoryManager;
     private GridLayoutGroup inventoryGridLayout;
     private List<string> usedWords = new List<string>();
     private UnityAction rewardAction;
@@ -30,7 +29,6 @@ public class PuzzleWordFill : MonoBehaviour
 
     void Awake()
     {
-        inventoryManager = InventoryManager.getInstance();
         inventoryGridLayout = GetComponentInChildren<GridLayoutGroup>();
     }
 
@@ -111,8 +109,8 @@ public class PuzzleWordFill : MonoBehaviour
 
     public void PopulatePuzzleInventory()
     {
-        List<InventoryWord> inventoryWords = inventoryManager.GetWords();
-        Debug.Log(inventoryManager.GetWords().Count);
+        List<InventoryWord> inventoryWords = InventoryManager.GetWords();
+        Debug.Log(InventoryManager.GetWords().Count);
         foreach(InventoryWord word in inventoryWords)
         {
             var GO = Instantiate(word, inventoryGridLayout.transform);
@@ -273,7 +271,7 @@ public class PuzzleWordFill : MonoBehaviour
         rewardAction.Invoke();
         for(int i = 0; i < usedWords.Count; i++)
         {
-            InventoryManager.getInstance().RemoveWord(usedWords[i]);
+            InventoryManager.RemoveWord(usedWords[i]);
         }
     }
 }

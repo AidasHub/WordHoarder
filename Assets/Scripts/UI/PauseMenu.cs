@@ -98,7 +98,7 @@ public class PauseMenu : MonoBehaviour
     private void SaveGame(int i)
     {
         Debug.Log("Saving game...");
-        GameScenario gameScenario = UIManager.getInstance().GetFromCanvas("GamePanel").GetComponent<GameScenario>();
+        GameScenario gameScenario = UIManager.GetFromCanvas("GamePanel").GetComponent<GameScenario>();
         if (gameScenario != null)
         {
             bool success = SaveManager.SaveGame(gameScenario, i);

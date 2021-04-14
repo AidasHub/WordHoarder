@@ -7,8 +7,6 @@ using TMPro;
 public class TutorialScenario : MonoBehaviour
 {
 
-    private UIManager _UIManager;
-
     [SerializeField]
     private TextMeshProUGUI tutorialText;
     [SerializeField]
@@ -31,7 +29,6 @@ public class TutorialScenario : MonoBehaviour
 
     private void Awake()
     {
-        _UIManager = UIManager.getInstance();
         objectWorldWord = key.GetComponent<WorldWord>();
         keyButton = key.GetComponent<Button>();
 
@@ -73,26 +70,26 @@ public class TutorialScenario : MonoBehaviour
                 keyButton.enabled = true;
                 break;
             case 4:
-                if (InventoryManager.getInstance().GetWords().Count != 1)
+                if (InventoryManager.GetWords().Count != 1)
                 {
                     tutorialText.text = tutorialStepsText[currentTutorialStep - 1];
                     return;
                 }
                 keyButton.enabled = false;
-                GameObject inventory = InventoryManager.getInstance().GetInventoryGO();
+                GameObject inventory = InventoryManager.GetInventoryGO();
                 inventory.transform.SetSiblingIndex(inventory.transform.parent.childCount - 1);
                 inventory.SetActive(true);
                 inventory.GetComponentInChildren<Button>().onClick.AddListener(AdvanceTutorial);
                 arrowImage.SetActive(true);
                 break;
             case 5:
-                InventoryManager.getInstance().GetInventoryGO().GetComponentInChildren<Button>().onClick.RemoveListener(AdvanceTutorial);
+                InventoryManager.GetInventoryGO().GetComponentInChildren<Button>().onClick.RemoveListener(AdvanceTutorial);
                 key.SetActive(false);
                 arrowImage.SetActive(false);
                 doorClosed.SetActive(true);
                 break;
             case 6:
-                InventoryManager.getInstance().ToggleInventory();
+                InventoryManager.ToggleInventory();
                 doorOpen.SetActive(true);
                 doorClosed.SetActive(false);
                 tutorialButtonStartGame.gameObject.SetActive(true);
