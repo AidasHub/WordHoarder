@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(PolygonCollider2D)), RequireComponent(typeof(LineRenderer))]
@@ -10,6 +11,8 @@ public class WorldWord : MonoBehaviour
     private string wordText;
     private PolygonCollider2D wordCollider;
     private LineRenderer lineRenderer;
+
+    private TextMeshProUGUI pickupText;
 
     private void Awake()
     {
@@ -40,6 +43,7 @@ public class WorldWord : MonoBehaviour
             wordCollider.enabled = false;
             EraseObjectOutline();
             InventoryManager.AddWord(wordText);
+            DisplayPickupText();
         }
     }
 
@@ -94,5 +98,66 @@ public class WorldWord : MonoBehaviour
         if (wordCollider == null)
             Awake();
         wordCollider.enabled = !isCollected;
+    }
+
+    private void DisplayPickupText()
+    {
+        var pickupTextObject = new GameObject(wordText);
+        pickupTextObject.transform.SetParent(gameObject.transform);
+
+        // Text properties
+        pickupText = pickupTextObject.AddComponent<TextMeshProUGUI>();
+        pickupText.alignment = TextAlignmentOptions.Midline;
+        pickupText.text = wordText.ToUpper();
+        pickupText.color = Color.green;
+        pickupText.fontSize = 0;
+        pickupText.outlineColor = Color.black;
+        pickupText.outlineWidth = 0.2f;
+        pickupText.enableWordWrapping = false;
+
+        // Position
+        var pickupTextRect = pickupTextObject.GetComponent<RectTransform>();
+        pickupTextRect.localScale = new Vector3(1, 1, 1);
+        Vector2 localPoint;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.parent.GetComponent<RectTransform>(), Input.mousePosition, Camera.main, out localPoint);
+        pickupTextRect.localPosition = localPoint;
+        StartCoroutine(PlayPickupTextAnimation(pickupText, 0.3f));
+    }
+
+    private IEnumerator PlayPickupTextAnimation(TextMeshProUGUI tmp, float seconds)
+    {
+        float debugSeconds = Time.realtimeSinceStartup;
+        var increaseSizeSeconds = seconds * 4 / 5;
+        var reduceSizeSeconds = seconds / 5;
+        float sizeStep = 72 / seconds;
+
+        float currentTime = 0f;
+        while (currentTime < increaseSizeSeconds)
+        {
+            var elapsedTime = Time.deltaTime;
+            tmp.fontSize += sizeStep * elapsedTime;
+            currentTime += elapsedTime;
+            yield return null;
+        }
+
+        currentTime = 0f;
+        while(currentTime < reduceSizeSeconds)
+        {
+            var elapsedTime = Time.deltaTime;
+            tmp.fontSize -= sizeStep * elapsedTime;
+            currentTime += elapsedTime;
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(3f);
+        Destroy(tmp.gameObject);
+    }
+
+    private void OnDisable()
+    {
+        if(pickupText != null)
+        {
+            Destroy(pickupText.gameObject);
+        }
     }
 }
