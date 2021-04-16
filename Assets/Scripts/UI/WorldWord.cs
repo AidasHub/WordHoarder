@@ -26,14 +26,12 @@ public class WorldWord : MonoBehaviour
     {
         if(enabled && !GameManager.GamePaused)
             DrawObjectOutline();
-        //MouseManager.getInstance().ActivateWordTooltip(Input.mousePosition, wordText);
     }
 
 
     void OnMouseExit()
     {
         EraseObjectOutline();
-        //MouseManager.getInstance().HideWordTooltip();
     }
 
     private void OnMouseDown()

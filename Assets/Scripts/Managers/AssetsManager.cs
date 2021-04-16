@@ -32,6 +32,7 @@ public class AssetsManager : MonoBehaviour
         ManagerPrefabs.MainCanvas = Resources.Load("Prefabs/Managers/MainCanvas") as GameObject;
         ManagerPrefabs.Inventory = Resources.Load("Prefabs/Managers/Inventory") as GameObject;
         ManagerPrefabs.InteractivePanel = Resources.Load("Prefabs/Managers/InteractivePanel") as GameObject;
+        ManagerPrefabs.Tooltip = Resources.Load("Prefabs/Managers/Tooltip") as GameObject;
 
         Words = new WordResource();
         Words.InventoryWord = Resources.Load("Prefabs/Inventory/InventoryWord") as GameObject;
@@ -55,6 +56,7 @@ public class AssetsManager : MonoBehaviour
         public GameObject MainCanvas;
         public GameObject Inventory;
         public GameObject InteractivePanel;
+        public GameObject Tooltip;
     }
 
     [Serializable]
