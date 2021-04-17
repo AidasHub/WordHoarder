@@ -51,6 +51,9 @@ public static class LocalizationManager
         public string MiscNo;
         public string MiscOK;
 
+        // Environment Destination Texts
+        public string EnvironmentToLivingRoom;
+
         public string[] TutorialSteps;
 
         public static _LocalizationInfo CreateFromJSON(string jsonString)
@@ -61,7 +64,7 @@ public static class LocalizationManager
 
     private static List<_LocalizationInfo> languageInfoList = new List<_LocalizationInfo>();
 
-    private static ActiveLanguage activeLanguage = ActiveLanguage.EN;
+    public static ActiveLanguage CurrentlyActiveLanguage { get; private set; } = ActiveLanguage.EN;
 
     public delegate void NotifyLanguageChange();
     public static event NotifyLanguageChange onLanguageChanged;
@@ -74,19 +77,19 @@ public static class LocalizationManager
             var info = _LocalizationInfo.CreateFromJSON(localizationFiles[i].text);
             languageInfoList.Add(info);
         }
-        activeLanguage = 0;
+        CurrentlyActiveLanguage = 0;
     }
 
     public static void SetActiveLanguage(int index)
     {
-        activeLanguage = (ActiveLanguage)index;
+        CurrentlyActiveLanguage = (ActiveLanguage)index;
         if (onLanguageChanged != null)
             onLanguageChanged.Invoke();
     }
 
     public static _LocalizationInfo GetActiveLanguage()
     {
-        int activeLanguageInt = (int)activeLanguage;
+        int activeLanguageInt = (int)CurrentlyActiveLanguage;
         return languageInfoList[activeLanguageInt];
     }
 }

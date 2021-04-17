@@ -9,6 +9,19 @@ using UnityEngine.Events;
 
 public class PuzzleWordFill : MonoBehaviour
 {
+    private class PuzzleInfo
+    {
+        public string textEN;
+        public string[] missingWordsEN;
+        public string textOther;
+        public string[] missingWordsOther;
+
+        public static PuzzleInfo CreateFromJSON(string jsonString)
+        {
+            return JsonUtility.FromJson<PuzzleInfo>(jsonString);
+        }
+    }
+
     [Header("Puzzle Settings")]
     [SerializeField]
     private int dashCount = 10;
@@ -123,7 +136,7 @@ public class PuzzleWordFill : MonoBehaviour
     public void PopulateWordPanels(TextAsset puzzle)
     {
         CleanupBlanks();
-        _PuzzleInfo puzzleInfo = _PuzzleInfo.CreateFromJSON(puzzle.text);
+        PuzzleInfo puzzleInfo = PuzzleInfo.CreateFromJSON(puzzle.text);
 
         #region EN_SETUP
 

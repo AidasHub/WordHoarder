@@ -10,10 +10,26 @@ public static class InteractiveManager
     private static GameObject interactivePanel;
     private static Button interactivePanelCloseButton;
     private static Animator animator;
+    private static GameObject activePuzzle;
 
     private static PuzzleWordFill puzzleWordFill;
-    //
     private static List<TextAsset> wordFillPuzzles;
+
+    private static PuzzleRotatingLock puzzleRotatingLock;
+    private static List<TextAsset> rotatingLockPuzzles;
+
+    private static bool interactivePanelOpen;
+    public static bool InteractivePanelOpen
+    {
+        get
+        {
+            return interactivePanelOpen;
+        }
+        private set
+        {
+            interactivePanelOpen = value;
+        }
+    }
 
     public static void Init()
     {
@@ -21,12 +37,14 @@ public static class InteractiveManager
         {
             interactivePanelPrefab = AssetsManager.ManagerPrefabs.InteractivePanel;
             wordFillPuzzles = AssetsManager.Puzzles.WordFillPuzzles;
+            rotatingLockPuzzles = AssetsManager.Puzzles.RotatingLockPuzzles;
             Debug.Log(wordFillPuzzles.Count);
 
             interactivePanel = UIManager.AddToCanvas(interactivePanelPrefab);
             interactivePanelCloseButton = interactivePanel.GetComponentInChildren<Button>();
             animator = interactivePanel.GetComponent<Animator>();
-            puzzleWordFill = interactivePanel.GetComponentInChildren<PuzzleWordFill>();
+            puzzleWordFill = interactivePanel.GetComponentInChildren<PuzzleWordFill>(true);
+            puzzleRotatingLock = interactivePanel.GetComponentInChildren<PuzzleRotatingLock>(true);
         }
     }
 
@@ -50,12 +68,15 @@ public static class InteractiveManager
             InventoryManager.DisableInventory();
             WordBar.HideWordBar();
             animator.SetBool("InteractionPanelEnabled", true);
+            InteractivePanelOpen = true;
+            TooltipManager.HideTooltip();
         }
         else
         {
             InventoryManager.EnableInventory();
             WordBar.ShowWordBar();
             animator.SetBool("InteractionPanelEnabled", false);
+            InteractivePanelOpen = false;
         }
     }
 
@@ -65,10 +86,30 @@ public static class InteractiveManager
         {
             Init();
         }
+        if (activePuzzle != null)
+            activePuzzle.SetActive(false);
+        activePuzzle = puzzleWordFill.gameObject;
+        activePuzzle.SetActive(true);
         puzzleWordFill.InitPuzzle(wordFillPuzzles[index], rewardAction);
         ToggleInteraction();
         interactivePanelCloseButton.onClick.RemoveAllListeners();
         interactivePanelCloseButton.onClick.AddListener(puzzleWordFill.Close);
+        interactivePanelCloseButton.onClick.AddListener(ToggleInteraction);
+    }
+
+    public static void LoadRotatingLockPuzzle(int index, UnityAction rewardAction)
+    {
+        if(interactivePanel == null)
+        {
+            Init();
+        }
+        if (activePuzzle != null)
+            activePuzzle.SetActive(false);
+        activePuzzle = puzzleRotatingLock.gameObject;
+        activePuzzle.SetActive(true);
+        puzzleRotatingLock.InitPuzzle(rotatingLockPuzzles[index], rewardAction);
+        ToggleInteraction();
+        interactivePanelCloseButton.onClick.RemoveAllListeners();
         interactivePanelCloseButton.onClick.AddListener(ToggleInteraction);
     }
 }

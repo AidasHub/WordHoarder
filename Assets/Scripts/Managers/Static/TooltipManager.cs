@@ -18,9 +18,10 @@ public static class TooltipManager
         tooltipText = tooltip.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
     }
 
-    private static void HideTooltip()
+    public static void HideTooltip()
     {
-        tooltip.SetActive(false);
+        if(tooltip != null)
+            tooltip.SetActive(false);
     }
 
     public static void DrawTooltip(string text)

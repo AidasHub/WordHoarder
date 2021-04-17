@@ -2,10 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class PuzzleRotatingLock : MonoBehaviour
 {
+    private class PuzzleInfo
+    {
+        public string word;
+        public string descriptionEN;
+        public string descriptionLT;
+    }
+
     [SerializeField]
     private GameObject lockPiecePrefab;
     private RectTransform canvas;
@@ -14,24 +22,27 @@ public class PuzzleRotatingLock : MonoBehaviour
     private RotatingLockLetter[] lockLetters;
     private int randomLetterCount = 5;
 
+    private TextMeshProUGUI descriptionText;
     private Button puzzleUnlockButton;
+    private UnityAction rewardAction;
+    private PuzzleInfo puzzleInfo;
 
     private int paddingX = 200;
     private int paddingY = 100;
 
-    private void Start()
+    public void InitPuzzle(TextAsset puzzle, UnityAction rewardAction)
     {
-        InitPuzzle("Cat");
-    }
-
-    public void InitPuzzle(string word)
-    {
+        this.rewardAction = rewardAction;
         canvas = GetComponent<RectTransform>();
         puzzleUnlockButton = gameObject.transform.GetChild(1).GetComponent<Button>();
         var lockBackground = gameObject.transform.GetChild(0).GetComponent<RectTransform>();
+        descriptionText = gameObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
 
-        SetupLockPieces(canvas, word);
+        puzzleInfo = JsonUtility.FromJson<PuzzleInfo>(puzzle.text);
+        SetupLockPieces(canvas, puzzleInfo.word);
 
+
+        // Adjusting created lock pieces
         var screenMiddleDistance = canvas.rect.size.x / 2;
         var sumButtonLength = lockPieces[0].GetComponent<RectTransform>().rect.width * lockPieces.Length;
         var sumButtonMiddleDistance = sumButtonLength / 2;
@@ -44,17 +55,23 @@ public class PuzzleRotatingLock : MonoBehaviour
             pieceRect.anchoredPosition = new Vector2(pieceRect.anchoredPosition.x + offset, pieceRect.anchoredPosition.y);
         }
 
-
+        // Unlock button
         var lockPieceButtonHeight = lockPieces[0].GetComponent<RectTransform>().rect.height + lockPieces[0].GetComponentInChildren<RectTransform>().rect.height;
-
         var puzzleUnlockButtonRect = puzzleUnlockButton.gameObject.GetComponent<RectTransform>();
         puzzleUnlockButtonRect.anchoredPosition = new Vector2(0, (0 - lockPieceButtonHeight));
         puzzleUnlockButtonRect.sizeDelta = new Vector2(sumButtonLength / 3, lockPieceButtonHeight / 3);
-
         puzzleUnlockButton.onClick.AddListener(AttemptUnlock);
 
+        // Background
         var backgroundHeight = lockPieceButtonHeight + paddingY;
         lockBackground.sizeDelta = new Vector2(sumButtonLength + paddingX, backgroundHeight);
+
+        // Description text
+        LocalizationManager.onLanguageChanged += UpdateLocalization;
+        UpdateLocalization();
+        var textRect = descriptionText.GetComponent<RectTransform>();
+        textRect.sizeDelta = new Vector2(canvas.rect.size.x, textRect.sizeDelta.y);
+        textRect.anchoredPosition = new Vector2(0, (0 - canvas.rect.y - descriptionText.preferredHeight));
     }
 
     private void SetupLockPieces(RectTransform canvas, string word)
@@ -127,7 +144,21 @@ public class PuzzleRotatingLock : MonoBehaviour
             buttonColors.disabledColor = Color.green;
             puzzleUnlockButton.colors = buttonColors;
             yield return new WaitForSeconds(seconds);
+            rewardAction.Invoke();
             InteractiveManager.ToggleInteraction();
         }
+    }
+
+    private void UpdateLocalization()
+    {
+        if (LocalizationManager.CurrentlyActiveLanguage == LocalizationManager.ActiveLanguage.EN)
+            descriptionText.text = puzzleInfo.descriptionEN;
+        if (LocalizationManager.CurrentlyActiveLanguage == LocalizationManager.ActiveLanguage.LT)
+            descriptionText.text = puzzleInfo.descriptionLT;
+    }
+
+    private void OnDisable()
+    {
+        LocalizationManager.onLanguageChanged -= UpdateLocalization;
     }
 }

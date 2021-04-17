@@ -6,12 +6,19 @@ using UnityEngine.UI;
 
 public class EnvironmentNavigation : MonoBehaviour
 {
+    private enum EnvironmentDestination
+    {
+        ToLivingRoom
+    }
+
     [SerializeField]
     private Button lockedButton;
     [SerializeField]
     private Button unlockedButton;
     [SerializeField]
     private bool isLocked;
+    [SerializeField]
+    EnvironmentDestination destination;
 
     public void Awake()
     {
@@ -44,7 +51,14 @@ public class EnvironmentNavigation : MonoBehaviour
 
     public void LoadWordFillPuzzle(int index)
     {
+        Debug.Log("Loading wordfill puzzle");
         InteractiveManager.LoadWordFillPuzzle(index, UnlockEnvironment);
+    }
+
+    public void LoadRotatingLockPuzzle(int index)
+    {
+        Debug.Log("Loading rotating lock puzzle");
+        InteractiveManager.LoadRotatingLockPuzzle(index, UnlockEnvironment);
     }
 
     public Tuple<string, bool> PrepareSaveData()
@@ -58,5 +72,31 @@ public class EnvironmentNavigation : MonoBehaviour
     {
         if (!isLocked)
             UnlockEnvironment();
+    }
+
+    private void OnMouseOver()
+    {
+        if (lockedButton.gameObject.activeInHierarchy && !InteractiveManager.InteractivePanelOpen &&!GameManager.GamePaused)
+        {
+            string text = GetEnvironmentDestinationText(destination);
+            TooltipManager.DrawTooltip(text);
+        }
+    }
+
+    private void OnMouseExit()
+    {
+        TooltipManager.HideTooltip();
+    }
+
+    private string GetEnvironmentDestinationText(EnvironmentDestination destination)
+    {
+        var language = LocalizationManager.GetActiveLanguage();
+        switch (destination)
+        {
+            default:
+                return "Error";
+            case EnvironmentDestination.ToLivingRoom:
+                return language.EnvironmentToLivingRoom;
+        }
     }
 }

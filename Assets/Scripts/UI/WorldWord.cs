@@ -24,7 +24,7 @@ public class WorldWord : MonoBehaviour
 
     void OnMouseOver()
     {
-        if(enabled && !GameManager.GamePaused)
+        if(enabled && !InteractiveManager.InteractivePanelOpen && !GameManager.GamePaused)
             DrawObjectOutline();
     }
 
@@ -36,7 +36,7 @@ public class WorldWord : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if(enabled && !GameManager.GamePaused)
+        if(enabled && !InteractiveManager.InteractivePanelOpen && !GameManager.GamePaused)
         {
             wordCollider.enabled = false;
             EraseObjectOutline();

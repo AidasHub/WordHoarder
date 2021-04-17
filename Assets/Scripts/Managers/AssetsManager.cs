@@ -46,6 +46,14 @@ public class AssetsManager : MonoBehaviour
         }
         Puzzles.WordFillPuzzles = wordFillPuzzleAssets;
 
+        List<TextAsset> rotatingLockPuzzleAssets = new List<TextAsset>();
+        textAssets = Resources.LoadAll<TextAsset>("Puzzles/RotatingLock/");
+        for(int i = 0; i < textAssets.Length; i++)
+        {
+            rotatingLockPuzzleAssets.Add(textAssets[i]);
+        }
+        Puzzles.RotatingLockPuzzles = rotatingLockPuzzleAssets;
+
         Localization = new LocalizationResource();
         Localization.Languages = Resources.LoadAll<TextAsset>("Localization/");
     }
@@ -69,6 +77,7 @@ public class AssetsManager : MonoBehaviour
     public class PuzzleResource
     {
         public List<TextAsset> WordFillPuzzles;
+        public List<TextAsset> RotatingLockPuzzles;
     }
 
     [Serializable]

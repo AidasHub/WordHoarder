@@ -8,11 +8,6 @@ public class GameScenario : MonoBehaviour
     private List<GameObject> environments;
     public int CurrentEnvironment { get; private set; }
 
-    public void Awake()
-    {
-
-    }
-
     public void SwitchEnvironment(int index)
     {
         environments[CurrentEnvironment].SetActive(false);

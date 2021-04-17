@@ -29,6 +29,8 @@
 	"MiscNo": "No",
 	"MiscOK": "Ok",
 
+	"EnvironmentToLivingRoom": "Click to open a puzzle window",
+
 	"TutorialSteps": [
 		"Welcome to Word-Hoarder!",
 		"This tutorial will guide you through the basic controls",
