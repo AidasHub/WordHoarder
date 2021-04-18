@@ -2,13 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class EnvironmentNavigation : MonoBehaviour
 {
     private enum EnvironmentDestination
     {
-        ToLivingRoom
+        ToLivingRoom,
     }
 
     [SerializeField]
@@ -61,6 +62,12 @@ public class EnvironmentNavigation : MonoBehaviour
         InteractiveManager.LoadRotatingLockPuzzle(index, UnlockEnvironment);
     }
 
+    public void LoadImageGuessPuzzle(int index)
+    {
+        Debug.Log("Loading image guess puzzle");
+        InteractiveManager.LoadImageGuessPuzzle(index, UnlockEnvironment);
+    }
+
     public Tuple<string, bool> PrepareSaveData()
     {
         string navigationTo = gameObject.name;
@@ -82,6 +89,8 @@ public class EnvironmentNavigation : MonoBehaviour
             TooltipManager.DrawTooltip(text);
         }
     }
+
+    
 
     private void OnMouseExit()
     {

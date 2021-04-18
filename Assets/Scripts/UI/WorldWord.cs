@@ -9,10 +9,14 @@ public class WorldWord : MonoBehaviour
 {
     [SerializeField]
     private string wordText;
+    [SerializeField]
+    private SoundManager.Sound soundClip;
     private PolygonCollider2D wordCollider;
     private LineRenderer lineRenderer;
 
     private TextMeshProUGUI pickupText;
+
+    private float newScaleY;
 
     private void Awake()
     {
@@ -42,6 +46,7 @@ public class WorldWord : MonoBehaviour
             EraseObjectOutline();
             InventoryManager.AddWord(wordText);
             DisplayPickupText();
+            //SoundManager.PlaySound(soundClip);
         }
     }
 
@@ -68,9 +73,9 @@ public class WorldWord : MonoBehaviour
         float referenceRatio = (float)16 / 9;
         float referenceScale = 1f;
         float currentRatio = (float)Screen.width / Screen.height;
-        float newScale = referenceScale * referenceRatio / currentRatio;
+        newScaleY = referenceScale * referenceRatio / currentRatio;
 
-        Vector3 newScaleVector = new Vector3(transform.localScale.x, newScale, transform.localScale.z);
+        Vector3 newScaleVector = new Vector3(transform.localScale.x, newScaleY, transform.localScale.z);
         transform.localScale = newScaleVector;
         if (!GameManager.GamePaused)
             lineRenderer.enabled = true;
@@ -118,6 +123,7 @@ public class WorldWord : MonoBehaviour
         pickupTextRect.localScale = new Vector3(1, 1, 1);
         Vector2 localPoint;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.parent.GetComponent<RectTransform>(), Input.mousePosition, Camera.main, out localPoint);
+        localPoint.y /= newScaleY;
         pickupTextRect.localPosition = localPoint;
         StartCoroutine(PlayPickupTextAnimation(pickupText, 0.3f));
     }

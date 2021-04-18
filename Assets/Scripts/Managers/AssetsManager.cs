@@ -11,6 +11,10 @@ public class AssetsManager : MonoBehaviour
     public static PuzzleResource Puzzles { get; private set; }
     public static LocalizationResource Localization { get; private set; }
 
+    public static List<AudioResource> Audio { get; private set; }
+
+    public static List<Sprite> Sprites { get; private set; }
+
     private static AssetsManager instance;
 
     private void Awake()
@@ -54,8 +58,70 @@ public class AssetsManager : MonoBehaviour
         }
         Puzzles.RotatingLockPuzzles = rotatingLockPuzzleAssets;
 
+        List<TextAsset> imageGuessPuzzleAssets = new List<TextAsset>();
+        textAssets = Resources.LoadAll<TextAsset>("Puzzles/ImageGuess/");
+        for(int i = 0; i < textAssets.Length; i++)
+        {
+            imageGuessPuzzleAssets.Add(textAssets[i]);
+        }
+        Puzzles.ImageGuessPuzzles = imageGuessPuzzleAssets;
+
         Localization = new LocalizationResource();
         Localization.Languages = Resources.LoadAll<TextAsset>("Localization/");
+
+        AudioClip[] audioAssets = Resources.LoadAll<AudioClip>("Audio/");
+        string[] soundNames = Enum.GetNames(typeof(SoundManager.Sound));
+        Audio = new List<AudioResource>();
+        for(int i = 0; i < audioAssets.Length; i++)
+        {
+            for(int j = 0; j < soundNames.Length; j++)
+            {
+                if(audioAssets[i].name == soundNames[j])
+                {
+                    AudioResource resource = new AudioResource();
+                    resource.audioClip = audioAssets[i];
+                    SoundManager.Sound sound;
+                    Enum.TryParse<SoundManager.Sound>(soundNames[j], out sound);
+                    resource.sound = sound;
+                    Audio.Add(resource);
+                    break;
+                }
+            }
+        }
+
+        List<Sprite> spriteAssets = new List<Sprite>();
+        Sprite[] sprites = Resources.LoadAll<Sprite>("Sprites/");
+        for(int i = 0; i < sprites.Length; i++)
+        {
+            spriteAssets.Add(sprites[i]);
+        }
+        Sprites = spriteAssets;
+        Debug.Log(Sprites.Count);
+    }
+
+    public static AudioClip GetAudioClip(SoundManager.Sound sound)
+    {
+        for(int i = 0; i < Audio.Count; i++)
+        {
+            if(Audio[i].sound == sound)
+            {
+                return Audio[i].audioClip;
+            }
+        }
+        Debug.LogError("AudioClip for " + sound + " was not found");
+        return null;
+    }
+
+    public static Sprite GetSprite(string name)
+    {
+        Debug.Log("Searching for " + name);
+        for(int i = 0; i < Sprites.Count; i++)
+        {
+            if (Sprites[i].name == name)
+                return Sprites[i];
+        }
+        Debug.LogError("Sprite of the name " + name + " was not found");
+        return null;
     }
 
     [Serializable]
@@ -78,11 +144,19 @@ public class AssetsManager : MonoBehaviour
     {
         public List<TextAsset> WordFillPuzzles;
         public List<TextAsset> RotatingLockPuzzles;
+        public List<TextAsset> ImageGuessPuzzles;
     }
 
     [Serializable]
     public class LocalizationResource
     {
         public TextAsset[] Languages;
+    }
+
+    [Serializable]
+    public class AudioResource
+    {
+        public SoundManager.Sound sound;
+        public AudioClip audioClip;
     }
 }

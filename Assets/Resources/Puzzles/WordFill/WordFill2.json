@@ -1,0 +1,18 @@
+{
+  "textEN":
+  "At home I have a _ - a tiny _. I keep it placed it next to the _ so that it gets plenty of sunlight",
+  "missingWordsEN":
+  [
+    "plant",
+    "cactus",
+	"window"
+  ],
+  "textOther":
+  "Namie turiu _ - mažytį _. Aš jį laikau padėtą šalia _, kad jis gautų pakankamai saulės šviesos",
+  "missingWordsOther":
+  [
+    "augalą",
+    "kaktusą",
+	"lango"
+  ]
+}

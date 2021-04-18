@@ -33,6 +33,7 @@ public class InventoryWord : MonoBehaviour, IDragHandler, IEndDragHandler
             transform.SetParent(canvas.transform);
             startingPosition = rect.position;
             startDrag = false;
+            InventoryManager.ToggleInventory();
         }
         rect.anchoredPosition += eventData.delta / canvas.scaleFactor;
         canvasGroup.blocksRaycasts = false;

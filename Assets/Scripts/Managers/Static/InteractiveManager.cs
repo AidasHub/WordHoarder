@@ -18,6 +18,9 @@ public static class InteractiveManager
     private static PuzzleRotatingLock puzzleRotatingLock;
     private static List<TextAsset> rotatingLockPuzzles;
 
+    private static PuzzleImageGuess puzzleImageGuess;
+    private static List<TextAsset> imageGuessPuzzles;
+
     private static bool interactivePanelOpen;
     public static bool InteractivePanelOpen
     {
@@ -38,6 +41,7 @@ public static class InteractiveManager
             interactivePanelPrefab = AssetsManager.ManagerPrefabs.InteractivePanel;
             wordFillPuzzles = AssetsManager.Puzzles.WordFillPuzzles;
             rotatingLockPuzzles = AssetsManager.Puzzles.RotatingLockPuzzles;
+            imageGuessPuzzles = AssetsManager.Puzzles.ImageGuessPuzzles;
             Debug.Log(wordFillPuzzles.Count);
 
             interactivePanel = UIManager.AddToCanvas(interactivePanelPrefab);
@@ -45,6 +49,7 @@ public static class InteractiveManager
             animator = interactivePanel.GetComponent<Animator>();
             puzzleWordFill = interactivePanel.GetComponentInChildren<PuzzleWordFill>(true);
             puzzleRotatingLock = interactivePanel.GetComponentInChildren<PuzzleRotatingLock>(true);
+            puzzleImageGuess = interactivePanel.GetComponentInChildren<PuzzleImageGuess>(true);
         }
     }
 
@@ -108,6 +113,22 @@ public static class InteractiveManager
         activePuzzle = puzzleRotatingLock.gameObject;
         activePuzzle.SetActive(true);
         puzzleRotatingLock.InitPuzzle(rotatingLockPuzzles[index], rewardAction);
+        ToggleInteraction();
+        interactivePanelCloseButton.onClick.RemoveAllListeners();
+        interactivePanelCloseButton.onClick.AddListener(ToggleInteraction);
+    }
+
+    public static void LoadImageGuessPuzzle(int index, UnityAction rewardAction)
+    {
+        if (interactivePanel == null)
+        {
+            Init();
+        }
+        if (activePuzzle != null)
+            activePuzzle.SetActive(false);
+        activePuzzle = puzzleImageGuess.gameObject;
+        activePuzzle.SetActive(true);
+        puzzleImageGuess.InitPuzzle(imageGuessPuzzles[index], rewardAction);
         ToggleInteraction();
         interactivePanelCloseButton.onClick.RemoveAllListeners();
         interactivePanelCloseButton.onClick.AddListener(ToggleInteraction);

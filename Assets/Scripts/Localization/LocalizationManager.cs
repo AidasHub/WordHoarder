@@ -43,6 +43,9 @@ public static class LocalizationManager
         public string PauseOptions;
         public string PauseQuit;
 
+        // Puzzle related Text
+        public string PuzzleImageGuessQuestion;
+
         // Miscellaneous Text
         public string MiscContinue;
         public string MiscBack;

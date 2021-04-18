@@ -12,6 +12,11 @@ public class PuzzleRotatingLock : MonoBehaviour
         public string word;
         public string descriptionEN;
         public string descriptionLT;
+
+        public static PuzzleInfo CreateFromJSON(string jsonString)
+        {
+            return JsonUtility.FromJson<PuzzleInfo>(jsonString);
+        }
     }
 
     [SerializeField]
@@ -38,7 +43,7 @@ public class PuzzleRotatingLock : MonoBehaviour
         var lockBackground = gameObject.transform.GetChild(0).GetComponent<RectTransform>();
         descriptionText = gameObject.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
 
-        puzzleInfo = JsonUtility.FromJson<PuzzleInfo>(puzzle.text);
+        puzzleInfo = PuzzleInfo.CreateFromJSON(puzzle.text);
         SetupLockPieces(canvas, puzzleInfo.word);
 
 
@@ -145,6 +150,7 @@ public class PuzzleRotatingLock : MonoBehaviour
             puzzleUnlockButton.colors = buttonColors;
             yield return new WaitForSeconds(seconds);
             rewardAction.Invoke();
+            puzzleUnlockButton.interactable = true;
             InteractiveManager.ToggleInteraction();
         }
     }

@@ -40,6 +40,7 @@ public class _SetupManager : MonoBehaviour
         assetsManager.transform.parent = transform.parent;
 
         LocalizationManager.Init();
+        SoundManager.Init();
 
         LevelManager.LoadSplashScreen();
     }

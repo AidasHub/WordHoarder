@@ -78,7 +78,7 @@ public class PuzzleWordFill : MonoBehaviour
 
     public void UpdatePuzzle(string word, int wordIndex)
     {
-        string replacement = "<color=green>" + word + "</color>";
+        string replacement = "<color=#006400>" + word + "</color>";
 
         tmpLeft.text = ReplaceWord(tmpLeft.text, wordIndex - 1, replacement);
         for(int i = 0; i < blankWords.Count; i++)

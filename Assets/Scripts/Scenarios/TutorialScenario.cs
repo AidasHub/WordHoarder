@@ -89,7 +89,6 @@ public class TutorialScenario : MonoBehaviour
                 doorClosed.SetActive(true);
                 break;
             case 6:
-                InventoryManager.ToggleInventory();
                 doorOpen.SetActive(true);
                 doorClosed.SetActive(false);
                 tutorialButtonStartGame.gameObject.SetActive(true);

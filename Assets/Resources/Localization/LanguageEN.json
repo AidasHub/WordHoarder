@@ -22,6 +22,8 @@
 	"GraphicsResolution": "Resolution",
 	"GraphicsFullScreen": "Full Screen",
 
+	"PuzzleImageGuessQuestion": "What is this?",
+
 	"MiscContinue": "Continue",
 	"MiscBack": "Back",
 	"MiscLaunch": "Start",
