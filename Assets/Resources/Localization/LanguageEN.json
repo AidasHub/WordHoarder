@@ -22,6 +22,7 @@
 	"GraphicsResolution": "Resolution",
 	"GraphicsFullScreen": "Full Screen",
 
+	"PuzzleTooltip":"Click to open a puzzle window",
 	"PuzzleImageGuessQuestion": "What is this?",
 
 	"MiscContinue": "Continue",
@@ -30,8 +31,18 @@
 	"MiscYes": "Yes",
 	"MiscNo": "No",
 	"MiscOK": "Ok",
+	"MiscUnlock":"Unlock",
+	
+	"WordsCollected":"words collected",
 
-	"EnvironmentToLivingRoom": "Click to open a puzzle window",
+	"EnvironmentToCorridor":"Back to the corridor",
+	"EnvironmentToKitchen": "To the kitchen",
+	"EnvironmentToKitchen2":"Further to the kitchen",
+	"EnvironmentToLivingRoom": "To the living room",
+	"EnvironmentToLivingRoom2":"Further to the living room",
+	"EnvironmentToLivingRoom3": "Even further to the living room",
+	"EnvironmentToBathroom":"To the bathroom",
+	"EnvironmentToBedroom": "To the bedroom",
 
 	"TutorialSteps": [
 		"Welcome to Word-Hoarder!",

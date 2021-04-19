@@ -24,7 +24,7 @@ public static class GameManager
 
     public static UnityEvent onWordCollected = new UnityEvent();
 
-    private static int totalWords = 12;
+    private static int totalWords = 0;
     public static int TotalWords
     {
         get

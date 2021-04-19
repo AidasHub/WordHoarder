@@ -1,6 +1,6 @@
 {
-  "imageName": "Vacuum Cleaner",
-  "optionA":"Washing Machine",
-  "optionB":"Vacuum Cleaner",
-  "optionC":"Dryer"
+  "imageName": "Spoon",
+  "optionA":"Fork",
+  "optionB":"Spoon",
+  "optionC":"Knife"
 }

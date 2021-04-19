@@ -1,16 +1,16 @@
 {
   "textEN":
-  "I sit on a _. If I want to see myself I look in the _",
+  "This room has a _ for sitting on. It also has a _, so you could see yourself",
   "missingWordsEN":
   [
     "pouf",
     "mirror"
   ],
   "textOther":
-  "Aš sėdžiu ant _. Jeigu noriu pamatyti save, žiūriu į _",
+  "Šis kambarys sėdėjimui turi _. Jis taip pat turi _, kad galėtum pamatyti save",
   "missingWordsOther":
   [
-    "pufo",
+    "pufą",
     "veidrodį"
   ]
 }

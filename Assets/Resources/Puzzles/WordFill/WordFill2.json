@@ -1,18 +1,16 @@
 {
   "textEN":
-  "At home I have a _ - a tiny _. I keep it placed it next to the _ so that it gets plenty of sunlight",
+  "My living room could use some more furniture... Perhaps I should get an extra shelf or a _ to store my _ in",
   "missingWordsEN":
   [
-    "plant",
-    "cactus",
-	"window"
+    "cupboard",
+    "books"
   ],
   "textOther":
-  "Namie turiu _ - mažytį _. Aš jį laikau padėtą šalia _, kad jis gautų pakankamai saulės šviesos",
+  "Mano svetainei nepakenktų daugiau baldų. Galbūt man reikėtų įsigyti dar vieną lentyną arba _, kurioje galėčiau laikyti savo _",
   "missingWordsOther":
   [
-    "augalą",
-    "kaktusą",
-	"lango"
+    "spintą",
+    "knygas"
   ]
 }

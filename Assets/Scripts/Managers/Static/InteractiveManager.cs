@@ -115,6 +115,7 @@ public static class InteractiveManager
         puzzleRotatingLock.InitPuzzle(rotatingLockPuzzles[index], rewardAction);
         ToggleInteraction();
         interactivePanelCloseButton.onClick.RemoveAllListeners();
+        interactivePanelCloseButton.onClick.AddListener(puzzleRotatingLock.Close);
         interactivePanelCloseButton.onClick.AddListener(ToggleInteraction);
     }
 

@@ -152,6 +152,7 @@ public class PuzzleRotatingLock : MonoBehaviour
             rewardAction.Invoke();
             puzzleUnlockButton.interactable = true;
             InteractiveManager.ToggleInteraction();
+            Close();
         }
     }
 
@@ -161,10 +162,20 @@ public class PuzzleRotatingLock : MonoBehaviour
             descriptionText.text = puzzleInfo.descriptionEN;
         if (LocalizationManager.CurrentlyActiveLanguage == LocalizationManager.ActiveLanguage.LT)
             descriptionText.text = puzzleInfo.descriptionLT;
+        puzzleUnlockButton.GetComponentInChildren<TextMeshProUGUI>().text = LocalizationManager.GetActiveLanguage().MiscUnlock;
     }
 
     private void OnDisable()
     {
         LocalizationManager.onLanguageChanged -= UpdateLocalization;
+    }
+
+    public void Close()
+    {
+        for(int i = 0; i < lockPieces.Length; i++)
+        {
+            puzzleUnlockButton.onClick.RemoveAllListeners();
+            Destroy(lockPieces[i].gameObject);
+        }
     }
 }

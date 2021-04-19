@@ -16,6 +16,7 @@
 	"GraphicsResolution": "Ekrano raiška",
 	"GraphicsFullScreen": "Pilno ekrano režimas",
 
+	"PuzzleTooltip":"Spustelkite, kad atidaryti galvosūkio langą",
 	"PuzzleImageGuessQuestion": "Kas tai?",
 
 	"PauseLabel": "Žaidimas sustabdytas",
@@ -30,8 +31,18 @@
 	"MiscYes": "Taip",
 	"MiscNo": "Ne",
 	"MiscOK": "Gerai",
+	"MiscUnlock":"Atrakinti",
+	
+	"WordsCollected":"surinktų žodžių",
 
-	"EnvironmentToLivingRoom": "Spustelkite, kad atidaryti galvosūkio langą",
+	"EnvironmentToCorridor":"Atgal į koridorių",
+	"EnvironmentToKitchen": "Į virtuvę",
+	"EnvironmentToKitchen2":"Toliau į virtuvę",
+	"EnvironmentToLivingRoom": "Į svetainę",
+	"EnvironmentToLivingRoom2":"Toliau į svetainę",
+	"EnvironmentToLivingRoom3": "Dar toliau į svetainę",
+	"EnvironmentToBathroom":"Į vonią",
+	"EnvironmentToBedroom": "Į miegamąjį",
 
 	"TutorialSteps": [
 		"Sveiki, atvykę į Word-Hoarder!",

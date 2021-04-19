@@ -1,0 +1,24 @@
+{
+  "textEN":
+  "Electronic devices are wonderful! I can bake sweets in my _, make smoothies in my _, make toast in my _, browse the internet on my _ and watch movies on my _. All these devices are plugged into an _.",
+  "missingWordsEN":
+  [
+    "oven",
+    "blender",
+    "toaster",
+    "laptop",
+    "TV",
+    "electrical socket"
+  ],
+  "textOther":
+  "Elektriniai įrenginiai  yra nuostabūs! Aš galiu kepti saldumynus _, gaminti glotnučius _, skrudinti batoną _ naršyti internete _ ir žiūrėti filmus per _. Visi šie įrenginiai įjungiami į _",
+  "missingWordsOther":
+  [
+    "orkaitėje",
+    "trintuve",
+    "skrudintuve",
+    "nešiojamuoju kompiuteriu",
+    "televizorių",
+    "rozetę"
+  ]
+}

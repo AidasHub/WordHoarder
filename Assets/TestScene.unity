@@ -521,6 +521,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2128761128}
     m_Modifications:
+    - target: {fileID: 752521861188036644, guid: 2272fb74e4efa6047a54b4135f48c0b0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 752521861188036816, guid: 2272fb74e4efa6047a54b4135f48c0b0, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -605,16 +609,91 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 752521861188036825, guid: 2272fb74e4efa6047a54b4135f48c0b0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 752521861188036827, guid: 2272fb74e4efa6047a54b4135f48c0b0, type: 3}
+      propertyPath: puzzleIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 752521861188036919, guid: 2272fb74e4efa6047a54b4135f48c0b0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 752521861188036920, guid: 2272fb74e4efa6047a54b4135f48c0b0, type: 3}
       propertyPath: m_Name
       value: GamePanel
       objectReference: {fileID: 0}
-    - target: {fileID: 6523780605461446897, guid: 2272fb74e4efa6047a54b4135f48c0b0, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 752521861363293794, guid: 2272fb74e4efa6047a54b4135f48c0b0, type: 3}
+      propertyPath: puzzleType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 752521861363293794, guid: 2272fb74e4efa6047a54b4135f48c0b0, type: 3}
+      propertyPath: destination
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 822347933004094023, guid: 2272fb74e4efa6047a54b4135f48c0b0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712926792963785296, guid: 2272fb74e4efa6047a54b4135f48c0b0, type: 3}
+      propertyPath: puzzleType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2104841012047399126, guid: 2272fb74e4efa6047a54b4135f48c0b0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2242123266171361652, guid: 2272fb74e4efa6047a54b4135f48c0b0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3755429407361358842, guid: 2272fb74e4efa6047a54b4135f48c0b0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5147950386336803580, guid: 2272fb74e4efa6047a54b4135f48c0b0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6136698655910298892, guid: 2272fb74e4efa6047a54b4135f48c0b0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2272fb74e4efa6047a54b4135f48c0b0, type: 3}
+--- !u!1 &752521861645010888 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 752521861188036917, guid: 2272fb74e4efa6047a54b4135f48c0b0, type: 3}
+  m_PrefabInstance: {fileID: 752521861645010887}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &752521861645010889
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752521861645010888}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.3889122, y: -0.925951}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 63.037827, y: 104.70505}
+  m_EdgeRadius: 0
 --- !u!1001 &8188388692235690729
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -44,6 +44,7 @@ public static class LocalizationManager
         public string PauseQuit;
 
         // Puzzle related Text
+        public string PuzzleTooltip;
         public string PuzzleImageGuessQuestion;
 
         // Miscellaneous Text
@@ -53,9 +54,19 @@ public static class LocalizationManager
         public string MiscYes;
         public string MiscNo;
         public string MiscOK;
+        public string MiscUnlock;
+
+        public string WordsCollected;
 
         // Environment Destination Texts
+        public string EnvironmentToCorridor;
+        public string EnvironmentToKitchen;
+        public string EnvironmentToKitchen2;
         public string EnvironmentToLivingRoom;
+        public string EnvironmentToLivingRoom2;
+        public string EnvironmentToLivingRoom3;
+        public string EnvironmentToBathroom;
+        public string EnvironmentToBedroom;
 
         public string[] TutorialSteps;
 

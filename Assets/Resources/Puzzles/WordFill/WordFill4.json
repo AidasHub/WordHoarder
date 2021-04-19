@@ -1,0 +1,18 @@
+{
+  "textEN":
+  "Winter nights can be so cozy - a _ in your hands, some tea in a cup on the _ and a warm _. What could be better?",
+  "missingWordsEN":
+  [
+    "magazine",
+    "table",
+	  "fireplace"
+  ],
+  "textOther":
+  "Žiemos naktys gali būti tokios jaukios - _ rankose, arbata puodelyje ant _ ir šiltas _. Kas galėtų būti geriau?",
+  "missingWordsOther":
+  [
+    "žurnalas",
+    "stalo",
+	  "židinys"
+  ]
+}

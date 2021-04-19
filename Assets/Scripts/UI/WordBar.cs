@@ -10,6 +10,7 @@ public class WordBar : MonoBehaviour
     private Slider slider;
     [SerializeField]
     private TextMeshProUGUI sliderText;
+    private float collectionPercentage;
 
     private static WordBar instance;
 
@@ -31,12 +32,15 @@ public class WordBar : MonoBehaviour
         GameManager.onWordCollected.AddListener(UpdateWordsCollected);
         slider.maxValue = GameManager.TotalWords;
         UpdateWordsCollected();
+        LocalizationManager.onLanguageChanged += UpdateWordsCollected;
     }
 
     public void UpdateWordsCollected()
     {
         slider.value = GameManager.CollectedWords;
-        sliderText.text = GameManager.CollectedWords + "/" + GameManager.TotalWords + " words collected";
+        //sliderText.text = GameManager.CollectedWords + "/" + GameManager.TotalWords + " words collected";
+        collectionPercentage = (100 * (float)GameManager.CollectedWords / GameManager.TotalWords);
+        sliderText.text = string.Format("{0:0.0}% {1}", collectionPercentage, LocalizationManager.GetActiveLanguage().WordsCollected);
     }
 
     public static void ShowWordBar()
