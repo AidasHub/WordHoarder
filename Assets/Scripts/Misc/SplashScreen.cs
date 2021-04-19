@@ -1,21 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using WordHoarder.Managers.Static.Generic;
 
-public class SplashScreen : MonoBehaviour
+namespace WordHoarder.Misc
 {
-    [SerializeField]
-    public float displayForSeconds = 3f;
-
-    // Start is called before the first frame update
-    void Start()
+    public class SplashScreen : MonoBehaviour
     {
-        StartCoroutine(DisplaySplashScreen());
-    }
+        [SerializeField]
+        public float displayForSeconds = 3f;
 
-    IEnumerator DisplaySplashScreen()
-    {
-        yield return new WaitForSeconds(displayForSeconds);
-        LevelManager.LoadMainMenu();
+        // Start is called before the first frame update
+        void Start()
+        {
+            StartCoroutine(DisplaySplashScreen());
+        }
+
+        IEnumerator DisplaySplashScreen()
+        {
+            yield return new WaitForSeconds(displayForSeconds);
+            LevelManager.LoadMainMenu();
+        }
     }
 }

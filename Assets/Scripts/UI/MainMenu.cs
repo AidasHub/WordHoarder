@@ -3,166 +3,174 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using WordHoarder.Managers.Instanced;
+using WordHoarder.Managers.Static.Generic;
+using WordHoarder.Managers.Static.Localization;
+using static WordHoarder.Managers.Static.Generic.SaveManager;
 
-public class MainMenu : MonoBehaviour
+namespace WordHoarder.UI
 {
-    [SerializeField]
-    private Animator titleAnimator;
-    [SerializeField]
-    private AnimationClip loadingFadeClip;
-    [SerializeField]
-    private TextMeshProUGUI titleTMP;
-    [SerializeField]
-    private GameObject buttonPanel;
-    [SerializeField]
-    private MainMenuLocalization mainMenuLocalizationHelper;
 
-    [SerializeField]
-    private List<Button> loadSlotButtons;
-
-
-    [Header("Option Components")]
-    [SerializeField]
-    private Dropdown resolutionsDropdown;
-    [SerializeField]
-    private Toggle fullScreenToggle;
-
-
-    private string sourceTitleHalf = "WORD-";
-    private SaveData[] savesData;
-
-    private void Awake()
+    public class MainMenu : MonoBehaviour
     {
-        Init();
-    }
+        [SerializeField]
+        private Animator titleAnimator;
+        [SerializeField]
+        private AnimationClip loadingFadeClip;
+        [SerializeField]
+        private TextMeshProUGUI titleTMP;
+        [SerializeField]
+        private GameObject buttonPanel;
+        [SerializeField]
+        private MainMenuLocalization mainMenuLocalizationHelper;
+
+        [SerializeField]
+        private List<Button> loadSlotButtons;
 
 
-    public void Init()
-    {
-        StartCoroutine(DisplayTitle());
-    }
+        [Header("Option Components")]
+        [SerializeField]
+        private Dropdown resolutionsDropdown;
+        [SerializeField]
+        private Toggle fullScreenToggle;
 
-    private IEnumerator DisplayTitle()
-    {
-        yield return new WaitForSeconds(1f);
 
-        for(int i = 0; i < sourceTitleHalf.Length; i++)
+        private string sourceTitleHalf = "WORD-";
+        private SaveData[] savesData;
+
+        private void Awake()
         {
-            titleTMP.text = titleTMP.text + sourceTitleHalf[i];
-            yield return new WaitForSeconds(0.3f);
+            Init();
         }
 
-        titleAnimator.SetTrigger("DisplayTitleSecondHalf");
 
-    }
-
-    public void EnableButtonInteraction()
-    {
-        var buttons = buttonPanel.GetComponentsInChildren<Button>();
-        for(int i = 0; i < buttons.Length; i++)
+        public void Init()
         {
-            buttons[i].interactable = true;
+            StartCoroutine(DisplayTitle());
         }
-    }
 
-    public void StartGame()
-    {
-        AnimationEvent animEvent = new AnimationEvent();
-        animEvent.time = loadingFadeClip.length - 0.01f;
-        animEvent.functionName = "StartGameProcess";
-        loadingFadeClip.AddEvent(animEvent);
-        titleAnimator.SetBool("DisplayLoadingScreen", true);
-    }
-
-    private void StartGameProcess()
-    {
-        _SetupManager.getInstance().InitGame();
-        LevelManager.LoadTutorial();
-    }
-
-
-    public void InitializeLoadMenu()
-    {
-        savesData = SaveManager.GetSavedGames();
-        string[] slotInfo = new string[savesData.Length];
-        for(int i = 0; i < savesData.Length; i++)
+        private IEnumerator DisplayTitle()
         {
-            if(savesData[i] != null)
+            yield return new WaitForSeconds(1f);
+
+            for (int i = 0; i < sourceTitleHalf.Length; i++)
             {
-                slotInfo[i] = savesData[i].CollectedWords + "/" + savesData[i].TotalWords;
-                loadSlotButtons[i].interactable = true;
+                titleTMP.text = titleTMP.text + sourceTitleHalf[i];
+                yield return new WaitForSeconds(0.3f);
             }
-            else
+
+            titleAnimator.SetTrigger("DisplayTitleSecondHalf");
+
+        }
+
+        public void EnableButtonInteraction()
+        {
+            var buttons = buttonPanel.GetComponentsInChildren<Button>();
+            for (int i = 0; i < buttons.Length; i++)
             {
-                slotInfo[i] = null;
+                buttons[i].interactable = true;
             }
         }
-        mainMenuLocalizationHelper.UpdateLanguageForLoadSlots(slotInfo);
-    }
 
-    public void LoadGame(int index)
-    {
-        AnimationEvent animEvent = new AnimationEvent();
-        animEvent.time = loadingFadeClip.length - 0.01f;
-        animEvent.intParameter = index;
-        animEvent.functionName = "LoadGameProcess";
-        loadingFadeClip.AddEvent(animEvent);
-        titleAnimator.SetBool("DisplayLoadingScreen", true);
-    }
-
-    private void LoadGameProcess(int index)
-    {
-        _SetupManager.getInstance().InitGame();
-        LevelManager.LoadExistingGame(savesData[index]);
-    }
-
-    public void InitializeGraphicsMenu()
-    {
-        Resolution[] resolutions = SettingsManager.GetResolutions();
-        resolutionsDropdown.ClearOptions();
-        List<string> options = new List<string>();
-        int currentResolutionIndex = 0;
-        for(int i = 0; i < resolutions.Length; i++)
+        public void StartGame()
         {
-            string option = resolutions[i].width + "x" + resolutions[i].height;
-            options.Add(option);
-            if(SettingsManager.GetFullScreenMode())
-            {
-                if (Screen.currentResolution.width == resolutions[i].width && Screen.currentResolution.height == resolutions[i].height)
-                    currentResolutionIndex = i;
-            }
-            else
-            {
-                if (Screen.width == resolutions[i].width && Screen.height == resolutions[i].height)
-                    currentResolutionIndex = i;                    
-            }
+            AnimationEvent animEvent = new AnimationEvent();
+            animEvent.time = loadingFadeClip.length - 0.01f;
+            animEvent.functionName = "StartGameProcess";
+            loadingFadeClip.AddEvent(animEvent);
+            titleAnimator.SetBool("DisplayLoadingScreen", true);
         }
-        resolutionsDropdown.AddOptions(options);
-        resolutionsDropdown.value = currentResolutionIndex;
-        resolutionsDropdown.RefreshShownValue();
 
-        bool isFullScreen = SettingsManager.GetFullScreenMode();
-        fullScreenToggle.isOn = isFullScreen;
-    }
+        private void StartGameProcess()
+        {
+            _SetupManager.getInstance().InitGame();
+            LevelManager.LoadTutorial();
+        }
 
-    public void SetResolution()
-    {
-        string[] resolutionString = resolutionsDropdown.options[resolutionsDropdown.value].text.Split('x');
-        int width = int.Parse(resolutionString[0]);
-        int height = int.Parse(resolutionString[1]);
-        SettingsManager.SetResolution(width, height);
-    }
 
-    public void SetFullScreenMode(bool isFullScreen)
-    {
-        SettingsManager.SetFullScreenMode(isFullScreen);
-    }
+        public void InitializeLoadMenu()
+        {
+            savesData = SaveManager.GetSavedGames();
+            string[] slotInfo = new string[savesData.Length];
+            for (int i = 0; i < savesData.Length; i++)
+            {
+                if (savesData[i] != null)
+                {
+                    slotInfo[i] = savesData[i].CollectedWords + "/" + savesData[i].TotalWords;
+                    loadSlotButtons[i].interactable = true;
+                }
+                else
+                {
+                    slotInfo[i] = null;
+                }
+            }
+            mainMenuLocalizationHelper.UpdateLanguageForLoadSlots(slotInfo);
+        }
 
-    public void QuitGame()
-    {
+        public void LoadGame(int index)
+        {
+            AnimationEvent animEvent = new AnimationEvent();
+            animEvent.time = loadingFadeClip.length - 0.01f;
+            animEvent.intParameter = index;
+            animEvent.functionName = "LoadGameProcess";
+            loadingFadeClip.AddEvent(animEvent);
+            titleAnimator.SetBool("DisplayLoadingScreen", true);
+        }
+
+        private void LoadGameProcess(int index)
+        {
+            _SetupManager.getInstance().InitGame();
+            LevelManager.LoadExistingGame(savesData[index]);
+        }
+
+        public void InitializeGraphicsMenu()
+        {
+            Resolution[] resolutions = SettingsManager.GetResolutions();
+            resolutionsDropdown.ClearOptions();
+            List<string> options = new List<string>();
+            int currentResolutionIndex = 0;
+            for (int i = 0; i < resolutions.Length; i++)
+            {
+                string option = resolutions[i].width + "x" + resolutions[i].height;
+                options.Add(option);
+                if (SettingsManager.GetFullScreenMode())
+                {
+                    if (Screen.currentResolution.width == resolutions[i].width && Screen.currentResolution.height == resolutions[i].height)
+                        currentResolutionIndex = i;
+                }
+                else
+                {
+                    if (Screen.width == resolutions[i].width && Screen.height == resolutions[i].height)
+                        currentResolutionIndex = i;
+                }
+            }
+            resolutionsDropdown.AddOptions(options);
+            resolutionsDropdown.value = currentResolutionIndex;
+            resolutionsDropdown.RefreshShownValue();
+
+            bool isFullScreen = SettingsManager.GetFullScreenMode();
+            fullScreenToggle.isOn = isFullScreen;
+        }
+
+        public void SetResolution()
+        {
+            string[] resolutionString = resolutionsDropdown.options[resolutionsDropdown.value].text.Split('x');
+            int width = int.Parse(resolutionString[0]);
+            int height = int.Parse(resolutionString[1]);
+            SettingsManager.SetResolution(width, height);
+        }
+
+        public void SetFullScreenMode(bool isFullScreen)
+        {
+            SettingsManager.SetFullScreenMode(isFullScreen);
+        }
+
+        public void QuitGame()
+        {
 #if UNITY_EDITOR
-        UnityEditor.EditorApplication.ExitPlaymode();
+            UnityEditor.EditorApplication.ExitPlaymode();
 #endif
-        Application.Quit();
+            Application.Quit();
+        }
     }
 }

@@ -3,53 +3,58 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using WordHoarder.Managers.Static.Generic;
+using WordHoarder.Managers.Static.Localization;
 
-public class WordBar : MonoBehaviour
+namespace WordHoarder.UI
 {
-    [SerializeField]
-    private Slider slider;
-    [SerializeField]
-    private TextMeshProUGUI sliderText;
-    private float collectionPercentage;
-
-    private static WordBar instance;
-
-    private void Awake()
+    public class WordBar : MonoBehaviour
     {
-        if (instance == null)
+        [SerializeField]
+        private Slider slider;
+        [SerializeField]
+        private TextMeshProUGUI sliderText;
+        private float collectionPercentage;
+
+        private static WordBar instance;
+
+        private void Awake()
         {
-            instance = this;
-            Init();
+            if (instance == null)
+            {
+                instance = this;
+                Init();
+            }
+            else if (instance != this)
+            {
+                Destroy(this.gameObject);
+            }
         }
-        else if (instance != this)
+
+        public void Init()
         {
-            Destroy(this.gameObject);
+            GameManager.onWordCollected.AddListener(UpdateWordsCollected);
+            slider.maxValue = GameManager.TotalWords;
+            UpdateWordsCollected();
+            LocalizationManager.onLanguageChanged += UpdateWordsCollected;
         }
-    }
 
-    public void Init()
-    { 
-        GameManager.onWordCollected.AddListener(UpdateWordsCollected);
-        slider.maxValue = GameManager.TotalWords;
-        UpdateWordsCollected();
-        LocalizationManager.onLanguageChanged += UpdateWordsCollected;
-    }
+        public void UpdateWordsCollected()
+        {
+            slider.value = GameManager.CollectedWords;
+            //sliderText.text = GameManager.CollectedWords + "/" + GameManager.TotalWords + " words collected";
+            collectionPercentage = (100 * (float)GameManager.CollectedWords / GameManager.TotalWords);
+            sliderText.text = string.Format("{0:0.0}% {1}", collectionPercentage, LocalizationManager.GetActiveLanguage().WordsCollected);
+        }
 
-    public void UpdateWordsCollected()
-    {
-        slider.value = GameManager.CollectedWords;
-        //sliderText.text = GameManager.CollectedWords + "/" + GameManager.TotalWords + " words collected";
-        collectionPercentage = (100 * (float)GameManager.CollectedWords / GameManager.TotalWords);
-        sliderText.text = string.Format("{0:0.0}% {1}", collectionPercentage, LocalizationManager.GetActiveLanguage().WordsCollected);
-    }
+        public static void ShowWordBar()
+        {
+            instance.gameObject.SetActive(true);
+        }
 
-    public static void ShowWordBar()
-    {
-        instance.gameObject.SetActive(true);
-    }
-
-    public static void HideWordBar()
-    {
-        instance.gameObject.SetActive(false);
+        public static void HideWordBar()
+        {
+            instance.gameObject.SetActive(false);
+        }
     }
 }
