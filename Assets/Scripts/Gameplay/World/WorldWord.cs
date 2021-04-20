@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using WordHoarder.Managers.Static.Generic;
+using WordHoarder.Managers.Static.Gameplay;
 using WordHoarder.Managers.Static.UI;
 
 namespace WordHoarder.Gameplay.World
@@ -32,7 +32,7 @@ namespace WordHoarder.Gameplay.World
 
         void OnMouseOver()
         {
-            if (enabled && !InteractiveManager.InteractivePanelOpen && !GameManager.GamePaused)
+            if (enabled && !InteractiveManager.InteractivePanelOpen && !InventoryManager.IsOpen && !GameManager.GamePaused)
                 DrawObjectOutline();
         }
 
@@ -44,7 +44,7 @@ namespace WordHoarder.Gameplay.World
 
         private void OnMouseDown()
         {
-            if (enabled && !InteractiveManager.InteractivePanelOpen && !GameManager.GamePaused)
+            if (enabled && !InventoryManager.IsOpen && !InteractiveManager.InteractivePanelOpen && !GameManager.GamePaused)
             {
                 wordCollider.enabled = false;
                 EraseObjectOutline();
@@ -137,7 +137,7 @@ namespace WordHoarder.Gameplay.World
             float debugSeconds = Time.realtimeSinceStartup;
             var increaseSizeSeconds = seconds * 4 / 5;
             var reduceSizeSeconds = seconds / 5;
-            float sizeStep = 72 / seconds;
+            float sizeStep = (float)72 / seconds;
 
             float currentTime = 0f;
             while (currentTime < increaseSizeSeconds)

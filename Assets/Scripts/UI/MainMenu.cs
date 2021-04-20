@@ -4,9 +4,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using WordHoarder.Managers.Instanced;
-using WordHoarder.Managers.Static.Generic;
-using WordHoarder.Managers.Static.Localization;
-using static WordHoarder.Managers.Static.Generic.SaveManager;
+using WordHoarder.Utility;
+using static WordHoarder.Utility.SaveManager;
 
 namespace WordHoarder.UI
 {
@@ -22,7 +21,7 @@ namespace WordHoarder.UI
         [SerializeField]
         private GameObject buttonPanel;
         [SerializeField]
-        private MainMenuLocalization mainMenuLocalizationHelper;
+        private MainMenuLocalizationHelper mainMenuLocalizationHelper;
 
         [SerializeField]
         private List<Button> loadSlotButtons;

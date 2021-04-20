@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
 using UnityEngine.UI;
-using WordHoarder.Managers.Static.Generic;
+using WordHoarder.Managers.Static.Gameplay;
 using WordHoarder.Managers.Instanced;
-using WordHoarder.UI;
+using WordHoarder.Gameplay.Puzzles;
 
 namespace WordHoarder.Managers.Static.UI
 {

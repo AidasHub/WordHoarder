@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using WordHoarder.Managers.Static.Generic;
 
-namespace WordHoarder.Misc
+namespace WordHoarder.Utility
 {
     public class SplashScreen : MonoBehaviour
     {

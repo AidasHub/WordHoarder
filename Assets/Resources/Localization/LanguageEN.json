@@ -22,7 +22,8 @@
 	"GraphicsResolution": "Resolution",
 	"GraphicsFullScreen": "Full Screen",
 
-	"PuzzleTooltip":"Click to open a puzzle window",
+	"PuzzleTooltip": "Click to open a puzzle window",
+	"ReverseWordTooltip": "Do you know what is hiding behind the box? Drag a word here if you do!",
 	"PuzzleImageGuessQuestion": "What is this?",
 
 	"MiscContinue": "Continue",

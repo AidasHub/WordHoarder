@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace WordHoarder.Managers.Static.Generic
+namespace WordHoarder.Utility
 {
     public static class SettingsManager
     {

@@ -4,8 +4,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using WordHoarder.Localization;
 using WordHoarder.Managers.Instanced;
-using WordHoarder.Managers.Static.Localization;
 using WordHoarder.Managers.Static.UI;
 
 namespace WordHoarder.Gameplay.Puzzles

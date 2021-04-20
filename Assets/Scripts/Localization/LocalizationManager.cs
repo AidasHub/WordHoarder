@@ -5,7 +5,7 @@ using System.IO;
 using System;
 using WordHoarder.Managers.Instanced;
 
-namespace WordHoarder.Managers.Static.Localization
+namespace WordHoarder.Localization
 {
 
     public static class LocalizationManager
@@ -49,6 +49,7 @@ namespace WordHoarder.Managers.Static.Localization
 
             // Puzzle related Text
             public string PuzzleTooltip;
+            public string ReverseWordTooltip;
             public string PuzzleImageGuessQuestion;
 
             // Miscellaneous Text

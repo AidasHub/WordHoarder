@@ -16,7 +16,8 @@
 	"GraphicsResolution": "Ekrano raiška",
 	"GraphicsFullScreen": "Pilno ekrano režimas",
 
-	"PuzzleTooltip":"Spustelkite, kad atidaryti galvosūkio langą",
+	"PuzzleTooltip": "Spustelkite, kad atidaryti galvosūkio langą",
+	"ReverseWordTooltip": "Ar žinai, kas čia slepiasi? Jeigu taip - nutrauk čia žodį!",
 	"PuzzleImageGuessQuestion": "Kas tai?",
 
 	"PauseLabel": "Žaidimas sustabdytas",
@@ -31,17 +32,17 @@
 	"MiscYes": "Taip",
 	"MiscNo": "Ne",
 	"MiscOK": "Gerai",
-	"MiscUnlock":"Atrakinti",
-	
-	"WordsCollected":"surinktų žodžių",
+	"MiscUnlock": "Atrakinti",
 
-	"EnvironmentToCorridor":"Atgal į koridorių",
+	"WordsCollected": "surinktų žodžių",
+
+	"EnvironmentToCorridor": "Atgal į koridorių",
 	"EnvironmentToKitchen": "Į virtuvę",
-	"EnvironmentToKitchen2":"Toliau į virtuvę",
+	"EnvironmentToKitchen2": "Toliau į virtuvę",
 	"EnvironmentToLivingRoom": "Į svetainę",
-	"EnvironmentToLivingRoom2":"Toliau į svetainę",
+	"EnvironmentToLivingRoom2": "Toliau į svetainę",
 	"EnvironmentToLivingRoom3": "Dar toliau į svetainę",
-	"EnvironmentToBathroom":"Į vonią",
+	"EnvironmentToBathroom": "Į vonią",
 	"EnvironmentToBedroom": "Į miegamąjį",
 
 	"TutorialSteps": [

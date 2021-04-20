@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using WordHoarder.Managers.Static.Localization;
 using WordHoarder.Managers.Static.UI;
-using WordHoarder.Managers.Static.Generic;
+using WordHoarder.Managers.Static.Gameplay;
 using WordHoarder.Gameplay.World;
+using WordHoarder.Utility;
+using WordHoarder.Localization;
 
-namespace WordHoarder.GameScenarios
+namespace WordHoarder.Gameplay.GameScenarios
 {
     public class TutorialScenario : MonoBehaviour
     {

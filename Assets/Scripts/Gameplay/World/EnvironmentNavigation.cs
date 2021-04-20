@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using WordHoarder.GameScenarios;
-using WordHoarder.Managers.Static.Generic;
-using WordHoarder.Managers.Static.Localization;
+using WordHoarder.Gameplay.GameScenarios;
+using WordHoarder.Localization;
+using WordHoarder.Managers.Static.Gameplay;
 using WordHoarder.Managers.Static.UI;
 
 namespace WordHoarder.Gameplay.World
@@ -76,12 +76,6 @@ namespace WordHoarder.Gameplay.World
                 lockedButton.onClick.AddListener(() => gameScenario.LoadImageGuessPuzzle(puzzleIndex, UnlockEnvironment));
 
             unlockedButton.onClick.AddListener(() => gameScenario.SwitchEnvironment((int)destination));
-        }
-
-        private void OnDisable()
-        {
-            //lockedButton.onClick.RemoveAllListeners();
-            //unlockedButton.onClick.RemoveAllListeners();
         }
 
         public void UnlockEnvironment()

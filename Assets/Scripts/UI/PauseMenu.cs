@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using WordHoarder.GameScenarios;
-using WordHoarder.Managers.Static.Generic;
-using WordHoarder.Managers.Static.Localization;
+using WordHoarder.Gameplay.GameScenarios;
+using WordHoarder.Managers.Static.Gameplay;
 using WordHoarder.Managers.Static.UI;
-using static WordHoarder.Managers.Static.Generic.SaveManager;
+using WordHoarder.Utility;
+using static WordHoarder.Utility.SaveManager;
 
 namespace WordHoarder.UI
 {
@@ -18,7 +18,7 @@ namespace WordHoarder.UI
         [SerializeField]
         private GameObject background;
         [SerializeField]
-        private PauseMenuLocalization pauseMenuLocalizationHelper;
+        private PauseMenuLocalizationHelper pauseMenuLocalizationHelper;
         private bool menuOpen = false;
 
         [Header("Save Menu")]

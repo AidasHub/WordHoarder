@@ -4,12 +4,13 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System;
-using WordHoarder.GameScenarios;
+using WordHoarder.Gameplay.GameScenarios;
 using WordHoarder.Managers.Static.UI;
 using WordHoarder.Gameplay.World;
-using WordHoarder.UI;
+using WordHoarder.Managers.Static.Gameplay;
+using WordHoarder.Gameplay.Puzzles;
 
-namespace WordHoarder.Managers.Static.Generic
+namespace WordHoarder.Utility
 {
     public static class SaveManager
     {

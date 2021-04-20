@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using WordHoarder.Gameplay;
 using WordHoarder.Gameplay.World;
-using WordHoarder.Managers.Static.Generic;
+using WordHoarder.Managers.Static.Gameplay;
 using WordHoarder.Managers.Static.UI;
 
-namespace WordHoarder.GameScenarios
+namespace WordHoarder.Gameplay.GameScenarios
 {
     public class GameScenario : MonoBehaviour
     {

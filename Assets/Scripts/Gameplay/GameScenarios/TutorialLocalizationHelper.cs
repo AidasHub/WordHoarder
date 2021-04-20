@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using WordHoarder.GameScenarios;
+using WordHoarder.Localization;
 
-namespace WordHoarder.Managers.Static.Localization
+namespace WordHoarder.Gameplay.GameScenarios
 {
     public class TutorialLocalizationHelper : MonoBehaviour
     {

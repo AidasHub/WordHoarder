@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using WordHoarder.Managers.Instanced;
 using WordHoarder.Managers.Static.UI;
-using static WordHoarder.Managers.Static.Generic.SaveManager;
+using static WordHoarder.Utility.SaveManager;
 
-namespace WordHoarder.Managers.Static.Generic
+namespace WordHoarder.Utility
 {
 
     public static class LevelManager

@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using WordHoarder.Managers.Static.Generic;
+using WordHoarder.Managers.Static.Gameplay;
 
 namespace WordHoarder.Managers.Instanced
 {

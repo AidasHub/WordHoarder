@@ -5,8 +5,10 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using WordHoarder.Gameplay.Puzzles;
+using WordHoarder.Localization;
+using WordHoarder.Managers.Static.Gameplay;
 using WordHoarder.Managers.Static.UI;
-using WordHoarder.UI;
 
 namespace WordHoarder.Gameplay.World
 {
@@ -16,12 +18,28 @@ namespace WordHoarder.Gameplay.World
         private string expectedWord;
         [SerializeField]
         private UnityEvent actionEvent;
-        private Button button;
+        private Image image;
 
 
         private void Awake()
         {
-            button = GetComponent<Button>();
+            image = GetComponent<Image>();
+            BoxCollider2D collider = GetComponent<BoxCollider2D>();
+            if(collider != null)
+                collider.size = new Vector2(image.rectTransform.rect.width, image.rectTransform.rect.height);
+            if (actionEvent.GetPersistentEventCount() == 0)
+                actionEvent.AddListener(RevealWord);
+        }
+
+        private void OnMouseOver()
+        {
+            if(!InteractiveManager.InteractivePanelOpen && !InventoryManager.IsOpen && !GameManager.GamePaused)
+            TooltipManager.DrawTooltip(LocalizationManager.GetActiveLanguage().ReverseWordTooltip);
+        }
+
+        private void OnMouseExit()
+        {
+            TooltipManager.HideTooltip();
         }
 
         public void OnDrop(PointerEventData eventData)
@@ -31,12 +49,12 @@ namespace WordHoarder.Gameplay.World
                 var droppedGO = eventData.pointerDrag.gameObject;
                 var actualWord = droppedGO.GetComponent<TextMeshProUGUI>().text;
 
-                if (expectedWord == actualWord)
+                if (expectedWord.ToLower() == actualWord.ToLower())
                 {
                     InventoryManager.RemoveWord(expectedWord);
                     Destroy(droppedGO);
-                    //button.onClick.Invoke();
-                    actionEvent.Invoke();
+                    if (actionEvent != null)
+                        actionEvent.Invoke();
                 }
                 else
                 {
@@ -57,6 +75,30 @@ namespace WordHoarder.Gameplay.World
             image.color = Color.red;
             yield return new WaitForSeconds(1f);
             image.color = oldColor;
+        }
+
+        public void RevealWord()
+        {
+            StartCoroutine(RevealWordAnimation(1f));
+        }
+
+        private IEnumerator RevealWordAnimation(float seconds)
+        {
+            Color color = image.color;
+            float colorStep = 1f / seconds;
+            float timeStep = 0.01f;
+            while(image.color.a > 0)
+            {
+                color.a -= colorStep * timeStep;
+                image.color = color;
+                yield return new WaitForSeconds(timeStep);
+            }
+            gameObject.SetActive(false);
+        }
+
+        private void OnDisable()
+        {
+            TooltipManager.HideTooltip();
         }
     }
 }

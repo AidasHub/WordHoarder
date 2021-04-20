@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace WordHoarder.Managers.Static.Generic
+namespace WordHoarder.Managers.Static.Gameplay
 {
     public static class GameManager
     {

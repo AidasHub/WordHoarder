@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using WordHoarder.Localization;
+using WordHoarder.Utility;
 
-namespace WordHoarder.Managers.Static.Localization
+namespace WordHoarder.UI
 {
-    public class PauseMenuLocalization : MonoBehaviour
+    public class PauseMenuLocalizationHelper : MonoBehaviour
     {
         [Header("Main Menu Panel Text")]
         [SerializeField]

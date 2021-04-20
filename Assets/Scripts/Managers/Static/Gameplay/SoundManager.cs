@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using WordHoarder.Managers.Instanced;
 
-namespace WordHoarder.Managers.Static.Generic
+namespace WordHoarder.Managers.Static.Gameplay
 {
     public static class SoundManager
     {

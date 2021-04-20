@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using TMPro;
 using WordHoarder.Managers.Static.UI;
 
-namespace WordHoarder.UI
+namespace WordHoarder.Gameplay.Puzzles
 {
     [RequireComponent(typeof(TextMeshProUGUI))]
     public class InventoryWord : MonoBehaviour, IDragHandler, IEndDragHandler
