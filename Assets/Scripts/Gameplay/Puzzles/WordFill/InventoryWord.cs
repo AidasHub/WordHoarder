@@ -36,7 +36,8 @@ namespace WordHoarder.Gameplay.Puzzles
                 transform.SetParent(canvas.transform);
                 startingPosition = rect.position;
                 startDrag = false;
-                InventoryManager.ToggleInventory();
+                if(!InteractiveManager.InteractivePanelOpen)
+                    InventoryManager.ToggleInventory();
             }
             rect.anchoredPosition += eventData.delta / canvas.scaleFactor;
             canvasGroup.blocksRaycasts = false;

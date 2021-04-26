@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -19,10 +20,12 @@ namespace WordHoarder.Gameplay.World
         [SerializeField]
         private UnityEvent actionEvent;
         private Image image;
+        private bool isComplete;
 
 
         private void Awake()
         {
+            isComplete = false;
             image = GetComponent<Image>();
             BoxCollider2D collider = GetComponent<BoxCollider2D>();
             if(collider != null)
@@ -93,7 +96,21 @@ namespace WordHoarder.Gameplay.World
                 image.color = color;
                 yield return new WaitForSeconds(timeStep);
             }
+            isComplete = true;
             gameObject.SetActive(false);
+        }
+
+        public Tuple<string, bool> PrepareSaveData()
+        {
+            string interactableName = gameObject.name;
+            Tuple<string, bool> saveData = new Tuple<string, bool>(interactableName, isComplete);
+            return saveData;
+        }
+
+        public void LoadSaveData(bool isComplete)
+        {
+            if (isComplete)
+                gameObject.SetActive(false);
         }
 
         private void OnDisable()

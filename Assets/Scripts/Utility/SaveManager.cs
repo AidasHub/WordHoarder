@@ -20,15 +20,17 @@ namespace WordHoarder.Utility
             public int CurrentEnvironment;
             public List<Tuple<string, bool>> EnvironmentStatus;
             public List<Tuple<string, bool>> WorldWords;
+            public List<Tuple<string, bool>> ReverseWords;
             public List<string> InventoryWords;
             public int CollectedWords;
             public int TotalWords;
 
-            public SaveData(int ce, List<Tuple<string, bool>> es, List<Tuple<string, bool>> ww, List<string> iw, int cw, int tw)
+            public SaveData(int ce, List<Tuple<string, bool>> es, List<Tuple<string, bool>> ww, List<Tuple<string, bool>> rw, List<string> iw, int cw, int tw)
             {
                 CurrentEnvironment = ce;
                 EnvironmentStatus = es;
                 WorldWords = ww;
+                ReverseWords = rw;
                 InventoryWords = iw;
                 CollectedWords = cw;
                 TotalWords = tw;
@@ -74,6 +76,13 @@ namespace WordHoarder.Utility
                     saveWorldWords.Add(worldWords[i].PrepareSaveData());
                 }
 
+                List<Tuple<string, bool>> saveReverseWords = new List<Tuple<string, bool>>();
+                WorldInteractable[] reverseWords = gameScenarioGO.GetComponentsInChildren<WorldInteractable>(true);
+                for(int i = 0; i < reverseWords.Length; i++)
+                {
+                    saveReverseWords.Add(reverseWords[i].PrepareSaveData());
+                }
+
                 List<string> saveInventoryWords = new List<string>();
                 List<InventoryWord> inventoryWords = InventoryManager.GetWords();
                 for (int i = 0; i < inventoryWords.Count; i++)
@@ -84,7 +93,7 @@ namespace WordHoarder.Utility
                 int saveCollectedWords = GameManager.CollectedWords;
                 int totalWords = GameManager.TotalWords;
 
-                SaveData saveData = new SaveData(saveCurrentEnvironment, saveEnvironmentStatus, saveWorldWords, saveInventoryWords, saveCollectedWords, totalWords);
+                SaveData saveData = new SaveData(saveCurrentEnvironment, saveEnvironmentStatus, saveWorldWords, saveReverseWords, saveInventoryWords, saveCollectedWords, totalWords);
 
                 formatter.Serialize(fileStream, saveData);
                 Debug.Log("Game Data saved to " + path);

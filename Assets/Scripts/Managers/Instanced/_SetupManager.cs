@@ -28,6 +28,10 @@ namespace WordHoarder.Managers.Instanced
 
         private static _SetupManager instance;
 
+        public void Update()
+        {
+            Debug.Log("Inventory is open: " + InventoryManager.IsOpen);
+        }
         private void Awake()
         {
             if (instance == null)
@@ -90,6 +94,7 @@ namespace WordHoarder.Managers.Instanced
             gameScenario.GetComponent<GameScenario>().SwitchEnvironment(data.CurrentEnvironment);
             EnvironmentNavigation[] environmentStatus = gameScenario.GetComponentsInChildren<EnvironmentNavigation>(true);
             WorldWord[] worldWords = gameScenario.GetComponentsInChildren<WorldWord>(true);
+            WorldInteractable[] reverseWords = gameScenario.GetComponentsInChildren<WorldInteractable>(true);
 
             if (environmentStatus.Length != data.EnvironmentStatus.Count)
             {
@@ -99,6 +104,11 @@ namespace WordHoarder.Managers.Instanced
             if (worldWords.Length != data.WorldWords.Count)
             {
                 Debug.LogError("Error loading a save file - world words count does not match");
+                return;
+            }
+            if(reverseWords.Length != data.ReverseWords.Count)
+            {
+                Debug.LogError("Error loading a save file - world interactable count does not match");
                 return;
             }
 
@@ -121,6 +131,18 @@ namespace WordHoarder.Managers.Instanced
                     if (worldWords[i].gameObject.name == data.WorldWords[j].Item1)
                     {
                         worldWords[i].LoadSaveData(data.WorldWords[j].Item2);
+                        break;
+                    }
+                }
+            }
+
+            for(int i = 0; i < reverseWords.Length; i++)
+            {
+                for(int j = 0; j < data.ReverseWords.Count; j++)
+                {
+                    if(reverseWords[i].gameObject.name == data.ReverseWords[j].Item1)
+                    {
+                        reverseWords[i].LoadSaveData(data.ReverseWords[j].Item2);
                         break;
                     }
                 }

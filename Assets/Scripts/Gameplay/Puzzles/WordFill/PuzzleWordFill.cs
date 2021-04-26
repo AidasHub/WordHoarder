@@ -189,7 +189,8 @@ namespace WordHoarder.Gameplay.Puzzles
             for (int i = blanksOther.Count - 1; i >= 0; i--)
             {
                 textOther = textOther.Remove(blanksOther[i].Item1, 1);
-                textOther = textOther.Insert(blanksOther[i].Item1, puzzleInfo.missingWordsOther[i]);
+                string insertWord = "<color=#006400>" + puzzleInfo.missingWordsOther[i] + "</color>";
+                textOther = textOther.Insert(blanksOther[i].Item1, insertWord);
             }
 
             tmpRight.text = textOther;
