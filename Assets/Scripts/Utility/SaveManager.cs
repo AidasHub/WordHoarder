@@ -4,11 +4,11 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System;
-using WordHoarder.Gameplay.GameScenarios;
 using WordHoarder.Managers.Static.UI;
-using WordHoarder.Gameplay.World;
 using WordHoarder.Managers.Static.Gameplay;
-using WordHoarder.Gameplay.Puzzles;
+using WordHoarder.Gameplay.World;
+using WordHoarder.Gameplay.UI;
+using WordHoarder.Gameplay.GameScenarios;
 
 namespace WordHoarder.Utility
 {
@@ -63,7 +63,7 @@ namespace WordHoarder.Utility
 
 
                 List<Tuple<string, bool>> saveEnvironmentStatus = new List<Tuple<string, bool>>();
-                EnvironmentNavigation[] environmentStatus = gameScenarioGO.GetComponentsInChildren<EnvironmentNavigation>(true);
+                WorldNavigation[] environmentStatus = gameScenarioGO.GetComponentsInChildren<WorldNavigation>(true);
                 for (int i = 0; i < environmentStatus.Length; i++)
                 {
                     saveEnvironmentStatus.Add(environmentStatus[i].PrepareSaveData());
@@ -87,7 +87,7 @@ namespace WordHoarder.Utility
                 List<InventoryWord> inventoryWords = InventoryManager.GetWords();
                 for (int i = 0; i < inventoryWords.Count; i++)
                 {
-                    saveInventoryWords.Add(inventoryWords[i].getWordString());
+                    saveInventoryWords.Add(inventoryWords[i].GetWordString());
                 }
 
                 int saveCollectedWords = GameManager.CollectedWords;

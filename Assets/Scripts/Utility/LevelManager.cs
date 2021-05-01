@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using WordHoarder.Managers.Instanced;
 using WordHoarder.Managers.Static.UI;
+using WordHoarder.Setup;
 using static WordHoarder.Utility.SaveManager;
 
 namespace WordHoarder.Utility
@@ -24,21 +24,21 @@ namespace WordHoarder.Utility
         public static void LoadTutorial()
         {
             SceneManager.LoadSceneAsync(3);
-            _SetupManager.getInstance().InitializeTutorial();
+            GameSetup.GetInstance().InitializeTutorial();
             SceneManager.sceneLoaded += UIManager.RefreshCanvasOnLevelLoad;
         }
 
         public static void LoadNewGame()
         {
             SceneManager.LoadSceneAsync(4);
-            _SetupManager.getInstance().InitializeMainGame();
+            GameSetup.GetInstance().InitializeMainGame();
             SceneManager.sceneLoaded += UIManager.RefreshCanvasOnLevelLoad;
         }
 
         public static void LoadExistingGame(SaveData saveData)
         {
             SceneManager.LoadSceneAsync(4);
-            _SetupManager.getInstance().InitializeMainGame(saveData);
+            GameSetup.GetInstance().InitializeMainGame(saveData);
             SceneManager.sceneLoaded += UIManager.RefreshCanvasOnLevelLoad;
         }
     }
