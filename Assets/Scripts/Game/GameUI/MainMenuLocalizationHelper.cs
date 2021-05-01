@@ -49,6 +49,13 @@ namespace WordHoarder.Gameplay.UI
         [SerializeField]
         Text audioBack;
 
+        [Header("CreditsText")]
+        [SerializeField]
+        Text creditsTitle;
+        [SerializeField]
+        Text creditsBack;
+
+
         public void Start()
         {
             UpdateLanguage();
@@ -82,6 +89,9 @@ namespace WordHoarder.Gameplay.UI
             audioVolume.text = language.AudioVolume.ToUpper();
             audioEnabled.text = language.AudioEnabled.ToUpper();
             audioBack.text = language.MiscBack.ToUpper();
+
+            creditsTitle.text = language.MiscCreditsTitle.ToUpper();
+            creditsBack.text = language.MiscBack.ToUpper();
         }
 
         public void UpdateLanguageForLoadSlots(string[] slotInfo)

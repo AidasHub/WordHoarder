@@ -64,6 +64,7 @@ namespace WordHoarder.Managers.Static.UI
             public string MiscNo;
             public string MiscOK;
             public string MiscUnlock;
+            public string MiscCreditsTitle;
 
             public string WordsCollected;
 

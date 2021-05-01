@@ -35,7 +35,8 @@
 	"MiscYes": "Yes",
 	"MiscNo": "No",
 	"MiscOK": "Ok",
-	"MiscUnlock":"Unlock",
+	"MiscUnlock": "Unlock",
+	"MiscCreditsTitle": "Photo Credits",
 	
 	"WordsCollected":"words collected",
 
