@@ -41,6 +41,14 @@ namespace WordHoarder.Gameplay.UI
         [SerializeField]
         Text graphicsBack;
 
+        [Header("Audio Menu Panel Text")]
+        [SerializeField]
+        Text audioVolume;
+        [SerializeField]
+        Text audioEnabled;
+        [SerializeField]
+        Text audioBack;
+
         public void Start()
         {
             UpdateLanguage();
@@ -70,6 +78,10 @@ namespace WordHoarder.Gameplay.UI
             graphicsResolution.text = language.GraphicsResolution.ToUpper();
             graphicsFullScreen.text = language.GraphicsFullScreen.ToUpper();
             graphicsBack.text = language.MiscBack.ToUpper();
+
+            audioVolume.text = language.AudioVolume.ToUpper();
+            audioEnabled.text = language.AudioEnabled.ToUpper();
+            audioBack.text = language.MiscBack.ToUpper();
         }
 
         public void UpdateLanguageForLoadSlots(string[] slotInfo)

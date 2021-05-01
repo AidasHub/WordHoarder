@@ -40,6 +40,10 @@ namespace WordHoarder.Managers.Static.UI
             public string GraphicsResolution;
             public string GraphicsFullScreen;
 
+            // Audio Menu Options
+            public string AudioVolume;
+            public string AudioEnabled;
+
             // Pause Menu Options
             public string PauseLabel;
             public string PauseResume;

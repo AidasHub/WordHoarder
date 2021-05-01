@@ -9,7 +9,7 @@ using WordHoarder.Managers.Static.UI;
 
 namespace WordHoarder.Gameplay.Puzzles
 {
-    public class PuzzleImageGuess : MonoBehaviour
+    public class PuzzleImageGuess : MonoBehaviour, IPuzzle
     {
         private class PuzzleInfo
         {

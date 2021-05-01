@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using WordHoarder.Managers.Static.Gameplay;
 using WordHoarder.Setup;
 using WordHoarder.Utility;
 using static WordHoarder.Utility.SaveManager;
@@ -32,6 +33,10 @@ namespace WordHoarder.Gameplay.UI
         private Dropdown resolutionsDropdown;
         [SerializeField]
         private Toggle fullScreenToggle;
+        [SerializeField]
+        private Slider audioSlider;
+        [SerializeField]
+        private Toggle audioEnabled;
 
 
         private string sourceTitleHalf = "WORD-";
@@ -162,6 +167,27 @@ namespace WordHoarder.Gameplay.UI
         public void SetFullScreenMode(bool isFullScreen)
         {
             SettingsManager.SetFullScreenMode(isFullScreen);
+        }
+
+        public void InitializeAudioMenu()
+        {
+            audioSlider.value = SettingsManager.GetAudioVolume();
+            audioEnabled.isOn = SettingsManager.GetAudioEnabled();
+        }
+
+        public void PlayAudioSample()
+        {
+            SoundManager.PlaySound(SoundManager.Sound.Test);
+        }
+
+        public void SetAudioVolume(float volume)
+        {
+            SettingsManager.SetAudioVolume(volume);
+        }
+
+        public void SetAudioEnabled(bool audioEnabled)
+        {
+            SettingsManager.SetAudioEnabled(audioEnabled);
         }
 
         public void QuitGame()

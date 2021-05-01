@@ -42,7 +42,7 @@ namespace WordHoarder.Utility
         private static string saveFileName = "Data";
 
 
-        public static bool SaveGame(GameScenario gameScenario, int saveSlot)
+        public static bool SaveGame(SaveData saveData, int saveSlot)
         {
             if (saveSlot >= maxSavedGamesCount)
                 return false;
@@ -58,43 +58,6 @@ namespace WordHoarder.Utility
             bool success = false;
             try
             {
-                GameObject gameScenarioGO = gameScenario.gameObject;
-                int saveCurrentEnvironment = gameScenarioGO.GetComponent<GameScenario>().CurrentEnvironment;
-
-
-                List<Tuple<string, bool>> saveEnvironmentStatus = new List<Tuple<string, bool>>();
-                WorldNavigation[] environmentStatus = gameScenarioGO.GetComponentsInChildren<WorldNavigation>(true);
-                for (int i = 0; i < environmentStatus.Length; i++)
-                {
-                    saveEnvironmentStatus.Add(environmentStatus[i].PrepareSaveData());
-                }
-
-                List<Tuple<string, bool>> saveWorldWords = new List<Tuple<string, bool>>();
-                WorldWord[] worldWords = gameScenarioGO.GetComponentsInChildren<WorldWord>(true);
-                for (int i = 0; i < worldWords.Length; i++)
-                {
-                    saveWorldWords.Add(worldWords[i].PrepareSaveData());
-                }
-
-                List<Tuple<string, bool>> saveReverseWords = new List<Tuple<string, bool>>();
-                WorldInteractable[] reverseWords = gameScenarioGO.GetComponentsInChildren<WorldInteractable>(true);
-                for(int i = 0; i < reverseWords.Length; i++)
-                {
-                    saveReverseWords.Add(reverseWords[i].PrepareSaveData());
-                }
-
-                List<string> saveInventoryWords = new List<string>();
-                List<InventoryWord> inventoryWords = InventoryManager.GetWords();
-                for (int i = 0; i < inventoryWords.Count; i++)
-                {
-                    saveInventoryWords.Add(inventoryWords[i].GetWordString());
-                }
-
-                int saveCollectedWords = GameManager.CollectedWords;
-                int totalWords = GameManager.TotalWords;
-
-                SaveData saveData = new SaveData(saveCurrentEnvironment, saveEnvironmentStatus, saveWorldWords, saveReverseWords, saveInventoryWords, saveCollectedWords, totalWords);
-
                 formatter.Serialize(fileStream, saveData);
                 Debug.Log("Game Data saved to " + path);
                 success = true;

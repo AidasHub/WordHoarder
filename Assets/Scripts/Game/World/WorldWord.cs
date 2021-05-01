@@ -9,7 +9,7 @@ using WordHoarder.Managers.Static.UI;
 namespace WordHoarder.Gameplay.World
 {
     [RequireComponent(typeof(PolygonCollider2D)), RequireComponent(typeof(LineRenderer))]
-    public class WorldWord : MonoBehaviour
+    public class WorldWord : MonoBehaviour, IWorldSaveable
     {
         [SerializeField]
         private string wordText;
@@ -50,7 +50,7 @@ namespace WordHoarder.Gameplay.World
                 EraseObjectOutline();
                 InventoryManager.AddWord(wordText);
                 DisplayPickupText();
-                //SoundManager.PlaySound(soundClip);
+                SoundManager.PlaySound(soundClip);
             }
         }
 

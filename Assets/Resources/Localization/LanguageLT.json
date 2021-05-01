@@ -16,6 +16,9 @@
 	"GraphicsResolution": "Ekrano raiška",
 	"GraphicsFullScreen": "Pilno ekrano režimas",
 
+	"AudioVolume": "Garso stiprumas",
+	"AudioEnabled": "Garsas įjungtas",
+
 	"PuzzleTooltip": "Spustelkite, kad atidaryti galvosūkio langą",
 	"ReverseWordTooltip": "Ar žinai, kas čia slepiasi? Jeigu taip - nutrauk čia žodį!",
 	"PuzzleImageGuessQuestion": "Kas tai?",

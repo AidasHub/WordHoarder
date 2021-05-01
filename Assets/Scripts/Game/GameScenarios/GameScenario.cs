@@ -1,10 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using WordHoarder.Gameplay.UI;
 using WordHoarder.Gameplay.World;
 using WordHoarder.Managers.Static.Gameplay;
 using WordHoarder.Managers.Static.UI;
+using WordHoarder.Utility;
+using static WordHoarder.Utility.SaveManager;
 
 namespace WordHoarder.Gameplay.GameScenarios
 {
@@ -27,22 +31,43 @@ namespace WordHoarder.Gameplay.GameScenarios
             TooltipManager.HideTooltip();
         }
 
-        public void LoadWordFillPuzzle(int index, UnityAction rewardAction)
+        public SaveData PrepareSaveData()
         {
-            Debug.Log("Loading wordfill puzzle");
-            PuzzleManager.LoadWordFillPuzzle(index, rewardAction);
-        }
+            int saveCurrentEnvironment = CurrentEnvironment;
 
-        public void LoadRotatingLockPuzzle(int index, UnityAction rewardAction)
-        {
-            Debug.Log("Loading rotating lock puzzle");
-            PuzzleManager.LoadRotatingLockPuzzle(index, rewardAction);
-        }
+            List<Tuple<string, bool>> saveEnvironmentStatus = new List<Tuple<string, bool>>();
+            WorldNavigation[] environmentStatus = GetComponentsInChildren<WorldNavigation>(true);
+            for (int i = 0; i < environmentStatus.Length; i++)
+            {
+                saveEnvironmentStatus.Add(environmentStatus[i].PrepareSaveData());
+            }
 
-        public void LoadImageGuessPuzzle(int index, UnityAction rewardAction)
-        {
-            Debug.Log("Loading image guess puzzle");
-            PuzzleManager.LoadImageGuessPuzzle(index, rewardAction);
+            List<Tuple<string, bool>> saveWorldWords = new List<Tuple<string, bool>>();
+            WorldWord[] worldWords = GetComponentsInChildren<WorldWord>(true);
+            for (int i = 0; i < worldWords.Length; i++)
+            {
+                saveWorldWords.Add(worldWords[i].PrepareSaveData());
+            }
+
+            List<Tuple<string, bool>> saveReverseWords = new List<Tuple<string, bool>>();
+            WorldInteractable[] reverseWords = GetComponentsInChildren<WorldInteractable>(true);
+            for (int i = 0; i < reverseWords.Length; i++)
+            {
+                saveReverseWords.Add(reverseWords[i].PrepareSaveData());
+            }
+
+            List<string> saveInventoryWords = new List<string>();
+            List<InventoryWord> inventoryWords = InventoryManager.GetWords();
+            for (int i = 0; i < inventoryWords.Count; i++)
+            {
+                saveInventoryWords.Add(inventoryWords[i].GetWordString());
+            }
+
+            int saveCollectedWords = GameManager.CollectedWords;
+            int totalWords = GameManager.TotalWords;
+
+            SaveData saveData = new SaveData(saveCurrentEnvironment, saveEnvironmentStatus, saveWorldWords, saveReverseWords, saveInventoryWords, saveCollectedWords, totalWords);
+            return saveData;
         }
 
         public void LoadSaveData(int lastEnvironment)

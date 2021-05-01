@@ -33,20 +33,17 @@ namespace WordHoarder.Managers.Static.UI
             {
                 CreateTooltip();
             }
-            else
-            {
-                Vector2 localPoint;
-                RectTransformUtility.ScreenPointToLocalPointInRectangle(tooltip.transform.parent.GetComponent<RectTransform>(), Input.mousePosition, Camera.main, out localPoint);
-                tooltip.GetComponent<RectTransform>().localPosition = localPoint;
+            Vector2 localPoint;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(tooltip.transform.parent.GetComponent<RectTransform>(), Input.mousePosition, Camera.main, out localPoint);
+            tooltip.GetComponent<RectTransform>().localPosition = localPoint;
 
-                tooltipText.text = text;
-                var backgroundW = tooltipText.preferredWidth;
-                var backgroundH = tooltipText.preferredHeight;
+            tooltipText.text = text;
+            var backgroundW = tooltipText.preferredWidth;
+            var backgroundH = tooltipText.preferredHeight;
 
-                tooltipBackground.sizeDelta = new Vector2(backgroundW, backgroundH);
+            tooltipBackground.sizeDelta = new Vector2(backgroundW, backgroundH);
 
-                tooltip.SetActive(true);
-            }
+            tooltip.SetActive(true);
         }
     }
 }

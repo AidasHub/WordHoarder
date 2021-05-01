@@ -11,7 +11,7 @@ using WordHoarder.Gameplay.UI;
 
 namespace WordHoarder.Gameplay.Puzzles
 {
-    public class PuzzleWordFill : MonoBehaviour
+    public class PuzzleWordFill : MonoBehaviour, IPuzzle
     {
         private class PuzzleInfo
         {
@@ -291,6 +291,8 @@ namespace WordHoarder.Gameplay.Puzzles
             {
                 InventoryManager.RemoveWord(usedWords[i]);
             }
+            Close();
+            PuzzleManager.ToggleInteraction();
         }
     }
 }

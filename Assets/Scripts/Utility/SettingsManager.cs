@@ -7,6 +7,10 @@ namespace WordHoarder.Utility
 {
     public static class SettingsManager
     {
+
+        private static float audioVolume = 1f;
+        private static bool audioEnabled = true;
+
         public static Resolution[] GetResolutions()
         {
             return Screen.resolutions;
@@ -25,6 +29,26 @@ namespace WordHoarder.Utility
         public static void SetFullScreenMode(bool fullScreen)
         {
             Screen.fullScreen = fullScreen;
+        }
+
+        public static float GetAudioVolume()
+        {
+            return audioVolume;
+        }
+
+        public static void SetAudioVolume(float newVolume)
+        {
+            audioVolume = newVolume;
+        }
+
+        public static bool GetAudioEnabled()
+        {
+            return audioEnabled;
+        }
+
+        public static void SetAudioEnabled(bool enable)
+        {
+            audioEnabled = enable;
         }
     }
 }

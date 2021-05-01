@@ -12,7 +12,7 @@ using WordHoarder.Managers.Static.UI;
 
 namespace WordHoarder.Gameplay.World
 {
-    public class WorldInteractable : MonoBehaviour, IDropHandler
+    public class WorldInteractable : MonoBehaviour, IDropHandler, IWorldSaveable
     {
         [SerializeField]
         private string expectedWord;

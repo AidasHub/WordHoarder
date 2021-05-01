@@ -10,7 +10,7 @@ using WordHoarder.Managers.Static.UI;
 
 namespace WordHoarder.Gameplay.World
 {
-    public class WorldNavigation : MonoBehaviour
+    public class WorldNavigation : MonoBehaviour, IWorldSaveable
     {
         private enum EnvironmentDestination
         {
@@ -68,11 +68,11 @@ namespace WordHoarder.Gameplay.World
             if (gameScenario == null)
                 Debug.LogError("Game Scenario not found");
             if (puzzleType == PuzzleType.WordFill)
-                lockedButton.onClick.AddListener(() => gameScenario.LoadWordFillPuzzle(puzzleIndex, UnlockEnvironment));
+                lockedButton.onClick.AddListener(() => PuzzleManager.LoadWordFillPuzzle(puzzleIndex, UnlockEnvironment));
             else if (puzzleType == PuzzleType.RotatingLock)
-                lockedButton.onClick.AddListener(() => gameScenario.LoadRotatingLockPuzzle(puzzleIndex, UnlockEnvironment));
+                lockedButton.onClick.AddListener(() => PuzzleManager.LoadRotatingLockPuzzle(puzzleIndex, UnlockEnvironment));
             else if (puzzleType == PuzzleType.ImageGuess)
-                lockedButton.onClick.AddListener(() => gameScenario.LoadImageGuessPuzzle(puzzleIndex, UnlockEnvironment));
+                lockedButton.onClick.AddListener(() => PuzzleManager.LoadImageGuessPuzzle(puzzleIndex, UnlockEnvironment));
 
             unlockedButton.onClick.AddListener(() => gameScenario.SwitchEnvironment((int)destination));
         }
@@ -89,14 +89,13 @@ namespace WordHoarder.Gameplay.World
         public Tuple<string, bool> PrepareSaveData()
         {
             string navigationTo = gameObject.name;
-            Tuple<string, bool> saveData = new Tuple<string, bool>(navigationTo, isLocked);
+            Tuple<string, bool> saveData = new Tuple<string, bool>(navigationTo, !isLocked);
             return saveData;
         }
 
-        public void LoadSaveData(bool isLocked)
+        public void LoadSaveData(bool isComplete)
         {
-            Debug.Log(gameObject.name + " loaded with isLocked: " + isLocked);
-            if (!isLocked)
+            if (isComplete)
                 UnlockEnvironment();
         }
 

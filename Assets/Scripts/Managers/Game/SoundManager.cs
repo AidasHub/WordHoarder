@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using WordHoarder.Resources;
 using WordHoarder.Setup;
+using WordHoarder.Utility;
 
 namespace WordHoarder.Managers.Static.Gameplay
 {
@@ -11,6 +12,7 @@ namespace WordHoarder.Managers.Static.Gameplay
         public enum Sound
         {
             Test,
+            Key,
             Pouf,
             Mirror,
             Fridge,
@@ -22,7 +24,29 @@ namespace WordHoarder.Managers.Static.Gameplay
             Cupboard,
             Blender,
             Sink,
-            Toaster
+            Toaster,
+            Window,
+            Table,
+            Books,
+            Magazine,
+            Speaker,
+            Cactus,
+            Guitar,
+            TV,
+            Fireplace,
+            Stool,
+            Socket,
+            Bathtub,
+            Towel,
+            ShowerHead,
+            Switches,
+            Lamp,
+            Pillow,
+            Purse,
+            Trousers,
+            Shirt,
+            Shelf,
+            Shoes
         }
 
         private static AudioSource audioPlayer;
@@ -38,11 +62,15 @@ namespace WordHoarder.Managers.Static.Gameplay
 
         public static void PlaySound(Sound sound)
         {
+            if (SettingsManager.GetAudioEnabled() == false)
+                return;
             AudioClip audioClip = GameResources.GetAudioClip(sound);
             if (audioClip != null)
             {
                 if (audioPlayer == null)
                     Init();
+                var volume = SettingsManager.GetAudioVolume();
+                audioPlayer.volume = volume;
                 audioPlayer.PlayOneShot(audioClip);
             }
         }

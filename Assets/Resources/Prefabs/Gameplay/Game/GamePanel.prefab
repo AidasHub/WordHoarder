@@ -950,7 +950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Bathtub
-  soundClip: 0
+  soundClip: 25
 --- !u!1 &1849473887
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,7 +1001,7 @@ GameObject:
   - component: {fileID: 1904556360}
   - component: {fileID: 1904556359}
   m_Layer: 5
-  m_Name: Electrical Socket
+  m_Name: Socket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1165,8 +1165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b89b1baf0742924cac40d495cc89931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wordText: Electrical Socket
-  soundClip: 0
+  wordText: Socket
+  soundClip: 24
 --- !u!1 &1919612040
 GameObject:
   m_ObjectHideFlags: 0
@@ -1345,7 +1345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Window
-  soundClip: 0
+  soundClip: 14
 --- !u!1 &2000876505
 GameObject:
   m_ObjectHideFlags: 0
@@ -1697,7 +1697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Table
-  soundClip: 0
+  soundClip: 15
 --- !u!1 &68234688723137624
 GameObject:
   m_ObjectHideFlags: 0
@@ -2527,7 +2527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Sink
-  soundClip: 0
+  soundClip: 12
 --- !u!1 &752521861188036898
 GameObject:
   m_ObjectHideFlags: 0
@@ -2718,7 +2718,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Blender
-  soundClip: 0
+  soundClip: 11
 --- !u!1 &752521861188036908
 GameObject:
   m_ObjectHideFlags: 0
@@ -2899,7 +2899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Microwave
-  soundClip: 0
+  soundClip: 6
 --- !u!1 &752521861188036912
 GameObject:
   m_ObjectHideFlags: 0
@@ -3458,6 +3458,7 @@ MonoBehaviour:
   - {fileID: 6523780605461446897}
   - {fileID: 1374487342612749509}
   - {fileID: 1293068339}
+  - {fileID: 8335061860271910837}
 --- !u!1 &752521861188036921
 GameObject:
   m_ObjectHideFlags: 0
@@ -3816,7 +3817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Mirror
-  soundClip: 0
+  soundClip: 3
 --- !u!120 &752521861188036888
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -4492,7 +4493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Cupboard
-  soundClip: 0
+  soundClip: 10
 --- !u!1 &752521861188037067
 GameObject:
   m_ObjectHideFlags: 0
@@ -4671,7 +4672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Painting
-  soundClip: 0
+  soundClip: 8
 --- !u!1 &752521861188037070
 GameObject:
   m_ObjectHideFlags: 0
@@ -4866,7 +4867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Plant
-  soundClip: 0
+  soundClip: 7
 --- !u!1 &752521861188037079
 GameObject:
   m_ObjectHideFlags: 0
@@ -4962,7 +4963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Pouf
-  soundClip: 0
+  soundClip: 2
 --- !u!120 &752521861188036887
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -5283,7 +5284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Fridge
-  soundClip: 0
+  soundClip: 4
 --- !u!1 &752521861188037090
 GameObject:
   m_ObjectHideFlags: 0
@@ -5466,7 +5467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Toaster
-  soundClip: 0
+  soundClip: 13
 --- !u!1 &752521861188037095
 GameObject:
   m_ObjectHideFlags: 0
@@ -5648,7 +5649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Laptop
-  soundClip: 0
+  soundClip: 9
 --- !u!1 &752521861188037099
 GameObject:
   m_ObjectHideFlags: 0
@@ -5867,7 +5868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Oven
-  soundClip: 0
+  soundClip: 5
 --- !u!1 &752521861299372946
 GameObject:
   m_ObjectHideFlags: 0
@@ -6347,7 +6348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Speaker
-  soundClip: 0
+  soundClip: 18
 --- !u!1 &1653779617851231398
 GameObject:
   m_ObjectHideFlags: 0
@@ -6804,7 +6805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Shower Head
-  soundClip: 0
+  soundClip: 27
 --- !u!1 &2270756718951425147
 GameObject:
   m_ObjectHideFlags: 0
@@ -6993,7 +6994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Purse
-  soundClip: 0
+  soundClip: 31
 --- !u!1 &2380530164555444057
 GameObject:
   m_ObjectHideFlags: 0
@@ -7940,7 +7941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Fireplace
-  soundClip: 0
+  soundClip: 22
 --- !u!1 &3277529046622787772
 GameObject:
   m_ObjectHideFlags: 0
@@ -8631,7 +8632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Pillow
-  soundClip: 0
+  soundClip: 30
 --- !u!1 &4387602952284478080
 GameObject:
   m_ObjectHideFlags: 0
@@ -9253,7 +9254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Trousers
-  soundClip: 0
+  soundClip: 32
 --- !u!1 &4685521977894541717
 GameObject:
   m_ObjectHideFlags: 0
@@ -9553,7 +9554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Shelf
-  soundClip: 0
+  soundClip: 34
 --- !u!1 &5040174626806160740
 GameObject:
   m_ObjectHideFlags: 0
@@ -9886,7 +9887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Guitar
-  soundClip: 0
+  soundClip: 20
 --- !u!1 &6006299962624849230
 GameObject:
   m_ObjectHideFlags: 0
@@ -10165,7 +10166,7 @@ GameObject:
   - component: {fileID: 2775950357214693533}
   - component: {fileID: 4892422407557260043}
   m_Layer: 5
-  m_Name: NightLamp
+  m_Name: Lamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10348,8 +10349,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b89b1baf0742924cac40d495cc89931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wordText: Night Lamp
-  soundClip: 0
+  wordText: Lamp
+  soundClip: 29
 --- !u!1 &6479223895455103630
 GameObject:
   m_ObjectHideFlags: 0
@@ -10558,7 +10559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Cactus
-  soundClip: 0
+  soundClip: 19
 --- !u!1 &6523780605461446897
 GameObject:
   m_ObjectHideFlags: 0
@@ -10776,7 +10777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: TV
-  soundClip: 0
+  soundClip: 21
 --- !u!1 &6608544019856244968
 GameObject:
   m_ObjectHideFlags: 0
@@ -10981,7 +10982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Books
-  soundClip: 0
+  soundClip: 16
 --- !u!1 &6641402259700008515
 GameObject:
   m_ObjectHideFlags: 0
@@ -11171,7 +11172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Shoes
-  soundClip: 0
+  soundClip: 35
 --- !u!1 &6670611548957133222
 GameObject:
   m_ObjectHideFlags: 0
@@ -11598,7 +11599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Switches
-  soundClip: 0
+  soundClip: 28
 --- !u!1 &7152561622676947587
 GameObject:
   m_ObjectHideFlags: 0
@@ -11796,7 +11797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Shirt
-  soundClip: 0
+  soundClip: 33
 --- !u!1 &7227094117372607286
 GameObject:
   m_ObjectHideFlags: 0
@@ -11976,7 +11977,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Magazine
-  soundClip: 0
+  soundClip: 17
 --- !u!1 &7422162681396076968
 GameObject:
   m_ObjectHideFlags: 0
@@ -12411,7 +12412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Towel
-  soundClip: 0
+  soundClip: 26
 --- !u!1 &7973285641514357549
 GameObject:
   m_ObjectHideFlags: 0
@@ -13209,7 +13210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Stool
-  soundClip: 0
+  soundClip: 23
 --- !u!1 &8635087844801346324
 GameObject:
   m_ObjectHideFlags: 0

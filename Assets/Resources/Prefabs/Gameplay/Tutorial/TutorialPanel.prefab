@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: Key
+  soundClip: 1
 --- !u!120 &8058249630848015405
 LineRenderer:
   m_ObjectHideFlags: 0

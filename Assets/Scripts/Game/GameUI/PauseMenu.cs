@@ -36,6 +36,12 @@ namespace WordHoarder.Gameplay.UI
         [SerializeField]
         private Toggle fullScreenToggle;
 
+        [Header("Audio Settings")]
+        [SerializeField]
+        private Slider volumeSlider;
+        [SerializeField]
+        private Toggle audioToggle;
+
         private int orderInHierarchy = 0;
 
         public void Update()
@@ -109,7 +115,7 @@ namespace WordHoarder.Gameplay.UI
             GameScenario gameScenario = UIManager.GetFromCanvas("GamePanel").GetComponent<GameScenario>();
             if (gameScenario != null)
             {
-                bool success = SaveManager.SaveGame(gameScenario, i);
+                bool success = SaveManager.SaveGame(gameScenario.PrepareSaveData(), i);
                 SaveGameReportSuccess(success);
             }
             else
@@ -170,6 +176,27 @@ namespace WordHoarder.Gameplay.UI
         public void SetFullScreenMode(bool isFullScreen)
         {
             SettingsManager.SetFullScreenMode(isFullScreen);
+        }
+
+        public void InitializeAudioMenu()
+        {
+            volumeSlider.value = SettingsManager.GetAudioVolume();
+            audioToggle.isOn = SettingsManager.GetAudioEnabled();
+        }
+
+        public void SetAudioVolume(float volume)
+        {
+            SettingsManager.SetAudioVolume(volume);
+        }
+
+        public void SetAudioEnabled(bool isEnabled)
+        {
+            SettingsManager.SetAudioEnabled(isEnabled);
+        }
+
+        public void PlayAudioSample()
+        {
+            SoundManager.PlaySound(SoundManager.Sound.Test);
         }
 
         public void QuitGame()
