@@ -7,8 +7,7 @@ using WordHoarder.Gameplay.UI;
 using WordHoarder.Gameplay.World;
 using WordHoarder.Managers.Static.Gameplay;
 using WordHoarder.Managers.Static.UI;
-using WordHoarder.Utility;
-using static WordHoarder.Utility.SaveManager;
+using static WordHoarder.Utility.SaveUtility;
 
 namespace WordHoarder.Gameplay.GameScenarios
 {
@@ -21,6 +20,7 @@ namespace WordHoarder.Gameplay.GameScenarios
         public void Awake()
         {
             GameManager.TotalWords = GetComponentsInChildren<WorldWord>(true).Length;
+            GameManager.ClearCollectedWords();
         }
 
         public void SwitchEnvironment(int index)
@@ -70,9 +70,79 @@ namespace WordHoarder.Gameplay.GameScenarios
             return saveData;
         }
 
-        public void LoadSaveData(int lastEnvironment)
+        public void LoadSaveData(SaveData data)
         {
-            SwitchEnvironment(lastEnvironment);
+            SwitchEnvironment(data.CurrentEnvironment);
+
+            // Interface based search is not an option since it does not convert into UnityEngine.Object
+            WorldNavigation[] environmentStatus = GetComponentsInChildren<WorldNavigation>(true);
+            WorldWord[] worldWords = GetComponentsInChildren<WorldWord>(true);
+            WorldInteractable[] reverseWords = GetComponentsInChildren<WorldInteractable>(true);
+
+            if (environmentStatus.Length != data.EnvironmentStatus.Count)
+            {
+                Debug.LogError("Error loading a save file - environment navigation count does not match");
+                return;
+            }
+            if (worldWords.Length != data.WorldWords.Count)
+            {
+                Debug.LogError("Error loading a save file - world words count does not match");
+                return;
+            }
+            if (reverseWords.Length != data.ReverseWords.Count)
+            {
+                Debug.LogError("Error loading a save file - world interactable count does not match");
+                return;
+            }
+
+            for (int i = 0; i < environmentStatus.Length; i++)
+            {
+                for (int j = 0; j < data.EnvironmentStatus.Count; j++)
+                {
+                    if (environmentStatus[i].gameObject.name == data.EnvironmentStatus[j].Item1)
+                    {
+                        environmentStatus[i].LoadSaveData(data.EnvironmentStatus[j].Item2);
+                        break;
+                    }
+                }
+            }
+
+            for (int i = 0; i < worldWords.Length; i++)
+            {
+                for (int j = 0; j < data.WorldWords.Count; j++)
+                {
+                    if (worldWords[i].gameObject.name == data.WorldWords[j].Item1)
+                    {
+                        worldWords[i].LoadSaveData(data.WorldWords[j].Item2);
+                        break;
+                    }
+                }
+            }
+
+            for (int i = 0; i < reverseWords.Length; i++)
+            {
+                for (int j = 0; j < data.ReverseWords.Count; j++)
+                {
+                    if (reverseWords[i].gameObject.name == data.ReverseWords[j].Item1)
+                    {
+                        reverseWords[i].LoadSaveData(data.ReverseWords[j].Item2);
+                        break;
+                    }
+                }
+            }
+
+            for (int i = 0; i < data.InventoryWords.Count; i++)
+            {
+                InventoryManager.AddWord(data.InventoryWords[i]);
+            }
+
+            GameManager.ClearCollectedWords();
+            for (int i = 0; i < data.CollectedWords; i++)
+            {
+                GameManager.IncreaseCollectedWords();
+            }
+
+            Debug.Log("Data successfully loaded!");
         }
     }
 }

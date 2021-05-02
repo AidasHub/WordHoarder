@@ -19,6 +19,7 @@ public class GameSetupTests
     [UnitySetUp]
     public IEnumerator TestSetup()
     {
+
         if (!setupComplete)
         {
             var testSceneOperation = SceneManager.LoadSceneAsync("TestScene");
@@ -35,7 +36,7 @@ public class GameSetupTests
         var setupManager = new GameObject("Setup");
         setupManager.transform.SetParent(managers.transform);
         setupManager.AddComponent<GameSetup>();
-
+        yield return new WaitForSeconds(1f);
         if (setupOnce)
             setupComplete = true;
         yield return null;

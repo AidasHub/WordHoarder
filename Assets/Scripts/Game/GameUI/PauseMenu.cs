@@ -6,7 +6,7 @@ using WordHoarder.Gameplay.GameScenarios;
 using WordHoarder.Managers.Static.Gameplay;
 using WordHoarder.Managers.Static.UI;
 using WordHoarder.Utility;
-using static WordHoarder.Utility.SaveManager;
+using static WordHoarder.Utility.SaveUtility;
 
 namespace WordHoarder.Gameplay.UI
 {
@@ -68,7 +68,7 @@ namespace WordHoarder.Gameplay.UI
 
         public void InitializeSaveMenu()
         {
-            savesData = SaveManager.GetSavedGames();
+            savesData = SaveUtility.GetSavedGames();
             string[] slotInfo = new string[savesData.Length];
             for (int i = 0; i < saveSlotButtons.Count; i++)
             {
@@ -115,7 +115,7 @@ namespace WordHoarder.Gameplay.UI
             GameScenario gameScenario = UIManager.GetFromCanvas("GamePanel").GetComponent<GameScenario>();
             if (gameScenario != null)
             {
-                bool success = SaveManager.SaveGame(gameScenario.PrepareSaveData(), i);
+                bool success = SaveUtility.SaveGame(gameScenario.PrepareSaveData(), i);
                 SaveGameReportSuccess(success);
             }
             else
@@ -138,7 +138,7 @@ namespace WordHoarder.Gameplay.UI
 
         public void InitializeGraphicsMenu()
         {
-            Resolution[] resolutions = SettingsManager.GetResolutions();
+            Resolution[] resolutions = SettingsUtility.GetResolutions();
             resolutionsDropdown.ClearOptions();
             List<string> options = new List<string>();
             int currentResolutionIndex = 0;
@@ -146,7 +146,7 @@ namespace WordHoarder.Gameplay.UI
             {
                 string option = resolutions[i].width + "x" + resolutions[i].height;
                 options.Add(option);
-                if (SettingsManager.GetFullScreenMode())
+                if (SettingsUtility.GetFullScreenMode())
                 {
                     if (Screen.currentResolution.width == resolutions[i].width && Screen.currentResolution.height == resolutions[i].height)
                         currentResolutionIndex = i;
@@ -161,7 +161,7 @@ namespace WordHoarder.Gameplay.UI
             resolutionsDropdown.value = currentResolutionIndex;
             resolutionsDropdown.RefreshShownValue();
 
-            bool isFullScreen = SettingsManager.GetFullScreenMode();
+            bool isFullScreen = SettingsUtility.GetFullScreenMode();
             fullScreenToggle.isOn = isFullScreen;
         }
 
@@ -170,28 +170,28 @@ namespace WordHoarder.Gameplay.UI
             string[] resolutionString = resolutionsDropdown.options[resolutionsDropdown.value].text.Split('x');
             int width = int.Parse(resolutionString[0]);
             int height = int.Parse(resolutionString[1]);
-            SettingsManager.SetResolution(width, height);
+            SettingsUtility.SetResolution(width, height);
         }
 
         public void SetFullScreenMode(bool isFullScreen)
         {
-            SettingsManager.SetFullScreenMode(isFullScreen);
+            SettingsUtility.SetFullScreenMode(isFullScreen);
         }
 
         public void InitializeAudioMenu()
         {
-            volumeSlider.value = SettingsManager.GetAudioVolume();
-            audioToggle.isOn = SettingsManager.GetAudioEnabled();
+            volumeSlider.value = SettingsUtility.GetAudioVolume();
+            audioToggle.isOn = SettingsUtility.GetAudioEnabled();
         }
 
         public void SetAudioVolume(float volume)
         {
-            SettingsManager.SetAudioVolume(volume);
+            SettingsUtility.SetAudioVolume(volume);
         }
 
         public void SetAudioEnabled(bool isEnabled)
         {
-            SettingsManager.SetAudioEnabled(isEnabled);
+            SettingsUtility.SetAudioEnabled(isEnabled);
         }
 
         public void PlayAudioSample()

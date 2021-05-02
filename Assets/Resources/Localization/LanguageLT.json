@@ -4,7 +4,7 @@
 	"MenuOptions": "Nustatymai",
 	"MenuQuit": "Išeiti",
 
-	"LoadSlotEmpty": "Laisva",
+	"LoadSlotEmpty": "Tuščia",
 	"LoadSlotUsed": "surinktų žodžių",
 	"LoadSlotOverwrite": "Perrašyti pasirinktą užsaugojimą?",
 	"LoadSaveSuccessful": "Užsaugojimas sėkmingas!",

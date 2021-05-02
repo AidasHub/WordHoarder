@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+using WordHoarder.Setup;
 
 namespace WordHoarder.Managers.Static.Gameplay
 {
@@ -26,18 +28,7 @@ namespace WordHoarder.Managers.Static.Gameplay
 
         public static UnityEvent onWordCollected = new UnityEvent();
 
-        private static int totalWords = 0;
-        public static int TotalWords
-        {
-            get
-            {
-                return totalWords;
-            }
-            set
-            {
-                totalWords = value;
-            }
-        }
+        public static int TotalWords { get; set; }
 
         public static int CollectedWords { get; private set; }
 
@@ -45,6 +36,10 @@ namespace WordHoarder.Managers.Static.Gameplay
         {
             CollectedWords++;
             onWordCollected.Invoke();
+            if(CollectedWords == TotalWords)
+            {
+                SceneManager.LoadScene(5);
+            }
         }
 
         public static void ClearCollectedWords()

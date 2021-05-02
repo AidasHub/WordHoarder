@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using WordHoarder.Managers.Static.UI;
 using WordHoarder.Setup;
-using static WordHoarder.Utility.SaveManager;
+using static WordHoarder.Utility.SaveUtility;
 
 namespace WordHoarder.Utility
 {

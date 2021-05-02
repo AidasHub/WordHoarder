@@ -1,0 +1,292 @@
+{
+    "entryScene": "0_Init",
+    "recordingType": 0,
+    "recordings": [],
+    "touchData": [
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 8.556941032409668,
+            "position": {
+                "x": 0.5023946166038513,
+                "y": 0.5468483567237854
+            },
+            "positional": true,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "",
+            "objectTag": "",
+            "objectHierarchy": "",
+            "objectOffset": {
+                "x": 0.0,
+                "y": 0.0
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.1186380386352539,
+            "position": {
+                "x": 0.5023946166038513,
+                "y": 0.5468483567237854
+            },
+            "positional": true,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "",
+            "objectTag": "",
+            "objectHierarchy": "",
+            "objectOffset": {
+                "x": 0.0,
+                "y": 0.0
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 0.17456626892089845,
+            "position": {
+                "x": 0.4909003973007202,
+                "y": 0.504258930683136
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Load Game",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/MainPanel",
+            "objectOffset": {
+                "x": -0.02385600097477436,
+                "y": 0.2223147302865982
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.19915294647216798,
+            "position": {
+                "x": 0.4909003973007202,
+                "y": 0.504258930683136
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Load Game",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/MainPanel",
+            "objectOffset": {
+                "x": -0.02385600097477436,
+                "y": 0.2223147302865982
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 0.9452533721923828,
+            "position": {
+                "x": 0.5023946166038513,
+                "y": 0.6013628840446472
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Slot 1",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/LoadGamePanel",
+            "objectOffset": {
+                "x": 0.006277921609580517,
+                "y": -0.09562437236309052
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.08023738861083985,
+            "position": {
+                "x": 0.5023946166038513,
+                "y": 0.6013628840446472
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Slot 1",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/LoadGamePanel",
+            "objectOffset": {
+                "x": 0.006277921609580517,
+                "y": -0.09562437236309052
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 2.131394386291504,
+            "position": {
+                "x": 0.600095808506012,
+                "y": 0.30323678255081179
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Locked",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas/GamePanel/0 - Corridor/Navigation/CorridorToKitchen",
+            "objectOffset": {
+                "x": 0.07030244916677475,
+                "y": -0.0601995624601841
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.0929574966430664,
+            "position": {
+                "x": 0.600095808506012,
+                "y": 0.30323678255081179
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Locked",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas/GamePanel/0 - Corridor/Navigation/CorridorToKitchen",
+            "objectOffset": {
+                "x": 0.07030244916677475,
+                "y": -0.0601995624601841
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 2.0348663330078127,
+            "position": {
+                "x": 0.026340996846556665,
+                "y": 0.24361158907413484
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Pouf",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas/InteractivePanel/WordFill/Inventory/Container/Word Layout Group",
+            "objectOffset": {
+                "x": -0.24714477360248567,
+                "y": 0.24823389947414399
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 4,
+            "timeDelta": 0.11089611053466797,
+            "position": {
+                "x": 0.03304597735404968,
+                "y": 0.2640545070171356
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Pouf",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas",
+            "objectOffset": {
+                "x": -0.2287534475326538,
+                "y": 0.3795973062515259
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.9014453887939453,
+            "position": {
+                "x": 0.19588123261928559,
+                "y": 0.768313467502594
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "pouf",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas/InteractivePanel/WordFill/EnglishPanel/MainText",
+            "objectOffset": {
+                "x": 0.2642926871776581,
+                "y": 0.24105782806873322
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 0.9397687911987305,
+            "position": {
+                "x": 0.040708813816308978,
+                "y": 0.24872231483459474
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Mirror",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas/InteractivePanel/WordFill/Inventory/Container/Word Layout Group",
+            "objectOffset": {
+                "x": -0.1092129498720169,
+                "y": 0.32705339789390566
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 4,
+            "timeDelta": 0.0817413330078125,
+            "position": {
+                "x": 0.052203066647052768,
+                "y": 0.26064735651016238
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Mirror",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas",
+            "objectOffset": {
+                "x": -0.044844552874565127,
+                "y": 0.37959709763526919
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.8946952819824219,
+            "position": {
+                "x": 0.45162835717201235,
+                "y": 0.7666099071502686
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "mirror",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas/InteractivePanel/WordFill/EnglishPanel/MainText",
+            "objectOffset": {
+                "x": 0.13239850103855134,
+                "y": 0.19003242254257203
+            }
+        },
+        {
+            "pointerId": 0,
+            "eventType": 0,
+            "timeDelta": 2.910552978515625,
+            "position": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "playbackComplete",
+            "objectName": "",
+            "objectTag": "",
+            "objectHierarchy": "",
+            "objectOffset": {
+                "x": 0.0,
+                "y": 0.0
+            }
+        }
+    ]
+}

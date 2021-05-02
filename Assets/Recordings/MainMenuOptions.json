@@ -1,0 +1,805 @@
+{
+    "entryScene": "0_Init",
+    "recordingType": 0,
+    "recordings": [],
+    "touchData": [
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 7.871617794036865,
+            "position": {
+                "x": 0.042624522000551227,
+                "y": 0.07495740801095963
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "InfoButton",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas",
+            "objectOffset": {
+                "x": -0.12160888314247132,
+                "y": -0.0008044433780014515
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.20597314834594727,
+            "position": {
+                "x": 0.042624522000551227,
+                "y": 0.07495740801095963
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "InfoButton",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas",
+            "objectOffset": {
+                "x": -0.12160888314247132,
+                "y": -0.0008044433780014515
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 1.541214942932129,
+            "position": {
+                "x": 0.5023946166038513,
+                "y": 0.10732538253068924
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "BackButton",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/InfoSection",
+            "objectOffset": {
+                "x": 0.028735637664794923,
+                "y": -0.1969350129365921
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.10619258880615235,
+            "position": {
+                "x": 0.5023946166038513,
+                "y": 0.10732538253068924
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "BackButton",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/InfoSection",
+            "objectOffset": {
+                "x": 0.028735637664794923,
+                "y": -0.1969350129365921
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 1.4410629272460938,
+            "position": {
+                "x": 0.8472222089767456,
+                "y": 0.07325383275747299
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Flag-EN",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/MainMenuLocalizationHelper",
+            "objectOffset": {
+                "x": 0.14444458484649659,
+                "y": -0.16577249765396119
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.084014892578125,
+            "position": {
+                "x": 0.8472222089767456,
+                "y": 0.07325383275747299
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Flag-EN",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/MainMenuLocalizationHelper",
+            "objectOffset": {
+                "x": 0.14444458484649659,
+                "y": -0.16577249765396119
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 1.1111879348754883,
+            "position": {
+                "x": 0.9094827771186829,
+                "y": 0.08688244968652725
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Flag-LT",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/MainMenuLocalizationHelper",
+            "objectOffset": {
+                "x": -0.22528564929962159,
+                "y": -0.0022983127273619177
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.09956932067871094,
+            "position": {
+                "x": 0.9094827771186829,
+                "y": 0.08688244968652725
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Flag-LT",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/MainMenuLocalizationHelper",
+            "objectOffset": {
+                "x": -0.22528564929962159,
+                "y": -0.0022983127273619177
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 1.5302295684814454,
+            "position": {
+                "x": 0.5359195470809937,
+                "y": 0.35945484042167666
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Options",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/MainPanel",
+            "objectOffset": {
+                "x": 0.09416849166154862,
+                "y": -0.0023622179869562389
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.09671783447265625,
+            "position": {
+                "x": 0.5359195470809937,
+                "y": 0.35945484042167666
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Options",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/MainPanel",
+            "objectOffset": {
+                "x": 0.09416849166154862,
+                "y": -0.0023622179869562389
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 0.9580249786376953,
+            "position": {
+                "x": 0.5004789233207703,
+                "y": 0.5758091807365418
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Graphics",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/OptionsPanel",
+            "objectOffset": {
+                "x": 0.0012555592693388463,
+                "y": -0.14921937882900239
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.0846395492553711,
+            "position": {
+                "x": 0.5004789233207703,
+                "y": 0.5758091807365418
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Graphics",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/OptionsPanel",
+            "objectOffset": {
+                "x": 0.0012555592693388463,
+                "y": -0.14921937882900239
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 0.9412040710449219,
+            "position": {
+                "x": 0.5023946166038513,
+                "y": 0.49233388900756838
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Dropdown",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/GraphicsPanel",
+            "objectOffset": {
+                "x": 0.011494254693388939,
+                "y": 0.24285949766635896
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.08993148803710938,
+            "position": {
+                "x": 0.5023946166038513,
+                "y": 0.49233388900756838
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Dropdown",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/GraphicsPanel",
+            "objectOffset": {
+                "x": 0.011494254693388939,
+                "y": 0.24285949766635896
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 0.7780609130859375,
+            "position": {
+                "x": 0.47653257846832278,
+                "y": 0.40715503692626955
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Item 0: 640x480",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/GraphicsPanel/Dropdown/Dropdown List/Viewport/Content",
+            "objectOffset": {
+                "x": -0.0764782577753067,
+                "y": -0.026646558195352556
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.08052444458007813,
+            "position": {
+                "x": 0.47653257846832278,
+                "y": 0.40715503692626955
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Item 0: 640x480",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/GraphicsPanel/Dropdown/Dropdown List/Viewport/Content",
+            "objectOffset": {
+                "x": -0.0764782577753067,
+                "y": -0.026646558195352556
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 0.9215526580810547,
+            "position": {
+                "x": 0.45258620381355288,
+                "y": 0.367972731590271
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Toggle",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/GraphicsPanel",
+            "objectOffset": {
+                "x": -0.3641379475593567,
+                "y": 0.09010955691337586
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.08455085754394531,
+            "position": {
+                "x": 0.45258620381355288,
+                "y": 0.367972731590271
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Toggle",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/GraphicsPanel",
+            "objectOffset": {
+                "x": -0.3641379475593567,
+                "y": 0.09010955691337586
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 0.6881179809570313,
+            "position": {
+                "x": 0.45258620381355288,
+                "y": 0.367972731590271
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Toggle",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/GraphicsPanel",
+            "objectOffset": {
+                "x": -0.3641379475593567,
+                "y": 0.09010955691337586
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.10882186889648438,
+            "position": {
+                "x": 0.45258620381355288,
+                "y": 0.367972731590271
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Toggle",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/GraphicsPanel",
+            "objectOffset": {
+                "x": -0.3641379475593567,
+                "y": 0.09010955691337586
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 0.7614288330078125,
+            "position": {
+                "x": 0.4851532578468323,
+                "y": 0.27086883783340456
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "BACK",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/GraphicsPanel",
+            "objectOffset": {
+                "x": -0.10665862262248993,
+                "y": 0.3179323375225067
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.08696937561035156,
+            "position": {
+                "x": 0.4851532578468323,
+                "y": 0.27086883783340456
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "BACK",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/GraphicsPanel",
+            "objectOffset": {
+                "x": -0.10665862262248993,
+                "y": 0.3179323375225067
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 0.8010978698730469,
+            "position": {
+                "x": 0.4899425208568573,
+                "y": 0.388415664434433
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Audio",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/OptionsPanel",
+            "objectOffset": {
+                "x": -0.02636716142296791,
+                "y": -0.38419145345687868
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.08432197570800781,
+            "position": {
+                "x": 0.4899425208568573,
+                "y": 0.388415664434433
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Audio",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/OptionsPanel",
+            "objectOffset": {
+                "x": -0.02636716142296791,
+                "y": -0.38419145345687868
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 1.0436840057373047,
+            "position": {
+                "x": 0.5646551847457886,
+                "y": 0.5332197546958923
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Slider",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/AudioPanel",
+            "objectOffset": {
+                "x": 0.38793104887008669,
+                "y": 0.03606395795941353
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 4,
+            "timeDelta": 0.06379508972167969,
+            "position": {
+                "x": 0.5627394914627075,
+                "y": 0.5332197546958923
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Slider",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/AudioPanel",
+            "objectOffset": {
+                "x": 0.3764367997646332,
+                "y": 0.03606395795941353
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.9791660308837891,
+            "position": {
+                "x": 0.5359195470809937,
+                "y": 0.5298126339912415
+            },
+            "positional": true,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "",
+            "objectTag": "",
+            "objectHierarchy": "",
+            "objectOffset": {
+                "x": 0.0,
+                "y": 0.0
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 0.5937786102294922,
+            "position": {
+                "x": 0.4497126340866089,
+                "y": 0.3424190878868103
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Toggle",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/AudioPanel",
+            "objectOffset": {
+                "x": -0.38620689511299136,
+                "y": 0.10658050328493118
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.089752197265625,
+            "position": {
+                "x": 0.4497126340866089,
+                "y": 0.3424190878868103
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Toggle",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/AudioPanel",
+            "objectOffset": {
+                "x": -0.38620689511299136,
+                "y": 0.10658050328493118
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 0.5540809631347656,
+            "position": {
+                "x": 0.4497126340866089,
+                "y": 0.3424190878868103
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Toggle",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/AudioPanel",
+            "objectOffset": {
+                "x": -0.38620689511299136,
+                "y": 0.10658050328493118
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.0916748046875,
+            "position": {
+                "x": 0.4497126340866089,
+                "y": 0.3424190878868103
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Toggle",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/AudioPanel",
+            "objectOffset": {
+                "x": -0.38620689511299136,
+                "y": 0.10658050328493118
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 0.4853363037109375,
+            "position": {
+                "x": 0.4851532578468323,
+                "y": 0.2572402060031891
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "BACK",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/AudioPanel",
+            "objectOffset": {
+                "x": -0.10665862262248993,
+                "y": 0.26268717646598818
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.09482192993164063,
+            "position": {
+                "x": 0.4851532578468323,
+                "y": 0.2572402060031891
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "BACK",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/AudioPanel",
+            "objectOffset": {
+                "x": -0.10665862262248993,
+                "y": 0.26268717646598818
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 0.9175605773925781,
+            "position": {
+                "x": 0.4947318136692047,
+                "y": 0.26575809717178347
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "BACK",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/OptionsPanel",
+            "objectOffset": {
+                "x": -0.03784662112593651,
+                "y": 0.11724377423524857
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.10451698303222656,
+            "position": {
+                "x": 0.4947318136692047,
+                "y": 0.26575809717178347
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "BACK",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/OptionsPanel",
+            "objectOffset": {
+                "x": -0.03784662112593651,
+                "y": 0.11724377423524857
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 1.0653343200683594,
+            "position": {
+                "x": 0.8156130313873291,
+                "y": 0.09199318289756775
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Flag-EN",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/MainMenuLocalizationHelper",
+            "objectOffset": {
+                "x": -0.2601534128189087,
+                "y": 0.0590040422976017
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.11125564575195313,
+            "position": {
+                "x": 0.8156130313873291,
+                "y": 0.09199318289756775
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Flag-EN",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/MainMenuLocalizationHelper",
+            "objectOffset": {
+                "x": -0.2601534128189087,
+                "y": 0.0590040422976017
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 2.1092700958251955,
+            "position": {
+                "x": 0.5052682161331177,
+                "y": 0.49233388900756838
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Load Game",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/MainPanel",
+            "objectOffset": {
+                "x": 0.01381136104464531,
+                "y": 0.08666067570447922
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.07897758483886719,
+            "position": {
+                "x": 0.5052682161331177,
+                "y": 0.49233388900756838
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Load Game",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/MainPanel",
+            "objectOffset": {
+                "x": 0.01381136104464531,
+                "y": 0.08666067570447922
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 1.6440048217773438,
+            "position": {
+                "x": 0.5186781883239746,
+                "y": 0.24020442366600038
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Back",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/LoadGamePanel",
+            "objectOffset": {
+                "x": 0.048967644572257999,
+                "y": 0.06364796310663223
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.09295082092285156,
+            "position": {
+                "x": 0.5186781883239746,
+                "y": 0.24020442366600038
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Back",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/LoadGamePanel",
+            "objectOffset": {
+                "x": 0.048967644572257999,
+                "y": 0.06364796310663223
+            }
+        },
+        {
+            "pointerId": 0,
+            "eventType": 0,
+            "timeDelta": 2.4145259857177736,
+            "position": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "playbackComplete",
+            "objectName": "",
+            "objectTag": "",
+            "objectHierarchy": "",
+            "objectOffset": {
+                "x": 0.0,
+                "y": 0.0
+            }
+        }
+    ]
+}

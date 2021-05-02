@@ -62,14 +62,14 @@ namespace WordHoarder.Managers.Static.Gameplay
 
         public static void PlaySound(Sound sound)
         {
-            if (SettingsManager.GetAudioEnabled() == false)
+            if (SettingsUtility.GetAudioEnabled() == false)
                 return;
             AudioClip audioClip = GameResources.GetAudioClip(sound);
             if (audioClip != null)
             {
                 if (audioPlayer == null)
                     Init();
-                var volume = SettingsManager.GetAudioVolume();
+                var volume = SettingsUtility.GetAudioVolume();
                 audioPlayer.volume = volume;
                 audioPlayer.PlayOneShot(audioClip);
             }

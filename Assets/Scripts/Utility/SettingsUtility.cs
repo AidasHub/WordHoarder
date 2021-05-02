@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace WordHoarder.Utility
 {
-    public static class SettingsManager
+    public static class SettingsUtility
     {
 
         private static float audioVolume = 1f;
@@ -13,7 +14,8 @@ namespace WordHoarder.Utility
 
         public static Resolution[] GetResolutions()
         {
-            return Screen.resolutions;
+            var resolutions = Screen.resolutions.Where(resolution => resolution.refreshRate == 60).ToArray();
+            return resolutions;
         }
 
         public static void SetResolution(int width, int height)

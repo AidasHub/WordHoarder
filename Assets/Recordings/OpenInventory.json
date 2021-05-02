@@ -1,0 +1,178 @@
+{
+    "entryScene": "0_Init",
+    "recordingType": 0,
+    "recordings": [],
+    "touchData": [
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 6.885530948638916,
+            "position": {
+                "x": 0.4707854390144348,
+                "y": 0.48211243748664858
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Load Game",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/MainPanel",
+            "objectOffset": {
+                "x": -0.07659036666154862,
+                "y": -0.02961410954594612
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.2100067138671875,
+            "position": {
+                "x": 0.4707854390144348,
+                "y": 0.48211243748664858
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Load Game",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/MainPanel",
+            "objectOffset": {
+                "x": -0.07659036666154862,
+                "y": -0.02961410954594612
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 0.669560432434082,
+            "position": {
+                "x": 0.48036399483680727,
+                "y": 0.5843271017074585
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Slot 1",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/LoadGamePanel",
+            "objectOffset": {
+                "x": -0.05147872492671013,
+                "y": -0.2894156575202942
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.09979820251464844,
+            "position": {
+                "x": 0.48036399483680727,
+                "y": 0.5843271017074585
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Slot 1",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/LoadGamePanel",
+            "objectOffset": {
+                "x": -0.05147872492671013,
+                "y": -0.2894156575202942
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 3.3389620780944826,
+            "position": {
+                "x": 0.4976053535938263,
+                "y": 0.013628619723021984
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Button",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas/Inventory",
+            "objectOffset": {
+                "x": 0.030639266595244409,
+                "y": 0.06711018830537796
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.09929847717285156,
+            "position": {
+                "x": 0.4976053535938263,
+                "y": 0.013628619723021984
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Button",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas/Inventory",
+            "objectOffset": {
+                "x": 0.030639266595244409,
+                "y": 0.06711018830537796
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 2.6822586059570314,
+            "position": {
+                "x": 0.48802682757377627,
+                "y": 0.27257239818573
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Button",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas/Inventory",
+            "objectOffset": {
+                "x": -0.0843028575181961,
+                "y": -0.2481892853975296
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.0857076644897461,
+            "position": {
+                "x": 0.48802682757377627,
+                "y": 0.27257239818573
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Button",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas/Inventory",
+            "objectOffset": {
+                "x": -0.0843028575181961,
+                "y": -0.2481892853975296
+            }
+        },
+        {
+            "pointerId": 0,
+            "eventType": 0,
+            "timeDelta": 2.254610061645508,
+            "position": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "playbackComplete",
+            "objectName": "",
+            "objectTag": "",
+            "objectHierarchy": "",
+            "objectOffset": {
+                "x": 0.0,
+                "y": 0.0
+            }
+        }
+    ]
+}

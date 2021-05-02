@@ -77,5 +77,10 @@ namespace WordHoarder.Managers.Static.UI
             }
             mainCanvas.worldCamera = Camera.main;
         }
+
+        public static void Destroy()
+        {
+            GameObject.Destroy(mainCanvasGO);
+        }
     }
 }

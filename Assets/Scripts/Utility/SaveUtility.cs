@@ -12,7 +12,7 @@ using WordHoarder.Gameplay.GameScenarios;
 
 namespace WordHoarder.Utility
 {
-    public static class SaveManager
+    public static class SaveUtility
     {
         [Serializable]
         public class SaveData
@@ -38,8 +38,8 @@ namespace WordHoarder.Utility
         }
 
         private static int maxSavedGamesCount = 3;
-        private static string saveFolderName = "SaveData";
-        private static string saveFileName = "Data";
+        public static string SaveFolderName { get; private set; } = "SaveData";
+        public static string SaveFileName { get; private set; } = "Data";
 
 
         public static bool SaveGame(SaveData saveData, int saveSlot)
@@ -47,12 +47,12 @@ namespace WordHoarder.Utility
             if (saveSlot >= maxSavedGamesCount)
                 return false;
             BinaryFormatter formatter = new BinaryFormatter();
-            string path = Application.persistentDataPath + "/" + saveFolderName;
+            string path = Application.persistentDataPath + "/" + SaveFolderName;
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);
             }
-            path += "/" + saveFileName + saveSlot;
+            path += "/" + SaveFileName + saveSlot;
 
             FileStream fileStream = new FileStream(path, FileMode.Create);
             bool success = false;
@@ -76,10 +76,10 @@ namespace WordHoarder.Utility
 
         public static SaveData LoadGame(int saveSlot)
         {
-            string path = Application.persistentDataPath + "/" + saveFolderName;
+            string path = Application.persistentDataPath + "/" + SaveFolderName;
             if (Directory.Exists(path))
             {
-                path += "/" + saveFileName + saveSlot;
+                path += "/" + SaveFileName + saveSlot;
                 if (File.Exists(path))
                 {
                     BinaryFormatter formatter = new BinaryFormatter();
@@ -114,13 +114,13 @@ namespace WordHoarder.Utility
         public static SaveData[] GetSavedGames()
         {
             SaveData[] savesData = new SaveData[maxSavedGamesCount];
-            string path = Application.persistentDataPath + "/" + saveFolderName;
+            string path = Application.persistentDataPath + "/" + SaveFolderName;
             if (!Directory.Exists(path))
                 return savesData;
 
             for (int i = 0; i < maxSavedGamesCount; i++)
             {
-                string filePath = path + "/" + saveFileName + i;
+                string filePath = path + "/" + SaveFileName + i;
                 if (File.Exists(filePath))
                 {
                     savesData[i] = (LoadGame(i));
