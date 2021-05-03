@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -46,7 +47,15 @@ namespace WordHoarder.Managers.Static.Gameplay
             Trousers,
             Shirt,
             Shelf,
-            Shoes
+            Shoes,
+            Fork,
+            Spoon,
+            Knife,
+            Wall,
+            Sofa,
+            Toilet,
+            Click,
+            VacuumCleaner
         }
 
         private static AudioSource audioPlayer;
@@ -73,6 +82,17 @@ namespace WordHoarder.Managers.Static.Gameplay
                 audioPlayer.volume = volume;
                 audioPlayer.PlayOneShot(audioClip);
             }
+        }
+
+        public static void PlaySoundByStringValue(string str)
+        {
+            if (str.Contains(" "))
+                str = str.Replace(" ", "");
+            Debug.Log(str);
+            Sound sound;
+            bool parsed = Enum.TryParse<SoundManager.Sound>(str, true, out sound);
+            if (parsed)
+                SoundManager.PlaySound(sound);
         }
     }
 }

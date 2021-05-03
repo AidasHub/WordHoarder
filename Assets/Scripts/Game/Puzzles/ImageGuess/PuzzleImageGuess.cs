@@ -6,6 +6,8 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using WordHoarder.Resources;
 using WordHoarder.Managers.Static.UI;
+using WordHoarder.Managers.Static.Gameplay;
+using System;
 
 namespace WordHoarder.Gameplay.Puzzles
 {
@@ -28,6 +30,7 @@ namespace WordHoarder.Gameplay.Puzzles
         private Button[] buttons;
         private TextMeshProUGUI questionText;
         private Image backgroundPanel;
+        private string answer;
 
         private UnityAction rewardAction;
 
@@ -47,6 +50,7 @@ namespace WordHoarder.Gameplay.Puzzles
                 buttons[i].GetComponentInChildren<TextMeshProUGUI>().text = optionTexts[i].ToUpper();
                 if (optionTexts[i].ToLower() == puzzleInfo.imageName.ToLower())
                 {
+                    answer = optionTexts[i];
                     buttons[i].onClick.AddListener(() => SelectAnswer(ii, true));
                 }
                 else
@@ -90,6 +94,7 @@ namespace WordHoarder.Gameplay.Puzzles
             {
                 buttonColors.disabledColor = Color.green;
                 button.colors = buttonColors;
+                SoundManager.PlaySoundByStringValue(answer);
                 yield return new WaitForSeconds(seconds);
                 rewardAction.Invoke();
                 button.interactable = true;

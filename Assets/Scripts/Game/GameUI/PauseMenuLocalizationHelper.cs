@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using WordHoarder.Managers.Static.Gameplay;
 using WordHoarder.Managers.Static.UI;
 using WordHoarder.Utility;
 

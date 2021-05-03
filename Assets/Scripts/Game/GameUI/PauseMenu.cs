@@ -47,6 +47,13 @@ namespace WordHoarder.Gameplay.UI
 
         private int orderInHierarchy = 0;
 
+        public void Awake()
+        {
+            Button[] buttons = gameObject.GetComponentsInChildren<Button>(true);
+            foreach (Button b in buttons)
+                b.onClick.AddListener(() => SoundManager.PlaySound(SoundManager.Sound.Click));
+        }
+
         public void Update()
         {
             if (Input.GetKeyDown(KeyCode.Escape) && !menuOpen)

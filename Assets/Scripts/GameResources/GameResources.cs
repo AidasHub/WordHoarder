@@ -104,7 +104,6 @@ namespace WordHoarder.Resources
                 spriteAssets.Add(sprites[i]);
             }
             Sprites = spriteAssets;
-            Debug.Log(Sprites.Count);
         }
 
         public static AudioClip GetAudioClip(SoundManager.Sound sound)
@@ -122,7 +121,6 @@ namespace WordHoarder.Resources
 
         public static Sprite GetSprite(string name)
         {
-            Debug.Log("Searching for " + name);
             for (int i = 0; i < Sprites.Count; i++)
             {
                 if (Sprites[i].name == name)

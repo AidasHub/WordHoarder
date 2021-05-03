@@ -43,7 +43,6 @@ namespace WordHoarder.Gameplay.GameScenarios
         {
             if(currentTutorialStep == 4)
             {
-                Debug.Log(InventoryManager.GetWords().Count);
                 if (InventoryManager.GetWords().Count > 0)
                     AdvanceTutorial();
             }

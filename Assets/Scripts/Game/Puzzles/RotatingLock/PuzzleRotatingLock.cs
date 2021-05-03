@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using WordHoarder.Managers.Static.Gameplay;
 using WordHoarder.Managers.Static.UI;
 
 namespace WordHoarder.Gameplay.Puzzles
@@ -151,6 +152,7 @@ namespace WordHoarder.Gameplay.Puzzles
             {
                 buttonColors.disabledColor = Color.green;
                 puzzleUnlockButton.colors = buttonColors;
+                SoundManager.PlaySoundByStringValue(puzzleInfo.word);
                 yield return new WaitForSeconds(seconds);
                 rewardAction.Invoke();
                 puzzleUnlockButton.interactable = true;

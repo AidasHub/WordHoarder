@@ -50,6 +50,9 @@ namespace WordHoarder.Gameplay.UI
 
         public void Init()
         {
+            Button[] buttons = GameObject.FindObjectsOfType<Button>(true);
+            foreach (Button b in buttons)
+                b.onClick.AddListener(() => SoundManager.PlaySound(SoundManager.Sound.Click));
             StartCoroutine(DisplayTitle());
         }
 

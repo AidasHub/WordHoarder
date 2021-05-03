@@ -41,13 +41,11 @@ namespace WordHoarder.Gameplay.UI
 
         public void UpdateProgression()
         {
-            Debug.Log("Calculating game completion");
             int currentCompletion = GameManager.CollectedWords + GameManager.UnlockedEnvironments + GameManager.RevealedHiddenObjects;
             int totalCompletion = GameManager.TotalWords + GameManager.TotalEnvironments + GameManager.TotalHiddenObjects;
             slider.value = currentCompletion;
             //sliderText.text = GameManager.CollectedWords + "/" + GameManager.TotalWords + " words collected";
             collectionPercentage = (100 * (float)currentCompletion/ totalCompletion);
-            Debug.Log(collectionPercentage);
             sliderText.text = string.Format("{0}: {1:0.0}%", LocalizationManager.GetActiveLanguage().WordsCollected, collectionPercentage);
         }
 

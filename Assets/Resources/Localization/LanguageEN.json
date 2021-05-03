@@ -54,6 +54,10 @@
 	"EnvironmentToBathroom": "To the bathroom",
 	"EnvironmentToBedroom": "To the bedroom",
 
+	"EndCongratulations": "Congratulations!",
+	"EndCompletion": "You have successfully finished the game!",
+	"EndAwesome": "Awesome!",
+
 	"TutorialSteps": [
 		"Welcome to Word-Hoarder!",
 		"This tutorial will guide you through the basic controls",

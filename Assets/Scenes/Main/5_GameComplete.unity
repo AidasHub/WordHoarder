@@ -1025,9 +1025,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42656dff21d3b8f4ab276267b507489b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCameraGO: {fileID: 802082150}
-  mainCanvasGO: {fileID: 1836276731}
-  eventSystemGO: {fileID: 2123856880}
+  Congratulations: {fileID: 610370927}
+  CompletionText: {fileID: 342026682}
+  Button: {fileID: 1719301554}
 --- !u!1 &2123856878
 GameObject:
   m_ObjectHideFlags: 0

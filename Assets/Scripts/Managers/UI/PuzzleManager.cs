@@ -48,7 +48,6 @@ namespace WordHoarder.Managers.Static.UI
                 wordFillPuzzles = GameResources.Puzzles.WordFillPuzzles;
                 rotatingLockPuzzles = GameResources.Puzzles.RotatingLockPuzzles;
                 imageGuessPuzzles = GameResources.Puzzles.ImageGuessPuzzles;
-                Debug.Log(wordFillPuzzles.Count);
 
                 interactivePanel = UIManager.AddToCanvas(interactivePanelPrefab);
                 interactivePanelCloseButton = interactivePanel.GetComponentInChildren<Button>();

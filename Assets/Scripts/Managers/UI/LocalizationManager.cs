@@ -82,6 +82,10 @@ namespace WordHoarder.Managers.Static.UI
             public string EnvironmentToBathroom;
             public string EnvironmentToBedroom;
 
+            public string EndCongratulations;
+            public string EndCompletion;
+            public string EndAwesome;
+
             public string[] TutorialSteps;
 
             public static _LocalizationInfo CreateFromJSON(string jsonString)

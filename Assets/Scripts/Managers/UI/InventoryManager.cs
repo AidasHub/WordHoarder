@@ -106,7 +106,6 @@ namespace WordHoarder.Managers.Static.UI
             }
             else
             {
-                Debug.Log("Opening");
                 IsOpen = true;
                 inventoryAnimator.SetBool("InventoryOpen", true);
             }

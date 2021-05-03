@@ -127,7 +127,6 @@ namespace WordHoarder.Gameplay.Puzzles
         public void PopulatePuzzleInventory()
         {
             List<InventoryWord> inventoryWords = InventoryManager.GetWords();
-            Debug.Log(InventoryManager.GetWords().Count);
             foreach (InventoryWord word in inventoryWords)
             {
                 var GO = Instantiate(word, inventoryGridLayout.transform);
@@ -204,15 +203,11 @@ namespace WordHoarder.Gameplay.Puzzles
         {
             List<Tuple<int, int>> blanks = FindBlanksInText(tmpLeft.text, '|');
             tmpLeft.ForceMeshUpdate();
-            Debug.Log(blanks.Count);
 
             for (int i = 0; i < blankWords.Count; i++)
             {
                 var firstCharIndex = blanks[i].Item1;
                 var lastCharIndex = blanks[i].Item2 - 1;
-
-                Debug.Log(firstCharIndex);
-                Debug.Log(lastCharIndex);
 
                 Vector3 botLeft = tmpLeft.textInfo.characterInfo[firstCharIndex].bottomLeft;
                 Vector3 topLeft = tmpLeft.textInfo.characterInfo[firstCharIndex].topLeft;
