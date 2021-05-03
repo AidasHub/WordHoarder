@@ -55,7 +55,9 @@ namespace WordHoarder.Managers.Static.Gameplay
             Sofa,
             Toilet,
             Click,
-            VacuumCleaner
+            VacuumCleaner,
+            Scissors,
+            Bedroom
         }
 
         private static AudioSource audioPlayer;

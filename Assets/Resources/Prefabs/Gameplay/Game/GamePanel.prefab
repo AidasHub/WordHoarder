@@ -951,6 +951,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Bathtub
   soundClip: 25
+  wordCollider: {fileID: 0}
 --- !u!1 &1849473887
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,6 +1168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Socket
   soundClip: 24
+  wordCollider: {fileID: 0}
 --- !u!1 &1919612040
 GameObject:
   m_ObjectHideFlags: 0
@@ -1346,6 +1348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Window
   soundClip: 14
+  wordCollider: {fileID: 0}
 --- !u!1 &2000876505
 GameObject:
   m_ObjectHideFlags: 0
@@ -1376,7 +1379,6 @@ RectTransform:
   - {fileID: 1904556358}
   - {fileID: 1797335647}
   - {fileID: 2798023885715280839}
-  - {fileID: 7422687829321712556}
   m_Father: {fileID: 1293068340}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1698,6 +1700,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Table
   soundClip: 15
+  wordCollider: {fileID: 0}
 --- !u!1 &68234688723137624
 GameObject:
   m_ObjectHideFlags: 0
@@ -2109,7 +2112,7 @@ MonoBehaviour:
   unlockedButton: {fileID: 6201803819830830557}
   isLocked: 1
   destination: 0
-  puzzleType: 2
+  puzzleType: 1
   puzzleIndex: 5
 --- !u!61 &2704968445223230988
 BoxCollider2D:
@@ -2528,6 +2531,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Sink
   soundClip: 12
+  wordCollider: {fileID: 0}
 --- !u!1 &752521861188036898
 GameObject:
   m_ObjectHideFlags: 0
@@ -2719,6 +2723,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Blender
   soundClip: 11
+  wordCollider: {fileID: 0}
 --- !u!1 &752521861188036908
 GameObject:
   m_ObjectHideFlags: 0
@@ -2900,6 +2905,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Microwave
   soundClip: 6
+  wordCollider: {fileID: 0}
 --- !u!1 &752521861188036912
 GameObject:
   m_ObjectHideFlags: 0
@@ -3818,6 +3824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Mirror
   soundClip: 3
+  wordCollider: {fileID: 0}
 --- !u!120 &752521861188036888
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -4494,6 +4501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Cupboard
   soundClip: 10
+  wordCollider: {fileID: 0}
 --- !u!1 &752521861188037067
 GameObject:
   m_ObjectHideFlags: 0
@@ -4673,6 +4681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Painting
   soundClip: 8
+  wordCollider: {fileID: 0}
 --- !u!1 &752521861188037070
 GameObject:
   m_ObjectHideFlags: 0
@@ -4868,6 +4877,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Plant
   soundClip: 7
+  wordCollider: {fileID: 0}
 --- !u!1 &752521861188037079
 GameObject:
   m_ObjectHideFlags: 0
@@ -4964,6 +4974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Pouf
   soundClip: 2
+  wordCollider: {fileID: 0}
 --- !u!120 &752521861188036887
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -5285,6 +5296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Fridge
   soundClip: 4
+  wordCollider: {fileID: 0}
 --- !u!1 &752521861188037090
 GameObject:
   m_ObjectHideFlags: 0
@@ -5468,6 +5480,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Toaster
   soundClip: 13
+  wordCollider: {fileID: 0}
 --- !u!1 &752521861188037095
 GameObject:
   m_ObjectHideFlags: 0
@@ -5650,6 +5663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Laptop
   soundClip: 9
+  wordCollider: {fileID: 0}
 --- !u!1 &752521861188037099
 GameObject:
   m_ObjectHideFlags: 0
@@ -5869,6 +5883,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Oven
   soundClip: 5
+  wordCollider: {fileID: 0}
 --- !u!1 &752521861299372946
 GameObject:
   m_ObjectHideFlags: 0
@@ -6349,6 +6364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Speaker
   soundClip: 18
+  wordCollider: {fileID: 0}
 --- !u!1 &1653779617851231398
 GameObject:
   m_ObjectHideFlags: 0
@@ -6604,208 +6620,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &1813212840138950953
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7422687829321712556}
-  - component: {fileID: 2752751526671997059}
-  - component: {fileID: 3798812306573507058}
-  - component: {fileID: 5682759317480741093}
-  m_Layer: 5
-  m_Name: ShowerHead
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &7422687829321712556
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1813212840138950953}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2000876506}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!60 &2752751526671997059
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1813212840138950953}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 130.00462, y: 389.9326}
-      - {x: 133.5762, y: 395.6227}
-      - {x: 125.39142, y: 394.65668}
-      - {x: 121.74292, y: 397.5185}
-      - {x: 121.21469, y: 402.85834}
-      - {x: 127.31339, y: 404.46927}
-      - {x: 120.900055, y: 410.7261}
-      - {x: 116.16029, y: 405.33084}
-      - {x: 108.544365, y: 403.8576}
-      - {x: 100.896545, y: 407.67737}
-      - {x: 97.46121, y: 416.2908}
-      - {x: 98.42934, y: 425.70877}
-      - {x: 106.74568, y: 430.08688}
-      - {x: 115.19211, y: 428.1461}
-      - {x: 119.59774, y: 422.76874}
-      - {x: 126.16033, y: 418.59274}
-      - {x: 135.16905, y: 409.64368}
-      - {x: 139.10435, y: 409.41138}
-      - {x: 144.0325, y: 403.02533}
-      - {x: 152.82594, y: 405.24585}
-      - {x: 162.6303, y: 403.3179}
-      - {x: 166.97437, y: 397.1797}
-      - {x: 167.2787, y: 390.32944}
-      - {x: 160.57932, y: 381.58514}
-      - {x: 146.79486, y: 373.4694}
-      - {x: 137.61826, y: 374.08032}
-      - {x: 130.4159, y: 381.92004}
---- !u!120 &3798812306573507058
-LineRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1813212840138950953}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 0
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Positions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
-  m_Parameters:
-    serializedVersion: 3
-    widthMultiplier: 1
-    widthCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    colorGradient:
-      serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    numCornerVertices: 0
-    numCapVertices: 0
-    alignment: 0
-    textureMode: 0
-    shadowBias: 0.5
-    generateLightingData: 0
-  m_UseWorldSpace: 1
-  m_Loop: 0
---- !u!114 &5682759317480741093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1813212840138950953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b89b1baf0742924cac40d495cc89931, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wordText: Shower Head
-  soundClip: 27
 --- !u!1 &2270756718951425147
 GameObject:
   m_ObjectHideFlags: 0
@@ -6995,6 +6809,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Purse
   soundClip: 31
+  wordCollider: {fileID: 0}
 --- !u!1 &2380530164555444057
 GameObject:
   m_ObjectHideFlags: 0
@@ -7942,6 +7757,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Fireplace
   soundClip: 22
+  wordCollider: {fileID: 0}
 --- !u!1 &3277529046622787772
 GameObject:
   m_ObjectHideFlags: 0
@@ -8633,6 +8449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Pillow
   soundClip: 30
+  wordCollider: {fileID: 0}
 --- !u!1 &4387602952284478080
 GameObject:
   m_ObjectHideFlags: 0
@@ -9255,6 +9072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Trousers
   soundClip: 32
+  wordCollider: {fileID: 0}
 --- !u!1 &4685521977894541717
 GameObject:
   m_ObjectHideFlags: 0
@@ -9555,6 +9373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Shelf
   soundClip: 34
+  wordCollider: {fileID: 0}
 --- !u!1 &5040174626806160740
 GameObject:
   m_ObjectHideFlags: 0
@@ -9888,6 +9707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Guitar
   soundClip: 20
+  wordCollider: {fileID: 0}
 --- !u!1 &6006299962624849230
 GameObject:
   m_ObjectHideFlags: 0
@@ -10351,6 +10171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Lamp
   soundClip: 29
+  wordCollider: {fileID: 0}
 --- !u!1 &6479223895455103630
 GameObject:
   m_ObjectHideFlags: 0
@@ -10560,6 +10381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Cactus
   soundClip: 19
+  wordCollider: {fileID: 0}
 --- !u!1 &6523780605461446897
 GameObject:
   m_ObjectHideFlags: 0
@@ -10778,6 +10600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: TV
   soundClip: 21
+  wordCollider: {fileID: 0}
 --- !u!1 &6608544019856244968
 GameObject:
   m_ObjectHideFlags: 0
@@ -10983,6 +10806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Books
   soundClip: 16
+  wordCollider: {fileID: 0}
 --- !u!1 &6641402259700008515
 GameObject:
   m_ObjectHideFlags: 0
@@ -11173,6 +10997,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Shoes
   soundClip: 35
+  wordCollider: {fileID: 0}
 --- !u!1 &6670611548957133222
 GameObject:
   m_ObjectHideFlags: 0
@@ -11600,6 +11425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Switches
   soundClip: 28
+  wordCollider: {fileID: 0}
 --- !u!1 &7152561622676947587
 GameObject:
   m_ObjectHideFlags: 0
@@ -11798,6 +11624,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Shirt
   soundClip: 33
+  wordCollider: {fileID: 0}
 --- !u!1 &7227094117372607286
 GameObject:
   m_ObjectHideFlags: 0
@@ -11978,6 +11805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Magazine
   soundClip: 17
+  wordCollider: {fileID: 0}
 --- !u!1 &7422162681396076968
 GameObject:
   m_ObjectHideFlags: 0
@@ -12110,8 +11938,6 @@ GameObject:
   - component: {fileID: 2785680490896999560}
   - component: {fileID: 716900780266851565}
   - component: {fileID: 6821050138857437515}
-  - component: {fileID: 848475587829725640}
-  - component: {fileID: 3096150077361781667}
   m_Layer: 5
   m_Name: Kettle
   m_TagString: Untagged
@@ -12153,7 +11979,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7473222842050216988}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -12202,37 +12028,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0
---- !u!114 &848475587829725640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7473222842050216988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
-  m_EffectDistance: {x: 3, y: 3}
-  m_UseGraphicAlpha: 1
---- !u!114 &3096150077361781667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7473222842050216988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22e584956678d8e4a8b45c7a7375d8da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  expectedWord: kettle
-  actionEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &7759561659227121587
 GameObject:
   m_ObjectHideFlags: 0
@@ -12413,6 +12208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Towel
   soundClip: 26
+  wordCollider: {fileID: 0}
 --- !u!1 &7973285641514357549
 GameObject:
   m_ObjectHideFlags: 0
@@ -13211,6 +13007,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordText: Stool
   soundClip: 23
+  wordCollider: {fileID: 0}
 --- !u!1 &8635087844801346324
 GameObject:
   m_ObjectHideFlags: 0

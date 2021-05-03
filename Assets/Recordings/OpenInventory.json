@@ -6,10 +6,10 @@
         {
             "pointerId": -1,
             "eventType": 1,
-            "timeDelta": 6.885530948638916,
+            "timeDelta": 8.23697280883789,
             "position": {
-                "x": 0.4707854390144348,
-                "y": 0.48211243748664858
+                "x": 0.46717172861099245,
+                "y": 0.47755834460258486
             },
             "positional": false,
             "waitSignal": "",
@@ -18,17 +18,17 @@
             "objectTag": "Untagged",
             "objectHierarchy": "MenuCanvas/MainPanel",
             "objectOffset": {
-                "x": -0.07659036666154862,
-                "y": -0.02961410954594612
+                "x": -0.08606429398059845,
+                "y": -0.08158548176288605
             }
         },
         {
             "pointerId": -1,
             "eventType": 2,
-            "timeDelta": 0.2100067138671875,
+            "timeDelta": 0.20731067657470704,
             "position": {
-                "x": 0.4707854390144348,
-                "y": 0.48211243748664858
+                "x": 0.46717172861099245,
+                "y": 0.47755834460258486
             },
             "positional": false,
             "waitSignal": "",
@@ -37,17 +37,17 @@
             "objectTag": "Untagged",
             "objectHierarchy": "MenuCanvas/MainPanel",
             "objectOffset": {
-                "x": -0.07659036666154862,
-                "y": -0.02961410954594612
+                "x": -0.08606429398059845,
+                "y": -0.08158548176288605
             }
         },
         {
             "pointerId": -1,
             "eventType": 1,
-            "timeDelta": 0.669560432434082,
+            "timeDelta": 1.0215997695922852,
             "position": {
-                "x": 0.48036399483680727,
-                "y": 0.5843271017074585
+                "x": 0.5126262903213501,
+                "y": 0.5978456139564514
             },
             "positional": false,
             "waitSignal": "",
@@ -56,17 +56,17 @@
             "objectTag": "Untagged",
             "objectHierarchy": "MenuCanvas/LoadGamePanel",
             "objectOffset": {
-                "x": -0.05147872492671013,
-                "y": -0.2894156575202942
+                "x": 0.033101703971624377,
+                "y": -0.1349111646413803
             }
         },
         {
             "pointerId": -1,
             "eventType": 2,
-            "timeDelta": 0.09979820251464844,
+            "timeDelta": 0.09057807922363281,
             "position": {
-                "x": 0.48036399483680727,
-                "y": 0.5843271017074585
+                "x": 0.5126262903213501,
+                "y": 0.5978456139564514
             },
             "positional": false,
             "waitSignal": "",
@@ -75,17 +75,17 @@
             "objectTag": "Untagged",
             "objectHierarchy": "MenuCanvas/LoadGamePanel",
             "objectOffset": {
-                "x": -0.05147872492671013,
-                "y": -0.2894156575202942
+                "x": 0.033101703971624377,
+                "y": -0.1349111646413803
             }
         },
         {
             "pointerId": -1,
             "eventType": 1,
-            "timeDelta": 3.3389620780944826,
+            "timeDelta": 4.395570755004883,
             "position": {
-                "x": 0.4976053535938263,
-                "y": 0.013628619723021984
+                "x": 0.49242424964904787,
+                "y": 0.014362657442688942
             },
             "positional": false,
             "waitSignal": "",
@@ -94,17 +94,17 @@
             "objectTag": "Untagged",
             "objectHierarchy": "MainCanvas/Inventory",
             "objectOffset": {
-                "x": 0.030639266595244409,
-                "y": 0.06711018830537796
+                "x": -0.03153390809893608,
+                "y": 0.09385783225297928
             }
         },
         {
             "pointerId": -1,
             "eventType": 2,
-            "timeDelta": 0.09929847717285156,
+            "timeDelta": 0.0915985107421875,
             "position": {
-                "x": 0.4976053535938263,
-                "y": 0.013628619723021984
+                "x": 0.49242424964904787,
+                "y": 0.014362657442688942
             },
             "positional": false,
             "waitSignal": "",
@@ -113,17 +113,17 @@
             "objectTag": "Untagged",
             "objectHierarchy": "MainCanvas/Inventory",
             "objectOffset": {
-                "x": 0.030639266595244409,
-                "y": 0.06711018830537796
+                "x": -0.03153390809893608,
+                "y": 0.09385783225297928
             }
         },
         {
             "pointerId": -1,
             "eventType": 1,
-            "timeDelta": 2.6822586059570314,
+            "timeDelta": 3.091388702392578,
             "position": {
-                "x": 0.48802682757377627,
-                "y": 0.27257239818573
+                "x": 0.49242424964904787,
+                "y": 0.2746858298778534
             },
             "positional": false,
             "waitSignal": "",
@@ -132,17 +132,17 @@
             "objectTag": "Untagged",
             "objectHierarchy": "MainCanvas/Inventory",
             "objectOffset": {
-                "x": -0.0843028575181961,
-                "y": -0.2481892853975296
+                "x": -0.03153390809893608,
+                "y": -0.16571655869483949
             }
         },
         {
             "pointerId": -1,
             "eventType": 2,
-            "timeDelta": 0.0857076644897461,
+            "timeDelta": 0.07223320007324219,
             "position": {
-                "x": 0.48802682757377627,
-                "y": 0.27257239818573
+                "x": 0.49242424964904787,
+                "y": 0.2746858298778534
             },
             "positional": false,
             "waitSignal": "",
@@ -151,14 +151,14 @@
             "objectTag": "Untagged",
             "objectHierarchy": "MainCanvas/Inventory",
             "objectOffset": {
-                "x": -0.0843028575181961,
-                "y": -0.2481892853975296
+                "x": -0.03153390809893608,
+                "y": -0.16571655869483949
             }
         },
         {
             "pointerId": 0,
             "eventType": 0,
-            "timeDelta": 2.254610061645508,
+            "timeDelta": 3.8539199829101564,
             "position": {
                 "x": 0.0,
                 "y": 0.0

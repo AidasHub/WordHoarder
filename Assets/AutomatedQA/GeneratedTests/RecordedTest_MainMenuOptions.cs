@@ -12,6 +12,12 @@ namespace GeneratedRecordedTests
     /// </summary>
     public class RecordedTest_MainMenuOptions : RecordedTestSuite
     {
+        [UnitySetUp]
+        public IEnumerator Setup()
+        {
+            UITestSetup.SetupUITests();
+            yield return null;
+        }
         /// <summary>
         /// Asserts that the recording can successfully play through to the end. 
         /// </summary>

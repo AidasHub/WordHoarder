@@ -1,0 +1,292 @@
+{
+    "entryScene": "0_Init",
+    "recordingType": 0,
+    "recordings": [],
+    "touchData": [
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 7.484984874725342,
+            "position": {
+                "x": 0.5378788113594055,
+                "y": 0.48114901781082156
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Load Game",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/MainPanel",
+            "objectOffset": {
+                "x": 0.09930494427680969,
+                "y": -0.0407131090760231
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.25478172302246096,
+            "position": {
+                "x": 0.5328282713890076,
+                "y": 0.4937163293361664
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Load Game",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/MainPanel",
+            "objectOffset": {
+                "x": 0.08606429398059845,
+                "y": 0.10234016925096512
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 1.6129193305969239,
+            "position": {
+                "x": 0.5227272510528565,
+                "y": 0.4955116808414459
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Slot 2",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/LoadGamePanel",
+            "objectOffset": {
+                "x": 0.05958300083875656,
+                "y": 0.1227763295173645
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.10831546783447266,
+            "position": {
+                "x": 0.5227272510528565,
+                "y": 0.4955116808414459
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Slot 2",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/LoadGamePanel",
+            "objectOffset": {
+                "x": 0.05958300083875656,
+                "y": 0.1227763295173645
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 2.7885265350341799,
+            "position": {
+                "x": 0.040909089148044589,
+                "y": 0.05924595892429352
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Locked",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas/GamePanel/3 - Living Room/Navigation/LivingRoomToLivingRoom2",
+            "objectOffset": {
+                "x": -0.0031064145732671024,
+                "y": -0.06962724775075913
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.10080146789550781,
+            "position": {
+                "x": 0.040909089148044589,
+                "y": 0.05924595892429352
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Locked",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas/GamePanel/3 - Living Room/Navigation/LivingRoomToLivingRoom2",
+            "objectOffset": {
+                "x": -0.0031064145732671024,
+                "y": -0.06962724775075913
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 1.8486700057983399,
+            "position": {
+                "x": 0.43686869740486147,
+                "y": 0.21543985605239869
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Books",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas/InteractivePanel/WordFill (1)/Inventory/Container/Word Layout Group",
+            "objectOffset": {
+                "x": -0.3210582733154297,
+                "y": 0.21451851725578309
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 4,
+            "timeDelta": 0.10547161102294922,
+            "position": {
+                "x": 0.4267676770687103,
+                "y": 0.23339317739009858
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Books",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas",
+            "objectOffset": {
+                "x": -0.36954307556152346,
+                "y": 0.3530465364456177
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.9066019058227539,
+            "position": {
+                "x": 0.11565656214952469,
+                "y": 0.6552962064743042
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "books",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas/InteractivePanel/WordFill (1)/EnglishPanel/MainText",
+            "objectOffset": {
+                "x": -0.23104052245616914,
+                "y": -0.11626353114843369
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 1.5365219116210938,
+            "position": {
+                "x": 0.36616161465644839,
+                "y": 0.21184919774532319
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Cupboard",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas/InteractivePanel/WordFill (1)/Inventory/Container/Word Layout Group",
+            "objectOffset": {
+                "x": 0.00015457153494935483,
+                "y": 0.1591077595949173
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 4,
+            "timeDelta": 0.08783912658691406,
+            "position": {
+                "x": 0.36616161465644839,
+                "y": 0.22980251908302308
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Cupboard",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas",
+            "objectOffset": {
+                "x": 0.00015441894356627017,
+                "y": 0.3530474007129669
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.8689937591552734,
+            "position": {
+                "x": 0.3863636255264282,
+                "y": 0.7001795172691345
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "cupboard",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas/InteractivePanel/WordFill (1)/EnglishPanel/MainText",
+            "objectOffset": {
+                "x": 0.0784456804394722,
+                "y": 0.08040637522935868
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 2.2481117248535158,
+            "position": {
+                "x": 0.047979798167943957,
+                "y": 0.07719928026199341
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Unlocked",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas/GamePanel/3 - Living Room/Navigation/LivingRoomToLivingRoom2",
+            "objectOffset": {
+                "x": 0.4901982545852661,
+                "y": -0.07502919435501099
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.06783103942871094,
+            "position": {
+                "x": 0.047979798167943957,
+                "y": 0.07719928026199341
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Unlocked",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas/GamePanel/3 - Living Room/Navigation/LivingRoomToLivingRoom2",
+            "objectOffset": {
+                "x": 0.4901982545852661,
+                "y": -0.07502919435501099
+            }
+        },
+        {
+            "pointerId": 0,
+            "eventType": 0,
+            "timeDelta": 2.498218536376953,
+            "position": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "playbackComplete",
+            "objectName": "",
+            "objectTag": "",
+            "objectHierarchy": "",
+            "objectOffset": {
+                "x": 0.0,
+                "y": 0.0
+            }
+        }
+    ]
+}

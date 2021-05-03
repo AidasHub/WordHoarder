@@ -109,9 +109,11 @@ namespace WordHoarder.Gameplay.World
 
         public void LoadSaveData(bool isComplete)
         {
-            GameManager.IncreaseRevealedHiddenObjects();
             if (isComplete)
+            {
+                GameManager.IncreaseRevealedHiddenObjects();
                 gameObject.SetActive(false);
+            } 
         }
 
         private void OnDisable()

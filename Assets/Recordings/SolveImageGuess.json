@@ -6,10 +6,10 @@
         {
             "pointerId": -1,
             "eventType": 1,
-            "timeDelta": 7.74759578704834,
+            "timeDelta": 7.180080413818359,
             "position": {
-                "x": 0.5052682161331177,
-                "y": 0.4991482198238373
+                "x": 0.558080792427063,
+                "y": 0.48114901781082156
             },
             "positional": false,
             "waitSignal": "",
@@ -18,17 +18,17 @@
             "objectTag": "Untagged",
             "objectHierarchy": "MenuCanvas/MainPanel",
             "objectOffset": {
-                "x": 0.01381136104464531,
-                "y": 0.16417725384235383
+                "x": 0.15226757526397706,
+                "y": -0.0407131090760231
             }
         },
         {
             "pointerId": -1,
             "eventType": 2,
-            "timeDelta": 0.20248174667358399,
+            "timeDelta": 0.2416224479675293,
             "position": {
-                "x": 0.5052682161331177,
-                "y": 0.4991482198238373
+                "x": 0.5560606122016907,
+                "y": 0.48114901781082156
             },
             "positional": false,
             "waitSignal": "",
@@ -37,17 +37,17 @@
             "objectTag": "Untagged",
             "objectHierarchy": "MenuCanvas/MainPanel",
             "objectOffset": {
-                "x": 0.01381136104464531,
-                "y": 0.16417725384235383
+                "x": 0.14697131514549256,
+                "y": -0.0407131090760231
             }
         },
         {
             "pointerId": -1,
             "eventType": 1,
-            "timeDelta": 0.42023229598999026,
+            "timeDelta": 0.7848858833312988,
             "position": {
-                "x": 0.4976053535938263,
-                "y": 0.5792163610458374
+                "x": 0.5126262903213501,
+                "y": 0.5709156394004822
             },
             "positional": false,
             "waitSignal": "",
@@ -56,17 +56,17 @@
             "objectTag": "Untagged",
             "objectHierarchy": "MenuCanvas/LoadGamePanel",
             "objectOffset": {
-                "x": -0.006277838256210089,
-                "y": -0.3475530743598938
+                "x": 0.033101703971624377,
+                "y": -0.4414539635181427
             }
         },
         {
             "pointerId": -1,
             "eventType": 2,
-            "timeDelta": 0.06802845001220703,
+            "timeDelta": 0.07764625549316406,
             "position": {
-                "x": 0.4976053535938263,
-                "y": 0.5792163610458374
+                "x": 0.5126262903213501,
+                "y": 0.5709156394004822
             },
             "positional": false,
             "waitSignal": "",
@@ -75,166 +75,128 @@
             "objectTag": "Untagged",
             "objectHierarchy": "MenuCanvas/LoadGamePanel",
             "objectOffset": {
-                "x": -0.006277838256210089,
-                "y": -0.3475530743598938
+                "x": 0.033101703971624377,
+                "y": -0.4414539635181427
             }
         },
         {
             "pointerId": -1,
             "eventType": 1,
-            "timeDelta": 2.799319267272949,
+            "timeDelta": 2.1252565383911135,
             "position": {
-                "x": 0.3510536253452301,
-                "y": 0.0528109036386013
+                "x": 0.4247474670410156,
+                "y": 0.28366246819496157
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Unlocked",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas/GamePanel/0 - Corridor/Navigation/CorridorToLivingRoom",
+            "objectOffset": {
+                "x": 0.14794962108135224,
+                "y": 0.07674890756607056
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.09009742736816406,
+            "position": {
+                "x": 0.4247474670410156,
+                "y": 0.28366246819496157
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Unlocked",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas/GamePanel/0 - Corridor/Navigation/CorridorToLivingRoom",
+            "objectOffset": {
+                "x": 0.14794962108135224,
+                "y": 0.07674890756607056
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 1.321695327758789,
+            "position": {
+                "x": 0.3590908944606781,
+                "y": 0.03770197555422783
             },
             "positional": false,
             "waitSignal": "",
             "emitSignal": "",
             "objectName": "Locked",
             "objectTag": "Untagged",
-            "objectHierarchy": "MainCanvas/GamePanel/1 - Kitchen/Navigation/KitchenToCorridor",
+            "objectHierarchy": "MainCanvas/GamePanel/3 - Living Room/Navigation/LivingRoomToCorridor",
             "objectOffset": {
-                "x": -0.34078705310821535,
-                "y": -0.2106831818819046
+                "x": -0.19097067415714265,
+                "y": -0.15480421483516694
             }
         },
         {
             "pointerId": -1,
             "eventType": 2,
-            "timeDelta": 0.06744194030761719,
+            "timeDelta": 0.08751678466796875,
             "position": {
-                "x": 0.3510536253452301,
-                "y": 0.0528109036386013
+                "x": 0.3590908944606781,
+                "y": 0.03770197555422783
             },
             "positional": false,
             "waitSignal": "",
             "emitSignal": "",
             "objectName": "Locked",
             "objectTag": "Untagged",
-            "objectHierarchy": "MainCanvas/GamePanel/1 - Kitchen/Navigation/KitchenToCorridor",
+            "objectHierarchy": "MainCanvas/GamePanel/3 - Living Room/Navigation/LivingRoomToCorridor",
             "objectOffset": {
-                "x": -0.34078705310821535,
-                "y": -0.2106831818819046
+                "x": -0.19097067415714265,
+                "y": -0.15480421483516694
             }
         },
         {
             "pointerId": -1,
             "eventType": 1,
-            "timeDelta": 3.028519630432129,
+            "timeDelta": 2.2495479583740236,
             "position": {
-                "x": 0.665229856967926,
-                "y": 0.20442929863929749
+                "x": 0.3863636255264282,
+                "y": 0.20287252962589265
             },
             "positional": false,
             "waitSignal": "",
             "emitSignal": "",
-            "objectName": "OptionC",
+            "objectName": "OptionA",
             "objectTag": "Untagged",
             "objectHierarchy": "MainCanvas/InteractivePanel/ImageGuess",
             "objectOffset": {
-                "x": 0.06896362453699112,
-                "y": -0.0615997314453125
+                "x": 0.32727381587028506,
+                "y": -0.09938659518957138
             }
         },
         {
             "pointerId": -1,
             "eventType": 2,
-            "timeDelta": 0.10928821563720703,
+            "timeDelta": 0.10242557525634766,
             "position": {
-                "x": 0.665229856967926,
-                "y": 0.20442929863929749
+                "x": 0.3863636255264282,
+                "y": 0.20287252962589265
             },
             "positional": false,
             "waitSignal": "",
             "emitSignal": "",
-            "objectName": "OptionC",
+            "objectName": "OptionA",
             "objectTag": "Untagged",
             "objectHierarchy": "MainCanvas/InteractivePanel/ImageGuess",
             "objectOffset": {
-                "x": 0.06896362453699112,
-                "y": -0.0615997314453125
-            }
-        },
-        {
-            "pointerId": -1,
-            "eventType": 1,
-            "timeDelta": 2.2457656860351564,
-            "position": {
-                "x": 0.48802682757377627,
-                "y": 0.16695059835910798
-            },
-            "positional": false,
-            "waitSignal": "",
-            "emitSignal": "",
-            "objectName": "Locked",
-            "objectTag": "Untagged",
-            "objectHierarchy": "MainCanvas/GamePanel/1 - Kitchen/Navigation/KitchenToKitchen2",
-            "objectOffset": {
-                "x": -0.0862165242433548,
-                "y": -0.047078199684619907
-            }
-        },
-        {
-            "pointerId": -1,
-            "eventType": 2,
-            "timeDelta": 0.09361457824707031,
-            "position": {
-                "x": 0.48802682757377627,
-                "y": 0.16695059835910798
-            },
-            "positional": false,
-            "waitSignal": "",
-            "emitSignal": "",
-            "objectName": "Locked",
-            "objectTag": "Untagged",
-            "objectHierarchy": "MainCanvas/GamePanel/1 - Kitchen/Navigation/KitchenToKitchen2",
-            "objectOffset": {
-                "x": -0.0862165242433548,
-                "y": -0.047078199684619907
-            }
-        },
-        {
-            "pointerId": -1,
-            "eventType": 1,
-            "timeDelta": 1.7954349517822266,
-            "position": {
-                "x": 0.4976053535938263,
-                "y": 0.20954003930091859
-            },
-            "positional": false,
-            "waitSignal": "",
-            "emitSignal": "",
-            "objectName": "OptionB",
-            "objectTag": "Untagged",
-            "objectHierarchy": "MainCanvas/InteractivePanel/ImageGuess",
-            "objectOffset": {
-                "x": -0.018390869721770288,
-                "y": 0.04872192442417145
-            }
-        },
-        {
-            "pointerId": -1,
-            "eventType": 2,
-            "timeDelta": 0.11179924011230469,
-            "position": {
-                "x": 0.4976053535938263,
-                "y": 0.20954003930091859
-            },
-            "positional": false,
-            "waitSignal": "",
-            "emitSignal": "",
-            "objectName": "OptionB",
-            "objectTag": "Untagged",
-            "objectHierarchy": "MainCanvas/InteractivePanel/ImageGuess",
-            "objectOffset": {
-                "x": -0.018390869721770288,
-                "y": 0.04872192442417145
+                "x": 0.32727381587028506,
+                "y": -0.09938659518957138
             }
         },
         {
             "pointerId": 0,
             "eventType": 0,
-            "timeDelta": 3.2862930297851564,
+            "timeDelta": 5.25446891784668,
             "position": {
                 "x": 0.0,
                 "y": 0.0

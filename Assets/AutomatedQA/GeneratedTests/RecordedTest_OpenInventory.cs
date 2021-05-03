@@ -1,11 +1,8 @@
 using System.Collections;
-using System.IO;
 using NUnit.Framework;
 using Unity.RecordedTesting;
 using Unity.RecordedTesting.TestTools;
-using UnityEngine;
 using UnityEngine.TestTools;
-using WordHoarder.Utility;
 
 namespace GeneratedRecordedTests
 {
@@ -16,15 +13,9 @@ namespace GeneratedRecordedTests
     public class RecordedTest_OpenInventory : RecordedTestSuite
     {
         [UnitySetUp]
-        public IEnumerator SaveSetup()
+        public IEnumerator Setup()
         {
-            var data = Application.dataPath + "/Tests/UI Test Data/DataLoad";
-            string path = Application.persistentDataPath + "/" + SaveUtility.SaveFolderName;
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
-            File.Copy(data, path + "/" + SaveUtility.SaveFileName + "0", true);
+            UITestSetup.SetupUITests();
             yield return null;
         }
         /// <summary>

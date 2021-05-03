@@ -6,10 +6,10 @@
         {
             "pointerId": -1,
             "eventType": 1,
-            "timeDelta": 8.251599311828614,
+            "timeDelta": 7.333523750305176,
             "position": {
-                "x": 0.48323753476142886,
-                "y": 0.49233388900756838
+                "x": 0.515656590461731,
+                "y": 0.47755834460258486
             },
             "positional": false,
             "waitSignal": "",
@@ -18,17 +18,17 @@
             "objectTag": "Untagged",
             "objectHierarchy": "MenuCanvas/MainPanel",
             "objectOffset": {
-                "x": -0.04394528269767761,
-                "y": 0.08666067570447922
+                "x": 0.04104604944586754,
+                "y": -0.08158548176288605
             }
         },
         {
             "pointerId": -1,
             "eventType": 2,
-            "timeDelta": 0.23240184783935548,
+            "timeDelta": 0.24368906021118165,
             "position": {
-                "x": 0.48323753476142886,
-                "y": 0.49233388900756838
+                "x": 0.515656590461731,
+                "y": 0.47755834460258486
             },
             "positional": false,
             "waitSignal": "",
@@ -37,17 +37,17 @@
             "objectTag": "Untagged",
             "objectHierarchy": "MenuCanvas/MainPanel",
             "objectOffset": {
-                "x": -0.04394528269767761,
-                "y": 0.08666067570447922
+                "x": 0.04104604944586754,
+                "y": -0.08158548176288605
             }
         },
         {
             "pointerId": -1,
             "eventType": 1,
-            "timeDelta": 0.9489021301269531,
+            "timeDelta": 0.6003470420837402,
             "position": {
-                "x": 0.4899425208568573,
-                "y": 0.5843271017074585
+                "x": 0.5126262903213501,
+                "y": 0.6014362573623657
             },
             "positional": false,
             "waitSignal": "",
@@ -56,17 +56,17 @@
             "objectTag": "Untagged",
             "objectHierarchy": "MenuCanvas/LoadGamePanel",
             "objectOffset": {
-                "x": -0.026367120444774629,
-                "y": -0.2894156575202942
+                "x": 0.033101703971624377,
+                "y": -0.09403883665800095
             }
         },
         {
             "pointerId": -1,
             "eventType": 2,
-            "timeDelta": 0.08653545379638672,
+            "timeDelta": 0.07818889617919922,
             "position": {
-                "x": 0.4899425208568573,
-                "y": 0.5843271017074585
+                "x": 0.5126262903213501,
+                "y": 0.6014362573623657
             },
             "positional": false,
             "waitSignal": "",
@@ -75,36 +75,55 @@
             "objectTag": "Untagged",
             "objectHierarchy": "MenuCanvas/LoadGamePanel",
             "objectOffset": {
-                "x": -0.026367120444774629,
-                "y": -0.2894156575202942
+                "x": 0.033101703971624377,
+                "y": -0.09403883665800095
             }
         },
         {
             "pointerId": -1,
             "eventType": 1,
-            "timeDelta": 2.713075637817383,
+            "timeDelta": 2.234219551086426,
             "position": {
-                "x": 0.4976053535938263,
-                "y": 0.010221465490758419
+                "x": 0.4186868667602539,
+                "y": 0.29802513122558596
             },
             "positional": false,
             "waitSignal": "",
             "emitSignal": "",
-            "objectName": "Button",
+            "objectName": "Unlocked",
             "objectTag": "Untagged",
-            "objectHierarchy": "MainCanvas/Inventory",
+            "objectHierarchy": "MainCanvas/GamePanel/0 - Corridor/Navigation/CorridorToLivingRoom",
             "objectOffset": {
-                "x": 0.030639266595244409,
-                "y": -0.05548705905675888
+                "x": 0.4780219495296478,
+                "y": 0.33965158462524416
             }
         },
         {
             "pointerId": -1,
             "eventType": 2,
-            "timeDelta": 0.09477424621582031,
+            "timeDelta": 0.08722209930419922,
             "position": {
-                "x": 0.4976053535938263,
-                "y": 0.010221465490758419
+                "x": 0.4186868667602539,
+                "y": 0.29802513122558596
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Unlocked",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas/GamePanel/0 - Corridor/Navigation/CorridorToLivingRoom",
+            "objectOffset": {
+                "x": 0.4780219495296478,
+                "y": 0.33965158462524416
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 1.1368370056152344,
+            "position": {
+                "x": 0.4994949400424957,
+                "y": 0.014362657442688942
             },
             "positional": false,
             "waitSignal": "",
@@ -113,17 +132,36 @@
             "objectTag": "Untagged",
             "objectHierarchy": "MainCanvas/Inventory",
             "objectOffset": {
-                "x": 0.030639266595244409,
-                "y": -0.05548705905675888
+                "x": 0.05331430584192276,
+                "y": 0.09385783225297928
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.09354019165039063,
+            "position": {
+                "x": 0.4994949400424957,
+                "y": 0.014362657442688942
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Button",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas/Inventory",
+            "objectOffset": {
+                "x": 0.05331430584192276,
+                "y": 0.09385783225297928
             }
         },
         {
             "pointerId": -1,
             "eventType": 1,
-            "timeDelta": 2.213107109069824,
+            "timeDelta": 2.4458560943603517,
             "position": {
-                "x": 0.2964559495449066,
-                "y": 0.22316865622997285
+                "x": 0.3934343457221985,
+                "y": 0.21184919774532319
             },
             "positional": false,
             "waitSignal": "",
@@ -132,17 +170,17 @@
             "objectTag": "Untagged",
             "objectHierarchy": "MainCanvas/Inventory/Panel/Container/Word Layout Group",
             "objectOffset": {
-                "x": -0.05449463054537773,
-                "y": 0.32652151584625246
+                "x": -0.12350357323884964,
+                "y": 0.15406756103038789
             }
         },
         {
             "pointerId": -1,
             "eventType": 4,
-            "timeDelta": 0.20361995697021485,
+            "timeDelta": 0.14271831512451173,
             "position": {
-                "x": 0.36063218116760256,
-                "y": 0.32879045605659487
+                "x": 0.4015151560306549,
+                "y": 0.22441652417182923
             },
             "positional": false,
             "waitSignal": "",
@@ -151,17 +189,17 @@
             "objectTag": "Untagged",
             "objectHierarchy": "MainCanvas",
             "objectOffset": {
-                "x": -0.054495543241500857,
-                "y": 0.3265180289745331
+                "x": -0.07501877099275589,
+                "y": 0.29259729385375979
             }
         },
         {
             "pointerId": -1,
             "eventType": 2,
-            "timeDelta": 1.4381608963012696,
+            "timeDelta": 1.9138250350952149,
             "position": {
-                "x": 0.5454980731010437,
-                "y": 0.5928449630737305
+                "x": 0.544949471950531,
+                "y": 0.6104129552841187
             },
             "positional": false,
             "waitSignal": "",
@@ -170,128 +208,14 @@
             "objectTag": "Untagged",
             "objectHierarchy": "MainCanvas/GamePanel/3 - Living Room/ReverseWords",
             "objectOffset": {
-                "x": 0.0025273708160966636,
-                "y": -0.10590340942144394
-            }
-        },
-        {
-            "pointerId": -1,
-            "eventType": 1,
-            "timeDelta": 3.004596710205078,
-            "position": {
-                "x": 0.49281609058380129,
-                "y": 0.010221465490758419
-            },
-            "positional": false,
-            "waitSignal": "",
-            "emitSignal": "",
-            "objectName": "Button",
-            "objectTag": "Untagged",
-            "objectHierarchy": "MainCanvas/Inventory",
-            "objectOffset": {
-                "x": -0.026831816881895067,
-                "y": -0.05549519881606102
-            }
-        },
-        {
-            "pointerId": -1,
-            "eventType": 2,
-            "timeDelta": 0.07707023620605469,
-            "position": {
-                "x": 0.49281609058380129,
-                "y": 0.010221465490758419
-            },
-            "positional": false,
-            "waitSignal": "",
-            "emitSignal": "",
-            "objectName": "Button",
-            "objectTag": "Untagged",
-            "objectHierarchy": "MainCanvas/Inventory",
-            "objectOffset": {
-                "x": -0.026831816881895067,
-                "y": -0.05549519881606102
-            }
-        },
-        {
-            "pointerId": -1,
-            "eventType": 1,
-            "timeDelta": 1.5850296020507813,
-            "position": {
-                "x": 0.4976053535938263,
-                "y": 0.2947189211845398
-            },
-            "positional": true,
-            "waitSignal": "",
-            "emitSignal": "",
-            "objectName": "",
-            "objectTag": "",
-            "objectHierarchy": "",
-            "objectOffset": {
-                "x": 0.0,
-                "y": 0.0
-            }
-        },
-        {
-            "pointerId": -1,
-            "eventType": 2,
-            "timeDelta": 0.04706382751464844,
-            "position": {
-                "x": 0.4976053535938263,
-                "y": 0.2947189211845398
-            },
-            "positional": true,
-            "waitSignal": "",
-            "emitSignal": "",
-            "objectName": "",
-            "objectTag": "",
-            "objectHierarchy": "",
-            "objectOffset": {
-                "x": 0.0,
-                "y": 0.0
-            }
-        },
-        {
-            "pointerId": -1,
-            "eventType": 1,
-            "timeDelta": 0.30982398986816409,
-            "position": {
-                "x": 0.49281609058380129,
-                "y": 0.28279387950897219
-            },
-            "positional": false,
-            "waitSignal": "",
-            "emitSignal": "",
-            "objectName": "Button",
-            "objectTag": "Untagged",
-            "objectHierarchy": "MainCanvas/Inventory",
-            "objectOffset": {
-                "x": -0.026831816881895067,
-                "y": 0.119598388671875
-            }
-        },
-        {
-            "pointerId": -1,
-            "eventType": 2,
-            "timeDelta": 0.060546875,
-            "position": {
-                "x": 0.49281609058380129,
-                "y": 0.28279387950897219
-            },
-            "positional": false,
-            "waitSignal": "",
-            "emitSignal": "",
-            "objectName": "Button",
-            "objectTag": "Untagged",
-            "objectHierarchy": "MainCanvas/Inventory",
-            "objectOffset": {
-                "x": -0.026831816881895067,
-                "y": 0.119598388671875
+                "x": -0.002375582931563258,
+                "y": 0.007237844169139862
             }
         },
         {
             "pointerId": 0,
             "eventType": 0,
-            "timeDelta": 2.1319541931152345,
+            "timeDelta": 4.882667541503906,
             "position": {
                 "x": 0.0,
                 "y": 0.0

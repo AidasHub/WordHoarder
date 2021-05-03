@@ -49,7 +49,7 @@ namespace WordHoarder.Managers.Static.Gameplay
         }
         public static void IncreaseRevealedHiddenObjects()
         {
-            CollectedWords++;
+            RevealedHiddenObjects++;
             onProgressMade.Invoke();
             CheckForCompletion();
         }
