@@ -1,0 +1,20 @@
+{
+  "textEN": "I like room decorations. In my bedroom on the _ I have a tiny _ - a green _. It gets plenty of light through the _. It is said that like all living organisms they react to music. Indeed: when I string the _ or play music on my _ it also seems a lot happier.",
+  "missingWordsEN": [
+    "table",
+    "plant",
+    "cactus",
+    "window",
+    "guitar",
+    "speaker"
+  ],
+  "textOther": "Mėgstu kambario dekoracijas. Savo miegamajame ant _ turiu nedidelį _ - žalią _. Pro _ jis gauna daug šviesos. Sakoma, jog kaip ir visi gyvi organizmai jie reaguoja į muziką. Išties: kai stygoju _ arba pasileidžiu muzikos per _, jis taip pat atrodo laimingesnis,",
+  "missingWordsOther": [
+    "stalo",
+    "augalą",
+    "kaktusą",
+    "langą",
+    "gitara",
+    "kolonėlę"
+  ]
+}

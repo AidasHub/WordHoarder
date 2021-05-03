@@ -4,7 +4,7 @@
 	"MenuOptions": "Nustatymai",
 	"MenuQuit": "Išeiti",
 
-	"LoadSlotEmpty": "Laisva",
+	"LoadSlotEmpty": "Tuščia",
 	"LoadSlotUsed": "surinktų žodžių",
 	"LoadSlotOverwrite": "Perrašyti pasirinktą užsaugojimą?",
 	"LoadSaveSuccessful": "Užsaugojimas sėkmingas!",
@@ -16,6 +16,9 @@
 	"GraphicsResolution": "Ekrano raiška",
 	"GraphicsFullScreen": "Pilno ekrano režimas",
 
+	"AudioVolume": "Garso stiprumas",
+	"AudioEnabled": "Garsas įjungtas",
+
 	"PuzzleTooltip": "Spustelkite, kad atidaryti galvosūkio langą",
 	"ReverseWordTooltip": "Ar žinai, kas čia slepiasi? Jeigu taip - nutrauk čia žodį!",
 	"PuzzleImageGuessQuestion": "Kas tai?",
@@ -25,16 +28,21 @@
 	"PauseSave": "Užsaugoti žaidimą",
 	"PauseOptions": "Nustatymai",
 	"PauseQuit": "Išeiti iš žaidimo",
+	"PauseQuitConfirmation": "Kaip norėtumėte išeiti?",
+	"PauseQuitMainMenu": "Į pagrindinį meniu",
+	"PauseQuitDesktop": "Į darbalaukį",
 
 	"MiscContinue": "Tęsti",
 	"MiscBack": "Atgal",
+	"MiscCancel": "Atšaukti",
 	"MiscLaunch": "Pradėti",
 	"MiscYes": "Taip",
 	"MiscNo": "Ne",
 	"MiscOK": "Gerai",
 	"MiscUnlock": "Atrakinti",
+	"MiscCreditsTitle": "Nuotraukų šaltiniai",
 
-	"WordsCollected": "surinktų žodžių",
+	"WordsCollected": "Žaidimo progresas",
 
 	"EnvironmentToCorridor": "Atgal į koridorių",
 	"EnvironmentToKitchen": "Į virtuvę",
@@ -44,6 +52,10 @@
 	"EnvironmentToLivingRoom3": "Dar toliau į svetainę",
 	"EnvironmentToBathroom": "Į vonią",
 	"EnvironmentToBedroom": "Į miegamąjį",
+
+	"EndCongratulations": "Sveikiname!",
+	"EndCompletion": "Jūs sėkmingai perėjote žaidimą!",
+	"EndAwesome": "Puiku!",
 
 	"TutorialSteps": [
 		"Sveiki, atvykę į Word-Hoarder!",

@@ -1,6 +1,6 @@
 {
   "textEN":
-  "I'm hungry. I think I will open the _ and see if I have the ingredients to bake a pizza. Alternatively, I could heat up some food in the _. It's important to not forget putting the dirty dishes into the _",
+  "I'm hungry... Maybe I could find something in the _? At worst I could heat up some food in the _, but then I would have to wash the dishes in the _",
   "missingWordsEN":
   [
     "fridge",
@@ -8,11 +8,11 @@
 	"sink"
   ],
   "textOther":
-  "Aš alkanas. Manau atsidarysiu _ ir pažiūrėsiu, ar turiu ingredientų išsikepti picai. Priešingu atveju, galėčiau pasišildyti maisto _. Svarbu nepamiršti sudėti nešvarius indus į _!",
+  "Aš alkanas... Galbūt kažką rasčiau _? Blogiausiu atveju galėčiau pasišildyti maisto _, bet tuomet tektų plauti indus _",
   "missingWordsOther":
   [
-    "šaldytuvą",
+    "šaldytuve",
     "mikrobangų krosnelėje",
-	"kriauklę"
+	"kriauklėje"
   ]
 }

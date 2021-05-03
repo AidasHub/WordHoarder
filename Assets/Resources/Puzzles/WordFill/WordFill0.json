@@ -1,13 +1,13 @@
 {
   "textEN":
-  "This room has a _ for sitting on. It also has a _, so you could see yourself",
+  "This room has a _ for sitting on. It also has a _, in case you would like to see your reflection",
   "missingWordsEN":
   [
     "pouf",
     "mirror"
   ],
   "textOther":
-  "Šis kambarys sėdėjimui turi _. Jis taip pat turi _, kad galėtum pamatyti save",
+  "Šis kambarys turi _, kad būtų galima prisėsti. Jis taip pat turi _, jeigu norėtum pažvelgti į savo atvaizdą",
   "missingWordsOther":
   [
     "pufą",

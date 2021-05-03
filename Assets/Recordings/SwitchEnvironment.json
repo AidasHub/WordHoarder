@@ -1,0 +1,254 @@
+{
+    "entryScene": "0_Init",
+    "recordingType": 0,
+    "recordings": [],
+    "touchData": [
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 6.942625045776367,
+            "position": {
+                "x": 0.39848485589027407,
+                "y": 0.4757630228996277
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Load Game",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/MainPanel",
+            "objectOffset": {
+                "x": -0.2661372721195221,
+                "y": -0.10202164202928543
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.24858427047729493,
+            "position": {
+                "x": 0.39848485589027407,
+                "y": 0.4757630228996277
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Load Game",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/MainPanel",
+            "objectOffset": {
+                "x": -0.2661372721195221,
+                "y": -0.10202164202928543
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 0.6368756294250488,
+            "position": {
+                "x": 0.46414142847061159,
+                "y": 0.6014362573623657
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Slot 1",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/LoadGamePanel",
+            "objectOffset": {
+                "x": -0.09400864690542221,
+                "y": -0.09403883665800095
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.08992385864257813,
+            "position": {
+                "x": 0.46414142847061159,
+                "y": 0.6014362573623657
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Slot 1",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MenuCanvas/LoadGamePanel",
+            "objectOffset": {
+                "x": -0.09400864690542221,
+                "y": -0.09403883665800095
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 2.1978845596313478,
+            "position": {
+                "x": 0.6005050539970398,
+                "y": 0.315978467464447
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Unlocked",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas/GamePanel/0 - Corridor/Navigation/CorridorToKitchen",
+            "objectOffset": {
+                "x": -0.2665967643260956,
+                "y": 0.03126019239425659
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.07879638671875,
+            "position": {
+                "x": 0.6005050539970398,
+                "y": 0.315978467464447
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Unlocked",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas/GamePanel/0 - Corridor/Navigation/CorridorToKitchen",
+            "objectOffset": {
+                "x": -0.2665967643260956,
+                "y": 0.03126019239425659
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 0.8224153518676758,
+            "position": {
+                "x": 0.5005050301551819,
+                "y": 0.1723518818616867
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Unlocked",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas/GamePanel/1 - Kitchen/Navigation/KitchenToKitchen2",
+            "objectOffset": {
+                "x": -0.1514691412448883,
+                "y": 0.1858312040567398
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.11288738250732422,
+            "position": {
+                "x": 0.5005050301551819,
+                "y": 0.1723518818616867
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Unlocked",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas/GamePanel/1 - Kitchen/Navigation/KitchenToKitchen2",
+            "objectOffset": {
+                "x": -0.1514691412448883,
+                "y": 0.1858312040567398
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 1.2284002304077149,
+            "position": {
+                "x": 0.18636363744735719,
+                "y": 0.0951526015996933
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Unlocked",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas/GamePanel/2 - Kitchen 2/Navigation/Kitchen2ToKitchen",
+            "objectOffset": {
+                "x": -0.2895502746105194,
+                "y": 0.08893624693155289
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.09821414947509766,
+            "position": {
+                "x": 0.18636363744735719,
+                "y": 0.0951526015996933
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Unlocked",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas/GamePanel/2 - Kitchen 2/Navigation/Kitchen2ToKitchen",
+            "objectOffset": {
+                "x": -0.2895502746105194,
+                "y": 0.08893624693155289
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 1,
+            "timeDelta": 0.9057273864746094,
+            "position": {
+                "x": 0.3530302941799164,
+                "y": 0.06822261959314347
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Unlocked",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas/GamePanel/1 - Kitchen/Navigation/KitchenToCorridor",
+            "objectOffset": {
+                "x": 0.2513202130794525,
+                "y": 0.027265319600701333
+            }
+        },
+        {
+            "pointerId": -1,
+            "eventType": 2,
+            "timeDelta": 0.08807182312011719,
+            "position": {
+                "x": 0.3530302941799164,
+                "y": 0.06822261959314347
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "",
+            "objectName": "Unlocked",
+            "objectTag": "Untagged",
+            "objectHierarchy": "MainCanvas/GamePanel/1 - Kitchen/Navigation/KitchenToCorridor",
+            "objectOffset": {
+                "x": 0.2513202130794525,
+                "y": 0.027265319600701333
+            }
+        },
+        {
+            "pointerId": 0,
+            "eventType": 0,
+            "timeDelta": 2.255599021911621,
+            "position": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "positional": false,
+            "waitSignal": "",
+            "emitSignal": "playbackComplete",
+            "objectName": "",
+            "objectTag": "",
+            "objectHierarchy": "",
+            "objectOffset": {
+                "x": 0.0,
+                "y": 0.0
+            }
+        }
+    ]
+}
