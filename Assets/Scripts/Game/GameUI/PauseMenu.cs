@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using WordHoarder.Gameplay.GameScenarios;
 using WordHoarder.Managers.Static.Gameplay;
 using WordHoarder.Managers.Static.UI;
+using WordHoarder.Setup;
 using WordHoarder.Utility;
 using static WordHoarder.Utility.SaveUtility;
 
@@ -22,6 +23,8 @@ namespace WordHoarder.Gameplay.UI
         private bool menuOpen = false;
 
         [Header("Save Menu")]
+        [SerializeField]
+        private Button pauseSaveButton;
         [SerializeField]
         private Button saveOverwriteButtonYes;
         [SerializeField]
@@ -54,6 +57,11 @@ namespace WordHoarder.Gameplay.UI
                 background.SetActive(true);
                 GameManager.GamePaused = true;
                 menuOpen = true;
+                var isTutorial = UIManager.GetFromCanvas("GamePanel") == null;
+                if (isTutorial)
+                    pauseSaveButton.interactable = false;
+                else
+                    pauseSaveButton.interactable = true;
             }
         }
 
@@ -78,7 +86,8 @@ namespace WordHoarder.Gameplay.UI
                 }
                 else
                 {
-                    slotInfo[i] = savesData[i].CollectedWords + "/" + savesData[i].TotalWords;
+                    var gameCompletion = (float)savesData[i].CurrentProgress * 100 / savesData[i].TotalProgress;
+                    slotInfo[i] = string.Format("{0:0.0}%", gameCompletion);
                 }
             }
             pauseMenuLocalizationHelper.UpdateLanguageForSaveSlots(slotInfo);
@@ -197,6 +206,12 @@ namespace WordHoarder.Gameplay.UI
         public void PlayAudioSample()
         {
             SoundManager.PlaySound(SoundManager.Sound.Test);
+        }
+
+        public void QuitToMainMenu()
+        {
+            GameManager.GamePaused = false;
+            GameSetup.GetInstance().ReturnToMainMenu();
         }
 
         public void QuitGame()

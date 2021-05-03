@@ -29,16 +29,24 @@ namespace WordHoarder.Gameplay.GameScenarios
         private GameObject arrowImage;
 
         private WorldWord objectWorldWord;
-        private Button keyButton;
         private string[] tutorialStepsText;
         private int currentTutorialStep;
 
         private void Awake()
         {
-            objectWorldWord = key.GetComponent<WorldWord>();
-            keyButton = key.GetComponent<Button>();
+            objectWorldWord = key.GetComponentInChildren<WorldWord>();
 
             Init();
+        }
+
+        private void Update()
+        {
+            if(currentTutorialStep == 4)
+            {
+                Debug.Log(InventoryManager.GetWords().Count);
+                if (InventoryManager.GetWords().Count > 0)
+                    AdvanceTutorial();
+            }
         }
 
         private void Init()
@@ -68,12 +76,10 @@ namespace WordHoarder.Gameplay.GameScenarios
             {
                 case 2:
                     key.SetActive(true);
-                    keyButton.enabled = false;
                     break;
                 case 3:
                     tutorialButtonNext.gameObject.SetActive(false);
                     objectWorldWord.enabled = true;
-                    keyButton.enabled = true;
                     break;
                 case 4:
                     if (InventoryManager.GetWords().Count != 1)
@@ -81,7 +87,6 @@ namespace WordHoarder.Gameplay.GameScenarios
                         tutorialText.text = tutorialStepsText[currentTutorialStep - 1];
                         return;
                     }
-                    keyButton.enabled = false;
                     GameObject inventory = InventoryManager.GetInventoryGO();
                     inventory.transform.SetSiblingIndex(inventory.transform.parent.childCount - 1);
                     inventory.SetActive(true);

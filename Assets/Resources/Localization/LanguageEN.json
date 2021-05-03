@@ -18,6 +18,10 @@
 	"PauseSave": "Save Game",
 	"PauseOptions": "Options",
 	"PauseQuit": "Quit Game",
+	"PauseQuitConfirmation": "How would you like to quit?",
+	"PauseQuitMainMenu": "Main Menu",
+	"PauseQuitDesktop": "Desktop",
+
 
 	"GraphicsResolution": "Resolution",
 	"GraphicsFullScreen": "Full Screen",
@@ -31,22 +35,23 @@
 
 	"MiscContinue": "Continue",
 	"MiscBack": "Back",
+	"MiscCancel": "Cancel",
 	"MiscLaunch": "Start",
 	"MiscYes": "Yes",
 	"MiscNo": "No",
 	"MiscOK": "Ok",
 	"MiscUnlock": "Unlock",
 	"MiscCreditsTitle": "Photo Credits",
-	
-	"WordsCollected":"words collected",
 
-	"EnvironmentToCorridor":"Back to the corridor",
+	"WordsCollected": "Game progress",
+
+	"EnvironmentToCorridor": "Back to the corridor",
 	"EnvironmentToKitchen": "To the kitchen",
-	"EnvironmentToKitchen2":"Further to the kitchen",
+	"EnvironmentToKitchen2": "Further to the kitchen",
 	"EnvironmentToLivingRoom": "To the living room",
-	"EnvironmentToLivingRoom2":"Further to the living room",
+	"EnvironmentToLivingRoom2": "Further to the living room",
 	"EnvironmentToLivingRoom3": "Even further to the living room",
-	"EnvironmentToBathroom":"To the bathroom",
+	"EnvironmentToBathroom": "To the bathroom",
 	"EnvironmentToBedroom": "To the bedroom",
 
 	"TutorialSteps": [

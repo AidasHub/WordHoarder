@@ -20,7 +20,11 @@ namespace WordHoarder.Gameplay.GameScenarios
         public void Awake()
         {
             GameManager.TotalWords = GetComponentsInChildren<WorldWord>(true).Length;
+            GameManager.TotalEnvironments = GetComponentsInChildren<WorldNavigation>(true).Length;
+            GameManager.TotalHiddenObjects = GetComponentsInChildren<WorldInteractable>(true).Length;
             GameManager.ClearCollectedWords();
+            GameManager.ClearUnlockedEnvironments();
+            GameManager.ClearRevealedHiddenObjects();
         }
 
         public void SwitchEnvironment(int index)
@@ -64,14 +68,17 @@ namespace WordHoarder.Gameplay.GameScenarios
             }
 
             int saveCollectedWords = GameManager.CollectedWords;
-            int totalWords = GameManager.TotalWords;
+            int saveCurrentProgress = GameManager.CollectedWords + GameManager.UnlockedEnvironments + GameManager.RevealedHiddenObjects;
+            int saveTotalProgress = GameManager.TotalWords + GameManager.TotalEnvironments + GameManager.TotalHiddenObjects;
 
-            SaveData saveData = new SaveData(saveCurrentEnvironment, saveEnvironmentStatus, saveWorldWords, saveReverseWords, saveInventoryWords, saveCollectedWords, totalWords);
+            SaveData saveData = new SaveData(saveCurrentEnvironment, saveEnvironmentStatus, saveWorldWords, saveReverseWords, saveInventoryWords, saveCollectedWords, saveCurrentProgress, saveTotalProgress);
             return saveData;
         }
 
         public void LoadSaveData(SaveData data)
         {
+            GameManager.ClearUnlockedEnvironments();
+            GameManager.ClearRevealedHiddenObjects();
             SwitchEnvironment(data.CurrentEnvironment);
 
             // Interface based search is not an option since it does not convert into UnityEngine.Object
@@ -142,6 +149,9 @@ namespace WordHoarder.Gameplay.GameScenarios
                 GameManager.IncreaseCollectedWords();
             }
 
+            Debug.Log(GameManager.CollectedWords + " words collected");
+            Debug.Log(GameManager.UnlockedEnvironments + " environments unlocked");
+            Debug.Log(GameManager.RevealedHiddenObjects + " objects revealed");
             Debug.Log("Data successfully loaded!");
         }
     }

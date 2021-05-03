@@ -20,6 +20,14 @@ namespace WordHoarder.Gameplay.UI
         Text pauseOptions;
         [SerializeField]
         Text pauseQuit;
+        [SerializeField]
+        Text pauseQuitConfirmation;
+        [SerializeField]
+        Text pauseQuitCancel;
+        [SerializeField]
+        Text pauseQuitMainMenu;
+        [SerializeField]
+        Text pauseQuitDesktop;
 
         [Header("Save Menu Panel Text")]
         [SerializeField]
@@ -82,6 +90,10 @@ namespace WordHoarder.Gameplay.UI
             pauseSave.text = language.PauseSave.ToUpper();
             pauseOptions.text = language.MenuOptions.ToUpper();
             pauseQuit.text = language.PauseQuit.ToUpper();
+            pauseQuitConfirmation.text = language.PauseQuitConfirmation.ToUpper();
+            pauseQuitCancel.text = language.MiscCancel.ToUpper();
+            pauseQuitMainMenu.text = language.PauseQuitMainMenu.ToUpper();
+            pauseQuitDesktop.text = language.PauseQuitDesktop.ToUpper();
 
             saveBack.text = language.MiscBack.ToUpper();
             saveOverwriteLabel.text = language.LoadSlotOverwrite.ToUpper();
@@ -114,7 +126,7 @@ namespace WordHoarder.Gameplay.UI
                 }
                 else
                 {
-                    saveSlots[i].text = slotInfo[i] + " " + language.LoadSlotUsed;
+                    saveSlots[i].text = language.WordsCollected.ToUpper() + ": " + slotInfo[i];
                 }
             }
         }

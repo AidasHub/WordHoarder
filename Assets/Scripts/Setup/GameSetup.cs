@@ -98,7 +98,12 @@ namespace WordHoarder.Setup
 
         public void ReturnToMainMenu()
         {
-            for(int i = 0; i < transform.parent.childCount; i++)
+            UIManager.Destroy();
+            GameObject.Destroy(Camera.main);
+            GameManager.ClearCollectedWords();
+            GameManager.ClearRevealedHiddenObjects();
+            GameManager.ClearUnlockedEnvironments();
+            for (int i = 0; i < transform.parent.childCount; i++)
             {
                 var go = transform.parent.GetChild(i);
                 if (!go.GetComponent<GameSetup>())

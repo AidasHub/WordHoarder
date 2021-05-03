@@ -76,6 +76,7 @@ namespace WordHoarder.Gameplay.UI
             menuOptions.text = language.MenuOptions.ToUpper();
             menuQuit.text = language.MenuQuit.ToUpper();
 
+
             loadBack.text = language.MiscBack.ToUpper();
 
             optionsGraphics.text = language.OptionsGraphics.ToUpper();
@@ -105,7 +106,7 @@ namespace WordHoarder.Gameplay.UI
                 }
                 else
                 {
-                    loadSlots[i].text = slotInfo[i] + " " + language.LoadSlotUsed.ToUpper();
+                    loadSlots[i].text = language.WordsCollected.ToUpper() + ": " + slotInfo[i];
                 }
             }
         }

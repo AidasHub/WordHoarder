@@ -15,9 +15,9 @@ namespace WordHoarder.Gameplay.World
         private string wordText;
         [SerializeField]
         private SoundManager.Sound soundClip;
+        [SerializeField]
         private PolygonCollider2D wordCollider;
         private LineRenderer lineRenderer;
-
         private TextMeshProUGUI pickupText;
 
         private float newScaleY;
@@ -35,7 +35,6 @@ namespace WordHoarder.Gameplay.World
             if (enabled && !PuzzleManager.InteractivePanelOpen && !InventoryManager.IsOpen && !GameManager.GamePaused)
                 DrawObjectOutline();
         }
-
 
         void OnMouseExit()
         {

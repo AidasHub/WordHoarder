@@ -100,7 +100,8 @@ namespace WordHoarder.Gameplay.UI
             {
                 if (savesData[i] != null)
                 {
-                    slotInfo[i] = savesData[i].CollectedWords + "/" + savesData[i].TotalWords;
+                    var gameCompletion = (float)savesData[i].CurrentProgress * 100 / savesData[i].TotalProgress;
+                    slotInfo[i] = string.Format("{0:0.0}%", gameCompletion);
                     loadSlotButtons[i].interactable = true;
                 }
                 else

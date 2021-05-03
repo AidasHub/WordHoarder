@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Credits : MonoBehaviour
+namespace WordHoarder.Utility
 {
-    InputField inputField;
-    string defaultText =
-        @"
+    public class Credits : MonoBehaviour
+    {
+        InputField inputField;
+        string defaultText =
+            @"
 License: https://unsplash.com/license
 
 Kitchen 1 - https://unsplash.com/photos/MP0bgaS_d1c
@@ -19,11 +21,12 @@ Bathroom - https://unsplash.com/photos/FX1EbT-jKBQ
 Study - https://unsplash.com/photos/VtEYCUXZjRo
 Bedroom - https://unsplash.com/photos/zwbHbzxd2lg";
 
-    private void Awake()
-    {
-        inputField = GetComponent<InputField>();
-        inputField.readOnly = true;
-        inputField.interactable = true;
-        inputField.text = defaultText;
+        private void Awake()
+        {
+            inputField = GetComponent<InputField>();
+            inputField.readOnly = true;
+            inputField.interactable = true;
+            inputField.text = defaultText;
+        }
     }
 }

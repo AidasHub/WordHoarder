@@ -23,9 +23,11 @@ namespace WordHoarder.Utility
             public List<Tuple<string, bool>> ReverseWords;
             public List<string> InventoryWords;
             public int CollectedWords;
-            public int TotalWords;
+            public int CurrentProgress;
+            public int TotalProgress;
 
-            public SaveData(int ce, List<Tuple<string, bool>> es, List<Tuple<string, bool>> ww, List<Tuple<string, bool>> rw, List<string> iw, int cw, int tw)
+            public SaveData(int ce, List<Tuple<string, bool>> es, List<Tuple<string, bool>> ww, 
+                List<Tuple<string, bool>> rw, List<string> iw, int cw, int cp, int tp)
             {
                 CurrentEnvironment = ce;
                 EnvironmentStatus = es;
@@ -33,7 +35,8 @@ namespace WordHoarder.Utility
                 ReverseWords = rw;
                 InventoryWords = iw;
                 CollectedWords = cw;
-                TotalWords = tw;
+                CurrentProgress = cp;
+                TotalProgress = tp;
             }
         }
 

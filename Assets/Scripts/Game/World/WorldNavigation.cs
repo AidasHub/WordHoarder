@@ -83,6 +83,7 @@ namespace WordHoarder.Gameplay.World
                 lockedButton.gameObject.SetActive(false);
             unlockedButton.interactable = true;
             isLocked = false;
+            GameManager.IncreaseUnlockedEnvironments();
         }
 
 

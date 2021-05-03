@@ -81,6 +81,7 @@ namespace WordHoarder.Gameplay.World
 
         public void RevealWord()
         {
+            GameManager.IncreaseRevealedHiddenObjects();
             StartCoroutine(RevealWordAnimation(1f));
         }
 
@@ -108,6 +109,7 @@ namespace WordHoarder.Gameplay.World
 
         public void LoadSaveData(bool isComplete)
         {
+            GameManager.IncreaseRevealedHiddenObjects();
             if (isComplete)
                 gameObject.SetActive(false);
         }

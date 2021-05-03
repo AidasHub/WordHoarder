@@ -33,18 +33,22 @@ namespace WordHoarder.Gameplay.UI
 
         public void Init()
         {
-            GameManager.onWordCollected.AddListener(UpdateWordsCollected);
-            slider.maxValue = GameManager.TotalWords;
-            UpdateWordsCollected();
-            LocalizationManager.onLanguageChanged += UpdateWordsCollected;
+            GameManager.onProgressMade.AddListener(UpdateProgression);
+            slider.maxValue = GameManager.TotalWords + GameManager.TotalEnvironments + GameManager.TotalHiddenObjects;
+            UpdateProgression();
+            LocalizationManager.onLanguageChanged += UpdateProgression;
         }
 
-        public void UpdateWordsCollected()
+        public void UpdateProgression()
         {
-            slider.value = GameManager.CollectedWords;
+            Debug.Log("Calculating game completion");
+            int currentCompletion = GameManager.CollectedWords + GameManager.UnlockedEnvironments + GameManager.RevealedHiddenObjects;
+            int totalCompletion = GameManager.TotalWords + GameManager.TotalEnvironments + GameManager.TotalHiddenObjects;
+            slider.value = currentCompletion;
             //sliderText.text = GameManager.CollectedWords + "/" + GameManager.TotalWords + " words collected";
-            collectionPercentage = (100 * (float)GameManager.CollectedWords / GameManager.TotalWords);
-            sliderText.text = string.Format("{0:0.0}% {1}", collectionPercentage, LocalizationManager.GetActiveLanguage().WordsCollected);
+            collectionPercentage = (100 * (float)currentCompletion/ totalCompletion);
+            Debug.Log(collectionPercentage);
+            sliderText.text = string.Format("{0}: {1:0.0}%", LocalizationManager.GetActiveLanguage().WordsCollected, collectionPercentage);
         }
 
         public static void ShowWordBar()

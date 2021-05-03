@@ -50,6 +50,9 @@ namespace WordHoarder.Managers.Static.UI
             public string PauseSave;
             public string PauseOptions;
             public string PauseQuit;
+            public string PauseQuitConfirmation;
+            public string PauseQuitMainMenu;
+            public string PauseQuitDesktop;
 
             // Puzzle related Text
             public string PuzzleTooltip;
@@ -59,6 +62,7 @@ namespace WordHoarder.Managers.Static.UI
             // Miscellaneous Text
             public string MiscContinue;
             public string MiscBack;
+            public string MiscCancel;
             public string MiscLaunch;
             public string MiscYes;
             public string MiscNo;

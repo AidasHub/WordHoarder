@@ -28,9 +28,13 @@
 	"PauseSave": "Užsaugoti žaidimą",
 	"PauseOptions": "Nustatymai",
 	"PauseQuit": "Išeiti iš žaidimo",
+	"PauseQuitConfirmation": "Kaip norėtumėte išeiti?",
+	"PauseQuitMainMenu": "Į pagrindinį meniu",
+	"PauseQuitDesktop": "Į darbalaukį",
 
 	"MiscContinue": "Tęsti",
 	"MiscBack": "Atgal",
+	"MiscCancel": "Atšaukti",
 	"MiscLaunch": "Pradėti",
 	"MiscYes": "Taip",
 	"MiscNo": "Ne",
@@ -38,7 +42,7 @@
 	"MiscUnlock": "Atrakinti",
 	"MiscCreditsTitle": "Nuotraukų šaltiniai",
 
-	"WordsCollected": "surinktų žodžių",
+	"WordsCollected": "Žaidimo progresas",
 
 	"EnvironmentToCorridor": "Atgal į koridorių",
 	"EnvironmentToKitchen": "Į virtuvę",
