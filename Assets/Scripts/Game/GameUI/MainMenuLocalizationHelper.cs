@@ -7,7 +7,7 @@ using WordHoarder.Utility;
 
 namespace WordHoarder.Gameplay.UI
 {
-    public class MainMenuLocalizationHelper : MonoBehaviour
+    public class MainMenuLocalizationHelper : MonoBehaviour, ILocalizationHelper
     {
         [Header("Main Menu Panel Text")]
         [SerializeField]
@@ -95,7 +95,7 @@ namespace WordHoarder.Gameplay.UI
             creditsBack.text = language.MiscBack.ToUpper();
         }
 
-        public void UpdateLanguageForLoadSlots(string[] slotInfo)
+        public void UpdateLanguageForSaveGameSlots(string[] slotInfo)
         {
             var language = LocalizationManager.GetActiveLanguage();
             for (int i = 0; i < loadSlots.Count; i++)
@@ -109,6 +109,11 @@ namespace WordHoarder.Gameplay.UI
                     loadSlots[i].text = language.WordsCollected.ToUpper() + ": " + slotInfo[i];
                 }
             }
+        }
+
+        public void UpdateLanguageForSaveSuccess(bool success)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

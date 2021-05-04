@@ -664,23 +664,7 @@ MonoBehaviour:
   m_ItemImage: {fileID: 0}
   m_Value: 0
   m_Options:
-    m_Options:
-    - m_Text: Option A
-      m_Image: {fileID: 0}
-    - m_Text: Option B
-      m_Image: {fileID: 0}
-    - m_Text: Option C
-      m_Image: {fileID: 0}
-    - m_Text: Option C
-      m_Image: {fileID: 0}
-    - m_Text: Option C
-      m_Image: {fileID: 0}
-    - m_Text: Option C
-      m_Image: {fileID: 0}
-    - m_Text: Option C
-      m_Image: {fileID: 0}
-    - m_Text: Option C
-      m_Image: {fileID: 0}
+    m_Options: []
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1561,20 +1545,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4d5493f1807b9e45b2ed24266e03e18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 1510350066764069591}
-  background: {fileID: 644272140693125912}
-  pauseMenuLocalizationHelper: {fileID: 901580707880962323}
-  pauseSaveButton: {fileID: 7546705919020787653}
-  saveOverwriteButtonYes: {fileID: 7141299154650240262}
-  saveConfirmationLabel: {fileID: 1035885486396068484}
-  saveSlotButtons:
-  - {fileID: 6295752734731715098}
-  - {fileID: 3314739977694932886}
-  - {fileID: 3371806197256280410}
   resolutionsDropdown: {fileID: 614981838615172394}
   fullScreenToggle: {fileID: 8582779290578888041}
   volumeSlider: {fileID: 1312687086661809933}
   audioToggle: {fileID: 7650199006310375646}
+  saveGameButtons:
+  - {fileID: 6295752734731715098}
+  - {fileID: 3314739977694932886}
+  - {fileID: 3371806197256280410}
+  pauseMenu: {fileID: 1510350066764069591}
+  background: {fileID: 644272140693125912}
+  pauseSaveButton: {fileID: 7546705919020787653}
+  saveOverwriteButtonYes: {fileID: 7141299154650240262}
+  saveConfirmationLabel: {fileID: 1035885486396068484}
 --- !u!1 &999213107621655744
 GameObject:
   m_ObjectHideFlags: 0
@@ -4691,7 +4674,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 3b2f5bbed7a93a84f9914745dea52500, type: 3}
-    m_FontSize: 25
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2

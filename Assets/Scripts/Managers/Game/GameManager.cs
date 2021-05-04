@@ -31,9 +31,9 @@ namespace WordHoarder.Managers.Static.Gameplay
         public static int TotalWords { get; set; }
         public static int CollectedWords { get; private set; }
         public static int TotalEnvironments { get; set; }
-        public static int UnlockedEnvironments { get; set; }
+        public static int UnlockedEnvironments { get; private set; }
         public static int TotalHiddenObjects { get; set; }
-        public static int RevealedHiddenObjects { get; set; }
+        public static int RevealedHiddenObjects { get; private set; }
 
         public static void IncreaseCollectedWords()
         {

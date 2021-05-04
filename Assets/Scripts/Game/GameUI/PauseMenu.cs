@@ -7,19 +7,16 @@ using WordHoarder.Managers.Static.Gameplay;
 using WordHoarder.Managers.Static.UI;
 using WordHoarder.Setup;
 using WordHoarder.Utility;
-using static WordHoarder.Utility.SaveUtility;
 
 namespace WordHoarder.Gameplay.UI
 {
-    public class PauseMenu : MonoBehaviour
+    public class PauseMenu : Menu
     {
         [Header("Main")]
         [SerializeField]
         private GameObject pauseMenu;
         [SerializeField]
         private GameObject background;
-        [SerializeField]
-        private PauseMenuLocalizationHelper pauseMenuLocalizationHelper;
         private bool menuOpen = false;
 
         [Header("Save Menu")]
@@ -29,26 +26,17 @@ namespace WordHoarder.Gameplay.UI
         private Button saveOverwriteButtonYes;
         [SerializeField]
         private Text saveConfirmationLabel;
-        [SerializeField]
-        private List<Button> saveSlotButtons;
-        private SaveData[] savesData;
-
-        [Header("Graphics Settings")]
-        [SerializeField]
-        private Dropdown resolutionsDropdown;
-        [SerializeField]
-        private Toggle fullScreenToggle;
-
-        [Header("Audio Settings")]
-        [SerializeField]
-        private Slider volumeSlider;
-        [SerializeField]
-        private Toggle audioToggle;
 
         private int orderInHierarchy = 0;
 
         public void Awake()
         {
+            Init();
+        }
+
+        public void Init()
+        {
+            menuLocalizationHelper = GetComponentInChildren<PauseMenuLocalizationHelper>();
             Button[] buttons = gameObject.GetComponentsInChildren<Button>(true);
             foreach (Button b in buttons)
                 b.onClick.AddListener(() => SoundManager.PlaySound(SoundManager.Sound.Click));
@@ -79,25 +67,6 @@ namespace WordHoarder.Gameplay.UI
             background.SetActive(false);
             GameManager.GamePaused = false;
             menuOpen = false;
-        }
-
-        public void InitializeSaveMenu()
-        {
-            savesData = SaveUtility.GetSavedGames();
-            string[] slotInfo = new string[savesData.Length];
-            for (int i = 0; i < saveSlotButtons.Count; i++)
-            {
-                if (savesData[i] == null)
-                {
-                    slotInfo[i] = null;
-                }
-                else
-                {
-                    var gameCompletion = (float)savesData[i].CurrentProgress * 100 / savesData[i].TotalProgress;
-                    slotInfo[i] = string.Format("{0:0.0}%", gameCompletion);
-                }
-            }
-            pauseMenuLocalizationHelper.UpdateLanguageForSaveSlots(slotInfo);
         }
 
         public void SaveGameCheckOverwriting(int i)
@@ -141,92 +110,21 @@ namespace WordHoarder.Gameplay.UI
             }
         }
 
-        private void SaveGameReportSuccess(bool success)
-        {
-            pauseMenuLocalizationHelper.UpdateLanguageForSaveSuccess(success);
-            saveConfirmationLabel.transform.parent.gameObject.SetActive(true);
-        }
-
-        public void ClearSaveListeners()
-        {
-            saveOverwriteButtonYes.onClick.RemoveAllListeners();
-        }
-
-        public void InitializeGraphicsMenu()
-        {
-            Resolution[] resolutions = SettingsUtility.GetResolutions();
-            resolutionsDropdown.ClearOptions();
-            List<string> options = new List<string>();
-            int currentResolutionIndex = 0;
-            for (int i = 0; i < resolutions.Length; i++)
-            {
-                string option = resolutions[i].width + "x" + resolutions[i].height;
-                options.Add(option);
-                if (SettingsUtility.GetFullScreenMode())
-                {
-                    if (Screen.currentResolution.width == resolutions[i].width && Screen.currentResolution.height == resolutions[i].height)
-                        currentResolutionIndex = i;
-                }
-                else
-                {
-                    if (Screen.width == resolutions[i].width && Screen.height == resolutions[i].height)
-                        currentResolutionIndex = i;
-                }
-            }
-            resolutionsDropdown.AddOptions(options);
-            resolutionsDropdown.value = currentResolutionIndex;
-            resolutionsDropdown.RefreshShownValue();
-
-            bool isFullScreen = SettingsUtility.GetFullScreenMode();
-            fullScreenToggle.isOn = isFullScreen;
-        }
-
-        public void SetResolution()
-        {
-            string[] resolutionString = resolutionsDropdown.options[resolutionsDropdown.value].text.Split('x');
-            int width = int.Parse(resolutionString[0]);
-            int height = int.Parse(resolutionString[1]);
-            SettingsUtility.SetResolution(width, height);
-        }
-
-        public void SetFullScreenMode(bool isFullScreen)
-        {
-            SettingsUtility.SetFullScreenMode(isFullScreen);
-        }
-
-        public void InitializeAudioMenu()
-        {
-            volumeSlider.value = SettingsUtility.GetAudioVolume();
-            audioToggle.isOn = SettingsUtility.GetAudioEnabled();
-        }
-
-        public void SetAudioVolume(float volume)
-        {
-            SettingsUtility.SetAudioVolume(volume);
-        }
-
-        public void SetAudioEnabled(bool isEnabled)
-        {
-            SettingsUtility.SetAudioEnabled(isEnabled);
-        }
-
-        public void PlayAudioSample()
-        {
-            SoundManager.PlaySound(SoundManager.Sound.Test);
-        }
-
         public void QuitToMainMenu()
         {
             GameManager.GamePaused = false;
             GameSetup.GetInstance().ReturnToMainMenu();
         }
 
-        public void QuitGame()
+        private void SaveGameReportSuccess(bool success)
         {
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.ExitPlaymode();
-#endif
-            Application.Quit();
+            menuLocalizationHelper.UpdateLanguageForSaveSuccess(success);
+            saveConfirmationLabel.transform.parent.gameObject.SetActive(true);
+        }
+
+        public void ClearSaveListeners()
+        {
+            saveOverwriteButtonYes.onClick.RemoveAllListeners();
         }
     }
 }

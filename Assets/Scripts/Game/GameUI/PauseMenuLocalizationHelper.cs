@@ -8,7 +8,7 @@ using WordHoarder.Utility;
 
 namespace WordHoarder.Gameplay.UI
 {
-    public class PauseMenuLocalizationHelper : MonoBehaviour
+    public class PauseMenuLocalizationHelper : MonoBehaviour, ILocalizationHelper
     {
         [Header("Main Menu Panel Text")]
         [SerializeField]
@@ -115,7 +115,7 @@ namespace WordHoarder.Gameplay.UI
             audioBack.text = language.MiscBack.ToUpper();
         }
 
-        public void UpdateLanguageForSaveSlots(string[] slotInfo)
+        public void UpdateLanguageForSaveGameSlots(string[] slotInfo)
         {
             var language = LocalizationManager.GetActiveLanguage();
 

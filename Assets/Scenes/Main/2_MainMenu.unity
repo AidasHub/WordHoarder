@@ -3290,8 +3290,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 8595769646594697262}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: InitializeLoadMenu
+        m_TargetAssemblyTypeName: Menu, WordHoarder
+        m_MethodName: InitializeSaveMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5677,7 +5677,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 75
+    m_FontSize: 65
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -6041,8 +6041,8 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 8595769646594697262}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: InitializeLoadMenu
+        m_TargetAssemblyTypeName: Menu, WordHoarder
+        m_MethodName: InitializeSaveMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7927,6 +7927,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 8595769646594697262}
+        m_TargetAssemblyTypeName: Menu, WordHoarder
+        m_MethodName: InitializeAudioMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1860564920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8662,8 +8674,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 8595769646594697262}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: InitializeLoadMenu
+        m_TargetAssemblyTypeName: Menu, WordHoarder
+        m_MethodName: InitializeSaveMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9151,19 +9163,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9ad3f03305d12b47a8c4fbb7300800a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resolutionsDropdown: {fileID: 866385736}
+  fullScreenToggle: {fileID: 1813964136}
+  volumeSlider: {fileID: 650135165}
+  audioToggle: {fileID: 2037666227}
+  saveGameButtons:
+  - {fileID: 1196998751}
+  - {fileID: 366551549}
+  - {fileID: 573958067}
   titleAnimator: {fileID: 8595769646594697263}
   loadingFadeClip: {fileID: 7400000, guid: e2ef98cfebdee9c45ac4599e02ed8396, type: 2}
   titleTMP: {fileID: 916649375}
   buttonPanel: {fileID: 911141307}
-  mainMenuLocalizationHelper: {fileID: 332327609}
-  loadSlotButtons:
-  - {fileID: 1196998751}
-  - {fileID: 366551549}
-  - {fileID: 573958067}
-  resolutionsDropdown: {fileID: 866385736}
-  fullScreenToggle: {fileID: 1813964136}
-  audioSlider: {fileID: 650135165}
-  audioEnabled: {fileID: 2037666227}
 --- !u!95 &8595769646594697263
 Animator:
   serializedVersion: 3
